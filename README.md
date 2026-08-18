@@ -54,6 +54,8 @@ resultados/              gerado na execução
 
 Hiperparâmetros e o ano de corte (`split_year = 2010`) ficam em `config.py`.
 
+Escopo acadêmico (para quem, pergunta, objetivos e funções): [`docs/escopo.md`](docs/escopo.md).
+
 ## Setup
 
 ```powershell
