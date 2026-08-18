@@ -58,6 +58,10 @@ Escopo acadêmico (para quem, pergunta, objetivos e funções): [`docs/escopo.md
 
 ## Setup
 
+Não copie a pasta `.venv` do outro computador. Recrie o ambiente.
+
+Python **3.11 ou mais novo**. Depois:
+
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\pip install -r requirements.txt
@@ -65,7 +69,7 @@ python -m venv .venv
 
 Linux/macOS: `python3 -m venv .venv` e `.venv/bin/pip install -r requirements.txt`.
 
-Confirme que `data/emissao_gases.csv` existe antes de rodar.
+O CSV **não está no Git**. Copie `emissao_gases.csv` para `data/emissao_gases.csv` antes de rodar. Sem esse arquivo o `main.py` para com erro explícito.
 
 ## Como executar
 

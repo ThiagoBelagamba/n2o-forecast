@@ -15,6 +15,12 @@ from config import MODEL_CONFIG, PATHS, PD_OPTIONS, PLOT_STYLE, ensure_dirs
 def load_and_analyze_data(file_path=None):
     """Carrega os dados e filtra pelo gás configurado."""
     file_path = file_path or PATHS['data']
+    if not os.path.isfile(file_path):
+        raise FileNotFoundError(
+            f"Dataset não encontrado em:\n  {file_path}\n"
+            "Copie emissao_gases.csv para a pasta data/ "
+            "(o arquivo não vai no Git)."
+        )
     try:
         pd.set_option('display.max_columns', PD_OPTIONS['display.max_columns'])
         plt.style.use(PLOT_STYLE)

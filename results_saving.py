@@ -30,7 +30,10 @@ def save_results(
     """Salva modelo, predições, relatório e gráficos."""
     ensure_dirs()
 
-    joblib.dump(best_model, PATHS['model'])
+    joblib.dump(
+        best_model.best_estimator_ if hasattr(best_model, 'best_estimator_') else best_model,
+        PATHS['model'],
+    )
     save_predictions(best_model, X_train, y_train, X_test, y_test)
     save_report(
         best_model,
