@@ -2,15 +2,17 @@
 
 **Título provisório:** Previsão cronológica de emissão de N2O a partir do inventário SEEG (1970–2019)
 
-Preencher com a equipe:
+Preencher com a equipe (demais nomes):
 
 | Campo | Valor |
 | --- | --- |
 | Instituição | |
-| Curso / disciplina / turma | |
-| Semestre | |
+| Curso | Ciência da Computação |
+| Turno | Noite |
+| Semestre | 8º |
+| Disciplina | Tendências em Ciência da Computação |
 | Professor | Prof. Dr. Renato Gonçalves Rocha |
-| Período | |
+| Integrante (esta frente) | Thiago Belagamba Bueno |
 | Repositório técnico | https://github.com/ThiagoBelagamba/n2o-forecast |
 
 Este documento delimita **para quem**, **o quê**, **como** e **quem faz o quê**. A parte já implementada no repositório corresponde à frente de **análise de dados e mecanismo preditivo** (Manual de Funções, seção 9).
@@ -19,13 +21,16 @@ Este documento delimita **para quem**, **o quê**, **como** e **quem faz o quê*
 
 ## 1. Para quem
 
+O recorte **não é um aplicativo** (não há tela de login nem produto comercial). O entregável é um **mecanismo preditivo + avaliação honesta**. Quem se beneficia disso:
+
 | Interessado | Uso esperado |
 | --- | --- |
+| Engenheiros ambientais, analistas de GEE e equipes de inventário | Projetar emissão de N2O por setor no horizonte seguinte ao último ano disponível; priorizar subsetores (agropecuária, dejetos, solos) para mitigação; testar se “repetir o último ano” já basta ou se um modelo ganha |
+| Gestores e consultorias de clima / ESG | Insumo quantitativo (com incerteza) para cenário de curto prazo, não substituto do inventário oficial |
+| Pesquisadores | Reproduzir o experimento e comparar métodos em split cronológico |
 | Equipe e banca da disciplina | Avaliar pergunta, método, evidências e limitações |
-| Pesquisadores e analistas de inventário de GEE | Reproduzir o experimento e comparar modelos em horizonte futuro |
-| Quem consulta o SEEG | Entender se é possível *prever* N2O setorial, e não só descrever o passado |
 
-Não há, neste recorte, um produto comercial nem um usuário de aplicativo. O beneficiário imediato é o **processo de pesquisa aplicada** da disciplina.
+O N2O entra no inventário brasileiro e na conversão para CO2e. Um engenheiro ambiental **usaria** uma previsão setorial se ela for melhor que a persistência e vier com métricas (MAE/RMSE) e recorte temporal explícito. Enquanto o modelo não superar “copiar 2010”, o uso operacional fica limitado — e isso também é informação útil para esse público.
 
 ---
 
@@ -106,7 +111,7 @@ Conforme o Manual de Funções: cada integrante assume uma função **principal*
 
 | Campo | Registro |
 | --- | --- |
-| Nome | Thiago Belagamba *(corrigir se o nome oficial for outro)* |
+| Nome | Thiago Belagamba Bueno |
 | Função principal | Análise de dados e desenvolvimento do mecanismo preditivo (seção 9) |
 | Função secundária | Infraestrutura e versionamento do repositório técnico (seção 10, recorte Git) |
 | Evidência | https://github.com/ThiagoBelagamba/n2o-forecast |
