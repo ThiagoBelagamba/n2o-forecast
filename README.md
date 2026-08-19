@@ -4,7 +4,9 @@ Pipeline de regressão para estimar emissão de **N2O (t)** a partir do inventá
 
 O objetivo **não** é interpolar setores já vistos. O teste é o futuro: treino em 1970–2010 e teste em 2011–2019. Assim o mesmo setor não aparece nos dois lados do split só porque o ano mudou.
 
-Desenvolvido em **Python 3.13** (`requirements.txt` pinado). Deve funcionar em 3.11+.
+Desenvolvido em **Python 3.11+** (`requirements.txt`). Rodou neste repositório em 3.14.
+
+Resultados do teste 2011–2019 (números e vieses): [`docs/resultados.md`](docs/resultados.md). Escopo acadêmico: [`docs/escopo.md`](docs/escopo.md).
 
 ## Dataset
 
@@ -54,8 +56,6 @@ resultados/              gerado na execução
 
 Hiperparâmetros e o ano de corte (`split_year = 2010`) ficam em `config.py`.
 
-Escopo acadêmico (para quem, pergunta, objetivos e funções): [`docs/escopo.md`](docs/escopo.md).
-
 ## Setup
 
 Não copie a pasta `.venv` do outro computador. Recrie o ambiente.
@@ -85,16 +85,20 @@ Na **raiz** do projeto:
 2. `scripts/grafico.py` — exige o CSV de predições gerado pelo treino; marca o corte 2010/2011.
 3. `scripts/predict_only.py` — exige `resultados/modelo_n2o.joblib`; grava um CSV novo, sem sobrescrever o do treino.
 
-O GridSearch do Random Forest é a etapa lenta (12 combinações × 5 folds). O paralelismo está em `n_jobs=2` de propósito, para não saturar a máquina. Em um PC comum pode levar dezenas de minutos.
+O GridSearch do Random Forest é a etapa lenta (12 combinações × 5 folds). O paralelismo fica em `config.py` (`grid_n_jobs=4`, `rf_n_jobs=3`). Em um PC comum pode levar dezenas de minutos.
 
 ## Saídas (`resultados/`)
 
 | Arquivo | Conteúdo |
 | --- | --- |
-| `relatorio.txt` | Qualidade dos dados, métricas no teste, comparação com baselines |
-| `modelo_n2o.joblib` | Melhor modelo (menor MAE de validação cruzada) |
-| `emissao_n2o_com_predicoes.csv` | Predições de treino e teste, coluna `conjunto` |
-| `graficos/` | EDA, reais vs preditos, importância de features, série anual |
+| `relatorio.txt` | Qualidade dos dados, métricas no teste, RF vs Ridge vs persistência, vieses, §9.2 |
+| `leitura-secao9.txt` | Página curta da evidência |
+| `metricas_comparacao.csv` | Tabela RF / Ridge / baselines |
+| `cv_random_forest.csv`, `cv_ridge.csv` | Grid completo (12 + 4 combinações) |
+| `vies_por_faixa.csv`, `vies_por_nivel1.csv`, `vies_por_ano.csv` | Erro no teste por recorte |
+| `modelo_n2o.joblib` | Melhor modelo (RF). **Local**, ~103 MB — o GitHub recusa; gere com `main.py` |
+| `emissao_n2o_com_predicoes.csv` | Predições de treino e teste. Local (não vai ao Git) |
+| `graficos/` | EDA, reais vs preditos, importância, MAE por faixa/setor/ano, série anual |
 
 ## Como ler as métricas
 
@@ -115,8 +119,18 @@ Baselines no mesmo teste:
 
 O relatório traz Δ MAE e Δ RMSE contra a persistência. **Valor positivo = o modelo erra menos que repetir 2010.**
 
+No teste 2011–2019 (experimento já rodado):
+
+| Método | MAE (t) | RMSE (t) |
+| --- | ---: | ---: |
+| Persistência | 219,73 | 1.390,27 |
+| Random Forest | 232,78 | 1.437,71 |
+| Ridge | 1.593,26 | 5.589,09 |
+
+Δ MAE (persistência − RF) = −13,05 t. A persistência ganha; o RF só ganha de Ridge e dos dummies. Detalhe e vieses: [`docs/resultados.md`](docs/resultados.md).
+
 ## Limitações
 
 Um split aleatório 80/20 neste painel (528 grupos × 50 anos) coloca o mesmo setor em treino e teste. O R² fica alto porque o modelo memoriza o nível do setor, não porque prevê o futuro. Por isso a avaliação é cronológica.
 
-As features são só `ano` + categorias. Random Forest e Ridge **não extrapolam tendência** além de 2010: a previsão tende a saturar no último nível conhecido de cada setor. Empatar com a persistência é um resultado esperado, não um bug do código. Superar esse teto exigiria defasagens e tendência por setor — fora do escopo deste pipeline.
+As features são só `ano` + categorias. Random Forest e Ridge **não extrapolam tendência** além de 2010: a previsão média no teste ficou constante (1.205,59 t) enquanto a emissão real subiu. Perder para a persistência é o resultado medido, não um bug do código. Superar esse teto exigiria defasagens e tendência por setor — fora do escopo deste pipeline.

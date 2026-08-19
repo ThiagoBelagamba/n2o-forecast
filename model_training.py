@@ -1,6 +1,9 @@
 # model_training.py
+import os
+
 import numpy as np
 import pandas as pd
+from joblib import Memory
 from sklearn.base import clone
 from sklearn.dummy import DummyRegressor
 from sklearn.ensemble import RandomForestRegressor
@@ -14,7 +17,7 @@ from sklearn.metrics import (
 from sklearn.model_selection import GridSearchCV, TimeSeriesSplit
 from sklearn.pipeline import Pipeline
 
-from config import MODEL_CONFIG
+from config import MODEL_CONFIG, PATHS, ensure_dirs
 
 
 def compute_metrics(y_true, y_pred):
@@ -96,18 +99,25 @@ def _sort_by_year(X, y):
 
 
 def _fit_grid(name, estimator, param_grid, preprocessor, X_train, y_train, tscv):
-    pipeline = Pipeline(steps=[
-        ('preprocessor', clone(preprocessor)),
-        ('model', estimator),
-    ])
+    ensure_dirs()
+    cache_dir = os.path.join(PATHS['results_dir'], '.sklearn_cache')
+    memory = Memory(cache_dir, verbose=0)
+    pipeline = Pipeline(
+        steps=[
+            ('preprocessor', clone(preprocessor)),
+            ('model', estimator),
+        ],
+        memory=memory,
+    )
     grid_search = GridSearchCV(
         pipeline,
         param_grid,
         cv=tscv,
         scoring=MODEL_CONFIG['scoring'],
-        n_jobs=2,
-        verbose=1,
+        n_jobs=MODEL_CONFIG.get('grid_n_jobs', 1),
+        verbose=2,
         refit=True,
+        pre_dispatch='2*n_jobs',
     )
     print(f"\nTreinando {name}...")
     grid_search.fit(X_train, y_train)
@@ -124,13 +134,17 @@ def train_models(X_train, y_train, preprocessor):
     searches = {}
     searches['random_forest'] = _fit_grid(
         'Random Forest',
-        RandomForestRegressor(random_state=MODEL_CONFIG['random_state']),
+        RandomForestRegressor(
+            random_state=MODEL_CONFIG['random_state'],
+            n_jobs=MODEL_CONFIG.get('rf_n_jobs', 1),
+        ),
         MODEL_CONFIG['rf_param_grid'],
         preprocessor,
         X_sorted,
         y_sorted,
         tscv,
     )
+    _persist_cv(searches['random_forest'], 'random_forest')
     searches['ridge'] = _fit_grid(
         'Ridge',
         Ridge(),
@@ -140,7 +154,27 @@ def train_models(X_train, y_train, preprocessor):
         y_sorted,
         tscv,
     )
+    _persist_cv(searches['ridge'], 'ridge')
     return searches
+
+
+def _strip_pipeline_cache(estimator):
+    """Evita que o .joblib dependa da pasta de cache do GridSearch."""
+    if hasattr(estimator, 'memory'):
+        estimator.memory = None
+    return estimator
+
+
+def _persist_cv(grid_search, name):
+    """Grava tabela do grid e checkpoint do melhor estimador (sobrevive a interrupção)."""
+    import joblib
+
+    ensure_dirs()
+    cv_path = os.path.join(PATHS['results_dir'], f'cv_{name}.csv')
+    pd.DataFrame(grid_search.cv_results_).to_csv(cv_path, index=False)
+    ckpt = os.path.join(PATHS['results_dir'], f'checkpoint_{name}.joblib')
+    joblib.dump(_strip_pipeline_cache(grid_search.best_estimator_), ckpt)
+    print(f"Checkpoint {name} salvo em {ckpt}")
 
 
 def evaluate_model(model, X_test, y_test):

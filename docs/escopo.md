@@ -15,7 +15,7 @@ Preencher com a equipe (demais nomes):
 | Integrante (esta frente) | Thiago Belagamba Bueno |
 | Repositório técnico | https://github.com/ThiagoBelagamba/n2o-forecast |
 
-Este documento delimita **para quem**, **o quê**, **como** e **quem faz o quê**. A parte já implementada no repositório corresponde à frente de **análise de dados e mecanismo preditivo** (Manual de Funções, seção 9).
+Este documento delimita **para quem**, **o quê**, **como** e **quem faz o quê**. A frente de **análise de dados e mecanismo preditivo** (Manual de Funções, seção 9) está **executada**: treino, relatório, gráficos e `.joblib` em `resultados/`. Números e interpretação: [`docs/resultados.md`](resultados.md).
 
 ---
 
@@ -97,7 +97,7 @@ Se a disciplina exigir sistema completo (frontend, backend, BD, testes, seguran�
 | Métrica do grid | MAE (não R²) | Alvo com ~46% zeros e cauda longa |
 | Referência | persistência por setor em 2010 | Benchmark correto de previsão |
 | Métodos | Dummy, média por grupo, persistência, Ridge, Random Forest | Comparar, não só “rodar um RF” |
-| Reprodução | Python 3.13, `requirements.txt`, Git sem o CSV (~82 MB) | Dataset fora do repositório |
+| Reprodução | Python 3.11+, `requirements.txt`, Git sem o CSV (~82 MB) | Dataset fora do repositório |
 
 Código correspondente: `data_loading.py`, `data_preprocessing.py`, `model_training.py`, `results_saving.py`, `config.py`, `scripts/`.
 
@@ -107,31 +107,27 @@ Código correspondente: `data_loading.py`, `data_preprocessing.py`, `model_train
 
 Conforme o Manual de Funções: cada integrante assume uma função **principal**. Abaixo, a função já exercida neste repositório. As demais ficam para a equipe preencher.
 
-### 8.1 Função principal (já em execução)
+### 8.1 Função principal (concluída nesta frente)
 
 | Campo | Registro |
 | --- | --- |
 | Nome | Thiago Belagamba Bueno |
 | Função principal | Análise de dados e desenvolvimento do mecanismo preditivo (seção 9) |
 | Função secundária | Infraestrutura e versionamento do repositório técnico (seção 10, recorte Git) |
-| Evidência | https://github.com/ThiagoBelagamba/n2o-forecast |
+| Evidência | https://github.com/ThiagoBelagamba/n2o-forecast ; `resultados/relatorio.txt` |
 
-**Atribuições desta função (o que já foi feito no código):**
+**Atribuições desta função (código + experimento):**
 
 - delimitação do problema e da variável de interesse (`emissao` de N2O);
 - avaliação de origem, volume e qualidade (SEEG; 26.400 linhas N2O; 160 alvos nulos; `produto` ~54% ausente);
-- limpeza, imputação e EDA;
+- limpeza, imputação e EDA (gráficos em `resultados/graficos/`);
 - split cronológico e checagem de vazamento temporal;
 - baselines (média, mediana, zero, média por grupo, persistência);
-- treino comparado (Random Forest e Ridge) com MAE;
-- documentação técnica no README (métricas, limitações, reprodução);
-- organização do repositório (`.gitignore`, `requirements.txt`, `data/` sem o CSV).
+- treino comparado (Random Forest e Ridge) com grid MAE até o fim;
+- métricas no teste 2011–2019, vieses com evidência e modelo `resultados/modelo_n2o.joblib`;
+- documentação técnica no README e em [`docs/resultados.md`](resultados.md).
 
-**Ainda desta função (pendente de execução em máquina adequada):**
-
-- rodar `main.py` até o fim e arquivar `relatorio.txt`, gráficos e `modelo_n2o.joblib`;
-- preencher a seção de resultados do relatório/artigo com MAE/RMSE vs persistência;
-- contribuir com método, figuras e limitações na redação coletiva.
+**Pendente só da redação coletiva (não bloqueia a seção 9):** método, figuras e limitações no artigo/slides da equipe.
 
 ### 8.2 Funções da equipe (a alocar)
 
@@ -160,22 +156,23 @@ Não reivindicadas por esta frente. Preencher nome quando a equipe definir:
 | --- | --- |
 | Descrição do conjunto de dados | README + este escopo |
 | Procedimento de limpeza | `data_preprocessing.py` |
-| Análise exploratória | `data_loading.py` → `resultados/graficos/` após o treino |
-| Gráficos e indicadores | gerados na execução |
+| Análise exploratória | `data_loading.py` → `resultados/graficos/eda_*.png` |
+| Gráficos e indicadores | `resultados/graficos/` (EDA, teste, MAE por faixa/setor/ano, série anual) |
 | Justificativa dos métodos | README (MAE, persistência, split cronológico) |
 | Modelo de referência | persistência em `model_training.py` |
-| Modelos testados | Ridge e Random Forest |
-| Métricas e comparação | `results_saving.py` / `relatorio.txt` após o treino |
+| Modelos testados | Ridge e Random Forest (grid completo) |
+| Métricas e comparação | `resultados/relatorio.txt`, `metricas_comparacao.csv` |
 | Código reproduzível | repositório |
-| Modelo treinado | `resultados/modelo_n2o.joblib` após o treino |
-| Relatório de limitações | README, seção Limitações |
+| Modelo treinado | `resultados/modelo_n2o.joblib` (local; ~103 MB, fora do Git) |
+| Relatório de limitações | README + [`docs/resultados.md`](resultados.md) |
 | Documentação para integração | `scripts/predict_only.py` carrega o `.joblib` |
+| Relevância §9.2 | persistência MAE 219,73 t vs RF 232,78 t (RF não supera a referência) |
 
 ---
 
 ## 10. Premissas e riscos
 
 - O CSV local permanece fora do Git; sem `data/emissao_gases.csv` o experimento não roda.
-- O GridSearch é computacionalmente pesado; `n_jobs=2` evita saturar a máquina.
-- Empatar ou perder para a persistência **não invalida** a pesquisa: é um resultado científico possível e já previsto pelo desenho das features (`ano` + categorias, sem defasagens).
+- O GridSearch é pesado; em `config.py` o paralelismo é `grid_n_jobs=4` e `rf_n_jobs=3`.
+- Empatar ou perder para a persistência **não invalida** a pesquisa: no teste 2011–2019 a persistência (MAE 219,73 t) ganhou do RF (232,78 t). Resultado previsto pelo desenho das features (`ano` + categorias, sem defasagens).
 - Mudança de tema, inclusão de sistema web ou troca de recorte temporal deve ser **aprovada pelo professor** antes de entrar no escopo da equipe.

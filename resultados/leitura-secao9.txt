@@ -1,0 +1,31 @@
+Previsão cronológica de N2O (t) — evidência da seção 9.2
+Thiago Belagamba Bueno — mecanismo preditivo
+Código: https://github.com/ThiagoBelagamba/n2o-forecast
+
+1. Alvo
+   Emissão de N2O em toneladas, inventário SEEG 1970–2019.
+   Features: ano + hierarquia setorial (nivel_1…6, tipo, atividade, produto).
+
+2. Split (anti-vazamento)
+   Treino 1970–2010, teste 2011–2019. TimeSeriesSplit (5 folds) no treino.
+   O mesmo setor não entra no teste só porque o ano mudou: o teste é o futuro.
+
+3. Referência
+   Persistência: para cada setor, repetir o valor de 2010.
+
+4. Métricas no teste 2011–2019
+   random_forest (escolhido por MAE de CV): MAE 232.78 t | RMSE 1437.71 t | MedAE 0.3912 t | R² 0.9650
+   ridge: MAE 1593.26 t | RMSE 5589.09 t | MedAE 590.3355 t | R² 0.4707
+   persistência: MAE 219.73 t | RMSE 1390.27 t
+   Δ MAE (persistência − random_forest): -13.05 t
+   Hiperparâmetros: {'model__max_depth': None, 'model__min_samples_split': 2, 'model__n_estimators': 100}
+
+5. Limitação
+   Sem defasagens/tendência por setor, RF e Ridge saturam no nível de 2010.
+   Neste experimento o modelo não ganha da persistência em MAE; o método está correto e o resultado (teto das features) está medido.
+
+6. Viés (evidência no teste)
+   37.2% zeros; média 1343.7 t vs mediana 0.4001 t.
+   Top 10% das linhas: 95.3% da emissão e 93.6% do erro absoluto.
+
+Arquivos: relatorio.txt, graficos/, modelo_n2o.joblib, metricas_comparacao.csv

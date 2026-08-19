@@ -54,7 +54,9 @@ def perform_eda(df):
 
     plot_missing_values(df)
     plot_emission_distribution(df)
+    plot_emission_log_positivos(df)
     plot_emission_boxplot(df)
+    plot_emission_concentration(df)
     plot_correlation_matrix(df)
     plot_categorical_distributions(df)
 
@@ -94,6 +96,43 @@ def plot_emission_boxplot(df):
     sns.boxplot(x=df[MODEL_CONFIG['target_col']])
     plt.title(f"Boxplot da Emissão de {MODEL_CONFIG['gas_type']}")
     _save_plot('eda_boxplot_emissao.png')
+
+
+def plot_emission_log_positivos(df):
+    """Histograma em log dos valores positivos — evidência da cauda longa."""
+    y = df[MODEL_CONFIG['target_col']].dropna()
+    positivos = y[y > 0]
+    if positivos.empty:
+        return
+    plt.figure(figsize=(8, 5))
+    sns.histplot(np.log10(positivos), bins=40, kde=True)
+    plt.title("Distribuição log10 da emissão positiva de N2O (t)")
+    plt.xlabel("log10(emissão t)")
+    plt.ylabel("Frequência")
+    _save_plot('eda_distribuicao_positivos_log.png')
+
+
+def plot_emission_concentration(df):
+    """Curva de concentração: poucos registros carregam a maior parte da emissão."""
+    y = df[MODEL_CONFIG['target_col']].dropna().sort_values(ascending=False)
+    total = float(y.sum())
+    if total <= 0:
+        return
+    share = y.cumsum().to_numpy() / total
+    x = np.linspace(0, 100, len(share))
+    n_top10 = max(1, int(np.ceil(0.1 * len(y))))
+    top10 = 100.0 * float(y.iloc[:n_top10].sum()) / total
+
+    plt.figure(figsize=(8, 5))
+    plt.plot(x, 100 * share, color='steelblue', linewidth=2)
+    plt.axvline(10, color='gray', linestyle=':', label='10% das linhas')
+    plt.axhline(top10, color='firebrick', linestyle='--', label=f'Top 10% = {top10:.1f}% da emissão')
+    plt.xlabel("% das linhas (ordenadas da maior para a menor emissão)")
+    plt.ylabel("% acumulado da emissão total")
+    plt.title("Concentração da emissão de N2O")
+    plt.legend()
+    _save_plot('eda_concentracao_emissao.png')
+    print(f"Concentração: os 10% maiores registros somam {top10:.1f}% da emissão total.")
 
 
 def plot_correlation_matrix(df):

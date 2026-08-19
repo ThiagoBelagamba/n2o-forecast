@@ -1,6 +1,6 @@
 # O que fazer em casa — frente de dados e modelo (seção 9)
 
-Documento só da **sua** parte. Objetivo: chegar, executar, arquivar evidências e ficar tranquilo. Não precisa de frontend, API nem artigo inteiro da equipe.
+Documento só desta frente. A execução mínima **já foi feita** nesta máquina: `main.py`, `scripts/grafico.py` e `scripts/predict_only.py` terminaram. Números e interpretação: [`docs/resultados.md`](resultados.md).
 
 | Campo | Valor |
 | --- | --- |
@@ -13,149 +13,77 @@ Documento só da **sua** parte. Objetivo: chegar, executar, arquivar evidências
 
 ---
 
-## Antes de começar (5 minutos)
+## Status (não precisa treinar de novo)
 
-Leve para o outro PC:
+- [x] `main.py` terminou sem erro (grid RF 12×5 e Ridge 4×5 até o fim)
+- [x] `relatorio.txt` tem métricas de teste **e** persistência
+- [x] Gráficos de EDA, teste, vieses e série anual em `resultados/graficos/`
+- [x] `modelo_n2o.joblib` + `scripts/predict_only.py` (CSV novo gerado)
+- [x] Página curta: `resultados/leitura-secao9.txt` e `docs/resultados.md`
 
-- [ ] A pasta do projeto **ou** um `git pull` em `main`
-- [ ] O arquivo `emissao_gases.csv` (não está no Git; ~82 MB)
+Resultado no teste 2011–2019: **persistência MAE 219,73 t; RF 232,78 t; Ridge 1.593,26 t**. Δ MAE = −13,05 t (o RF não supera copiar 2010). Isso é o experimento concluído, não um bug.
 
-Não leve a pasta `.venv` desta máquina. Ela não funciona em outro Windows/Python.
-
-No PC de casa:
-
-- [ ] Python **3.11 ou mais novo** (`python --version`)
-- [ ] `emissao_gases.csv` copiado para `data\emissao_gases.csv` (ao lado de `data\README.md`)
+Se for **reproduzir** em outro PC, use a sequência abaixo. Não copie a pasta `.venv`.
 
 ---
 
-## Passo 1 — Ambiente
+## Sequência de execução (reproduzir)
 
-Na **raiz** do projeto (`n2o-forecast` / `gas`):
+Na **raiz** do projeto, PowerShell:
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\pip install -r requirements.txt
-```
-
-Se o `pip` falhar por versão do Python, instale 3.11+ e repita. Não precisa instalar nada globalmente.
-
-Confira:
-
-```powershell
-dir data\emissao_gases.csv
-```
-
-Se o arquivo não existir, o `main.py` para e avisa. Copie o CSV e siga.
-
----
-
-## Passo 2 — Treinar (o passo longo)
-
-```powershell
 .\.venv\Scripts\python.exe -u main.py
-```
-
-O `-u` mostra o progresso na hora. A EDA é rápida. O **Random Forest** (grid 12 × 5 folds) pode levar **dezenas de minutos**. Deixe a janela aberta. `n_jobs=2` é de propósito.
-
-**Pronto quando aparecer:** `Processo concluído. Relatório: ...`
-
-Se travar ou fechar no meio, rode de novo. A pasta `resultados\` é recriada.
-
----
-
-## Passo 3 — Gráfico anual
-
-Só depois do passo 2:
-
-```powershell
 .\.venv\Scripts\python.exe scripts\grafico.py
+.\.venv\Scripts\python.exe scripts\predict_only.py
 ```
+
+1. `main.py` — EDA, split, baselines, GridSearch, `relatorio.txt`, `.joblib`, gráficos de teste.
+2. `scripts/grafico.py` — exige `resultados\emissao_n2o_com_predicoes.csv`; gera `emissoes_por_ano.png`.
+3. `scripts/predict_only.py` — exige `modelo_n2o.joblib`; gera `emissao_n2o_novas_predicoes.csv` (não sobrescreve o do treino).
+
+O CSV precisa estar em `data\emissao_gases.csv` (~82 MB; fora do Git). Python **3.11+**.
 
 ---
 
-## Passo 4 — Conferir se gerou tudo
-
-Tem que existir:
+## Arquivos que têm que existir
 
 | Arquivo | Para quê |
 | --- | --- |
-| `resultados\relatorio.txt` | Métricas no teste 2011–2019 vs persistência |
-| `resultados\modelo_n2o.joblib` | Modelo treinado |
+| `resultados\relatorio.txt` | Métricas no teste 2011–2019 vs persistência, vieses, §9.2 |
+| `resultados\leitura-secao9.txt` | Página curta (alvo, split, tabela, limitação) |
+| `resultados\metricas_comparacao.csv` | RF vs Ridge vs baselines |
+| `resultados\modelo_n2o.joblib` | Modelo treinado (Random Forest) |
 | `resultados\emissao_n2o_com_predicoes.csv` | Predições com coluna `conjunto` |
 | `resultados\graficos\eda_*.png` | Análise exploratória |
 | `resultados\graficos\reais_vs_preditos.png` | Teste |
 | `resultados\graficos\emissoes_por_ano.png` | Série com corte 2010/2011 |
-| `resultados\graficos\feature_importances.png` | Só se o melhor modelo for Random Forest |
+| `resultados\graficos\feature_importances.png` | RF foi o melhor no CV |
+| `resultados\graficos\mae_por_faixa.png` | Viés de escala |
+| `docs\resultados.md` | Mesmos números, para a banca ler no Git |
 
-Abra `relatorio.txt` e anote:
+O Git **não** versiona o CSV de 82 MB, o `.venv`, o cache do sklearn, os CSVs grandes de predição nem o `.joblib` (~103 MB, acima do limite do GitHub). Relatório, gráficos e tabelas pequenas de métrica/viés entram no repositório. O modelo se recria com `main.py`.
 
-- MAE / RMSE / MedAE / R² do modelo no **teste**
-- MAE da **persistência**
-- Δ MAE (persistência − modelo)
-
-Valor **positivo** = você errou menos que copiar 2010. Valor **zero ou negativo** também vale: é resultado, não bug. Guarde o arquivo do jeito que saiu.
-
-Opcional, para testar o `.joblib`:
-
-```powershell
-.\.venv\Scripts\python.exe scripts\predict_only.py
-```
-
-Gera `resultados\emissao_n2o_novas_predicoes.csv`. Não é obrigatório para a entrega.
+Empacotar para Moodle/Drive, se pedir: GitHub + `docs/escopo.md` + `docs/resultados.md` + `resultados/relatorio.txt` + PNGs.
 
 ---
 
-## Passo 5 — Empacotar a sua evidência (seção 9.2)
-
-Crie uma pasta, por exemplo `entrega-thiago-secao9\`, com:
-
-1. Link do GitHub (código reproduzível).
-2. `docs\escopo.md` (já está no repo: pergunta, método, sua função).
-3. `resultados\relatorio.txt`.
-4. Os PNGs de `resultados\graficos\` (EDA + reais vs preditos + série anual).
-5. Uma página curta (pode ser um `.txt` ou slides de 3–5 páginas) com:
-   - o que é o alvo (N2O em t);
-   - split 1970–2010 / 2011–2019 e por quê;
-   - persistência como referência;
-   - a tabela de métricas copiada do relatório;
-   - limitação: sem defasagens o modelo tende a colar em 2010.
-
-Isso cobre as entregas mínimas do manual: dados, limpeza, EDA, gráficos, métodos, referência, modelos testados, métricas, comparação, código, modelo, limitações, integração (`predict_only.py`).
-
-**Não suba o CSV de 82 MB nem o `.venv` para o Git.** O `.joblib` e o `relatorio.txt` o Git ignora (`resultados/` está no `.gitignore`). Guarde essa pasta **localmente** (Drive, pendrive) e/ou anexe no Moodle/e-mail da disciplina. Se o professor pedir o modelo no Git, avise e aí tiramos `resultados/` do `.gitignore`.
-
----
-
-## O que você NÃO precisa fazer hoje
+## O que esta frente NÃO precisa fazer
 
 - Artigo completo, slides da equipe, cronograma, atas.
 - Frontend, backend, banco, UX, testes de sistema, segurança.
-- Reescrever o pipeline se a persistência ganhar.
-- Treinar de novo neste PC fraco.
-
-Isso é da equipe ou de depois que o professor pedir.
+- Reescrever o pipeline porque a persistência ganhou.
+- Treinar de novo só para “tentar um número melhor” com as mesmas features.
 
 ---
 
-## Se der erro
+## Se der erro (reprodução)
 
 | Sintoma | O que fazer |
 | --- | --- |
 | `Dataset não encontrado` | CSV em `data\emissao_gases.csv` |
 | `No module named sklearn` | Usar `.\.venv\Scripts\python.exe`, não o Python global |
 | Trava no “Fitting 5 folds…” | Esperar; é o grid. Não feche. |
-| Sem `feature_importances.png` | Ridge ganhou o CV; o scatter e o relatório bastam |
+| Cursor não abre o CSV | Arquivo de ~82 MB; o editor quebra. O Python lê. |
 | Pip reclama de versão | Python 3.11+ e venv novo |
-
----
-
-## Quando pode ficar tranquilo
-
-Marque só quando **os três** forem verdade:
-
-- [ ] `main.py` terminou sem erro
-- [ ] `relatorio.txt` tem métricas de teste **e** persistência
-- [ ] Pasta de evidência copiada para Drive/pendrive (código no GitHub + relatório + gráficos)
-
-Aí a seção 9 está entregável. O resto é redação coletiva e as outras funções da equipe.

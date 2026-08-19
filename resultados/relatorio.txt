@@ -1,0 +1,133 @@
+=== RELATÓRIO DO MODELO ===
+
+Split cronológico: treino anos <= 2010, teste anos > 2010
+Validação: TimeSeriesSplit (n_splits=5)
+Scoring do grid: neg_mean_absolute_error
+
+=== QUALIDADE DOS DADOS (N2O) ===
+Linhas após filtro de gás: 26400
+Alvos nulos descartados: 160
+Linhas usadas na modelagem: 26240
+Ausência em produto: 54.17%
+Ausência em atividade_economica: 0.57%
+Zeros no alvo: 46.19%
+Mediana do alvo: 0.0418 t
+Média do alvo: 907.0182 t
+Máximo do alvo: 138618.6300 t
+p90 do alvo: 736.9428 t
+p99 do alvo: 22317.8312 t
+Emissão nos 10% maiores registros: 96.61%
+Período: 1970–2019
+
+Modelo selecionado (menor MAE de CV): random_forest
+Melhores parâmetros: {'model__max_depth': None, 'model__min_samples_split': 2, 'model__n_estimators': 100}
+MAE de CV: 243.9290
+
+Desempenho no teste:
+MAE:   232.7764
+RMSE:  1437.7110
+R2:    0.9650
+MedAE: 0.3912
+
+=== MODELOS COMPARADOS NO TESTE ===
+
+random_forest
+MAE:   232.7764
+RMSE:  1437.7110
+R2:    0.9650
+MedAE: 0.3912
+
+ridge
+MAE:   1593.2551
+RMSE:  5589.0930
+R2:    0.4707
+MedAE: 590.3355
+
+=== COMPARAÇÃO COM BASELINES (TESTE) ===
+
+mean
+MAE:   1877.3552
+RMSE:  7700.7254
+R2:    -0.0048
+MedAE: 810.4122
+
+median
+MAE:   1343.7314
+RMSE:  7798.8685
+R2:    -0.0306
+MedAE: 0.3847
+
+constant_zero
+MAE:   1343.7348
+RMSE:  7798.8712
+R2:    -0.0306
+MedAE: 0.4001
+
+media_por_grupo
+MAE:   654.4799
+RMSE:  3668.4861
+R2:    0.7720
+MedAE: 0.7481
+
+persistencia
+MAE:   219.7271
+RMSE:  1390.2715
+R2:    0.9672
+MedAE: 0.2103
+
+=== GANHO VERSUS PERSISTÊNCIA ===
+Valores positivos = o modelo erra menos que repetir o último valor observado de cada setor (2010).
+Δ MAE  (persistência − modelo): -13.0493 t
+Δ RMSE (persistência − modelo): -47.4395 t
+
+O modelo não supera a persistência em MAE. Árvores e Ridge com só 'ano' + categorias tendem a repetir o nível conhecido do setor e não extrapolam tendência além de 2010.
+
+=== RELEVÂNCIA DO DESEMPENHO (manual §9.2) ===
+Não basta treinar um algoritmo. A relevância se mede no teste futuro (2011–2019) com MAE/RMSE contra a persistência (repetir 2010 por setor).
+
+random_forest ← selecionado por CV: MAE=232.7764 t | RMSE=1437.7110 t | MedAE=0.3912 t | R²=0.9650
+ridge: MAE=1593.2551 t | RMSE=5589.0930 t | MedAE=590.3355 t | R²=0.4707
+persistência: MAE=219.7271 t | RMSE=1390.2715 t | MedAE=0.2103 t | R²=0.9672
+
+Δ MAE  (persistência − random_forest): -13.0493 t (-5.94%)
+Δ RMSE (persistência − random_forest): -47.4395 t
+
+Conclusão: o modelo NÃO supera a persistência em MAE. O desempenho não é operacionalmente relevante neste recorte: copiar 2010 por setor é igual ou melhor. O resultado é negativo, mas válido — documenta o teto de 'ano + categorias' sem defasagens.
+
+=== INTERPRETAÇÃO DOS NÚMEROS (TESTE 2011–2019) ===
+n=4752 linhas. Média=1343.73 t, mediana=0.4001 t, máximo=138618.63 t, p90=1291.70 t.
+MAE=232.7764 t e MedAE=0.3912 t. MedAE << MAE: o erro típico (mediana) é pequeno; o MAE é puxado pela cauda dos grandes emissores, não pelo setor mediano.
+R²=0.9650 no teste cronológico. Não comparar com R² de split aleatório: aquele infla porque o mesmo setor aparece nos dois lados.
+Persistência (copiar 2010): MAE=219.7271 t, RMSE=1390.2715 t. Esse é o teto/chão do experimento.
+
+=== VIESES COM EVIDÊNCIA (TESTE) ===
+No recorte N2O completo: 46.19% zeros, média 907.02 t vs mediana 0.0418 t, máximo 138618.63 t. Os 10% maiores registros concentram 96.6% da emissão.
+No teste: 37.18% zeros. Os 10% maiores valores reais concentram 95.3% da emissão e 93.6% do erro absoluto do modelo.
+Isso confirma o viés de escala: o MAE é decidido por poucos grandes emissores.
+
+Erro por faixa de emissão:
+  - zero: n=1767, MAE=1.0969 t (persistência 0.0972 t), 0.0% da emissão, 0.2% do erro.
+  - baixo (positivo até a mediana dos positivos): n=1493, MAE=1.4147 t (persistência 1.0114 t), 0.0% da emissão, 0.2% do erro.
+  - medio (acima da mediana até o p90): n=1016, MAE=65.7342 t (persistência 56.1301 t), 4.6% da emissão, 6.0% do erro.
+  - alto (acima do p90): n=476, MAE=2175.0364 t (persistência 2070.2380 t), 95.3% da emissão, 93.6% do erro.
+
+Erro por nivel_1 (maior MAE primeiro):
+  - Mudança de Uso da Terra e Floresta: n=108, MAE=2426.3599 t (persistência 2537.2924 t), 15.3% da emissão.
+  - Agropecuária: n=612, MAE=1241.6377 t (persistência 1140.6285 t), 78.5% da emissão.
+  - Resíduos : n=36, MAE=163.3979 t (persistência 147.4271 t), 1.2% da emissão.
+  - Processos Industriais: n=144, MAE=41.4772 t (persistência 10.7112 t), 0.3% da emissão.
+  - Energia: n=3852, MAE=18.7875 t (persistência 16.9266 t), 4.6% da emissão.
+
+MAE por ano do teste (modelo vs persistência):
+  - 2011: modelo 112.9349 t | persistência 90.4019 t | emissão média 1259.37 t | previsão média 1205.59 t
+  - 2012: modelo 150.3889 t | persistência 121.9199 t | emissão média 1251.63 t | previsão média 1205.59 t
+  - 2013: modelo 177.9780 t | persistência 165.1002 t | emissão média 1331.11 t | previsão média 1205.59 t
+  - 2014: modelo 191.8139 t | persistência 180.1420 t | emissão média 1322.80 t | previsão média 1205.59 t
+  - 2015: modelo 190.3256 t | persistência 181.7454 t | emissão média 1330.57 t | previsão média 1205.59 t
+  - 2016: modelo 267.0406 t | persistência 262.0393 t | emissão média 1376.88 t | previsão média 1205.59 t
+  - 2017: modelo 301.1741 t | persistência 287.1904 t | emissão média 1386.63 t | previsão média 1205.59 t
+  - 2018: modelo 299.4175 t | persistência 291.4770 t | emissão média 1366.57 t | previsão média 1205.59 t
+  - 2019: modelo 403.9142 t | persistência 397.5278 t | emissão média 1468.05 t | previsão média 1205.59 t
+
+O MAE cresce ao longo de 2011–2019: o modelo não acompanha a trajetória após o corte (satura no nível conhecido).
+

@@ -34,6 +34,10 @@ MODEL_CONFIG = {
     'cv_splits': 5,      # TimeSeriesSplit
     'random_state': 42,
     'scoring': 'neg_mean_absolute_error',
+    # Grid paralelo + árvores em paralelo (Ryzen 6c/12t). Evita n_jobs aninhado
+    # saturar memória: 4 processos × 3 threads ≈ 12.
+    'grid_n_jobs': 4,
+    'rf_n_jobs': 3,
     'rf_param_grid': {
         'model__n_estimators': [100, 200],
         'model__max_depth': [None, 5, 10],

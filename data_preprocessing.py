@@ -1,4 +1,5 @@
 # data_preprocessing.py
+import numpy as np
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
@@ -27,14 +28,23 @@ def preprocess_data(df):
     X = df_clean.drop(columns=drop_cols)
     y = df_clean[target]
 
+    y_clean = df_clean[target]
+    n_top10 = max(1, int(np.ceil(0.1 * len(y_clean))))
+    top10 = y_clean.nlargest(n_top10)
+    y_sum = float(y_clean.sum())
+
     quality = {
         'n_raw': n_raw,
         'n_dropped_target': n_dropped_target,
         'n_clean': len(df_clean),
         'missing_pct': missing_pct,
-        'target_zeros_pct': 100.0 * (df_clean[target] == 0).mean(),
-        'target_median': float(df_clean[target].median()),
-        'target_mean': float(df_clean[target].mean()),
+        'target_zeros_pct': 100.0 * (y_clean == 0).mean(),
+        'target_median': float(y_clean.median()),
+        'target_mean': float(y_clean.mean()),
+        'target_max': float(y_clean.max()),
+        'target_p90': float(y_clean.quantile(0.90)),
+        'target_p99': float(y_clean.quantile(0.99)),
+        'share_em_top10_pct': (100.0 * float(top10.sum()) / y_sum) if y_sum else 0.0,
         'year_min': int(df_clean['ano'].min()) if 'ano' in df_clean.columns else None,
         'year_max': int(df_clean['ano'].max()) if 'ano' in df_clean.columns else None,
     }
