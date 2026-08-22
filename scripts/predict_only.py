@@ -1,4 +1,4 @@
-# scripts/predict_only.py
+# scripts/predict_only.py — projecao com modelo multi-ano ja treinado
 import os
 import sys
 from pathlib import Path
@@ -6,45 +6,49 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import joblib
-import numpy as np
+import warnings
 
 from config import MODEL_CONFIG, PATHS, ensure_dirs
 from data_loading import load_and_analyze_data
-from data_preprocessing import preprocess_data
+from data_preprocessing import to_nixtla_panel
+from reconciliation import build_hierarchy, leaf_forecasts_only, reconcile_forecasts
 
 
-def load_model_and_predict():
-    print("\nCarregando dados...")
+def main():
+    print("Carregando painel...")
     df = load_and_analyze_data(PATHS['data'])
+    panel, _ = to_nixtla_panel(df)
+    Y_df, S_df, tags, _ = build_hierarchy(panel)
+    Y_full = Y_df[Y_df['ds'].dt.year <= 2024].copy()
 
-    print("\nPré-processando dados...")
-    X, y, num_cols, cat_cols, _quality = preprocess_data(df)
-
-    print("\nCarregando modelo treinado...")
     if not os.path.exists(PATHS['model']):
-        print(f"Erro: modelo não encontrado em {PATHS['model']}")
-        print("Execute main.py primeiro para treinar e salvar o modelo.")
+        print(f"Modelo nao encontrado: {PATHS['model']}")
+        print("Execute main.py primeiro.")
         sys.exit(1)
 
-    model = joblib.load(PATHS['model'])
+    print("Carregando MLForecast...")
+    fcst = joblib.load(PATHS['model'])
+    h = len(MODEL_CONFIG['forecast_years'])
+    with warnings.catch_warnings():
+        warnings.simplefilter('ignore')
+        # Modelo salvo e o de avaliacao direta; para cenario use main.py.
+        # Aqui tentamos predict(h) se o objeto permitir.
+        try:
+            Y_hat = fcst.predict(h=h)
+        except Exception as e:
+            print(f"Predict falhou ({e}). Rode main.py para gerar projecao_2025_2026.csv")
+            sys.exit(1)
+        Y_rec, _ = reconcile_forecasts(Y_hat, Y_df, S_df, tags, train_end_year=2024)
 
-    print("\nFazendo previsões...")
-    predictions = model.predict(X)
-
-    print("\nSalvando resultados...")
+    cols = [c for c in Y_rec.columns if 'MinTrace' in c or 'BottomUp' in c or c == 'LGBM_Tweedie']
+    col = cols[0]
+    leaf = leaf_forecasts_only(Y_rec, tags, col)
+    leaf['ano'] = leaf['ds'].dt.year
     ensure_dirs()
-    df_results = X.copy()
-    df_results[MODEL_CONFIG['target_col']] = np.asarray(y)
-    df_results['emissao_predita'] = np.round(predictions, 8)
-    corte = MODEL_CONFIG['split_year']
-    df_results['conjunto'] = np.where(
-        df_results['ano'] <= corte, 'treino', 'teste'
-    )
-
-    df_results.to_csv(PATHS['predictions_new'], index=False)
-    print(f"\nPrevisões salvas em: {PATHS['predictions_new']}")
+    out = PATHS['predictions_new']
+    leaf.to_csv(out, index=False)
+    print(f"Salvo: {out}")
 
 
-if __name__ == "__main__":
-    print("Iniciando predições usando modelo pré-treinado...")
-    load_model_and_predict()
+if __name__ == '__main__':
+    main()

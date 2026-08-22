@@ -1,141 +1,93 @@
-# data_preprocessing.py
+# -*- coding: utf-8 -*-
+# data_preprocessing.py — painel unique_id / ds / y (lags via MLForecast)
 import numpy as np
-from sklearn.compose import ColumnTransformer
-from sklearn.impute import SimpleImputer
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
+import pandas as pd
 
 from config import MODEL_CONFIG
 
 
-def add_sector_lags(df):
+def make_unique_id(df, group_cols=None):
+    """Concatena chaves setoriais em unique_id estável."""
+    cols = group_cols or [
+        c for c in MODEL_CONFIG['group_cols'] if c in df.columns
+    ]
+    if not cols:
+        raise ValueError("Nenhuma coluna de grupo para unique_id.")
+    filled = df[cols].fillna('missing').astype(str)
+    return filled.agg('|'.join, axis=1)
+
+
+def to_nixtla_panel(df):
     """
-    Adiciona defasagens por setor (só passado):
-    emissao_lag1, emissao_lag2, delta_lag1 = lag1 - lag2.
-    Remove linhas sem lag1 (início da série).
+    Converte o painel nacional SEEG para o contrato Nixtla:
+    unique_id, ds (Timestamp anual), y, + colunas de hierarquia.
+    Não remove séries só-zero (necessárias para a matriz S).
     """
     target = MODEL_CONFIG['target_col']
     group_cols = [c for c in MODEL_CONFIG['group_cols'] if c in df.columns]
-    if not group_cols:
-        raise ValueError("Nenhuma coluna de grupo setorial para calcular lags.")
-    if 'ano' not in df.columns:
-        raise ValueError("Coluna 'ano' obrigatória para lags.")
 
     out = df.copy()
-    out['_grupo'] = (
-        out[group_cols]
-        .fillna('missing')
-        .astype(str)
-        .agg('|'.join, axis=1)
-    )
-    out = out.sort_values(['_grupo', 'ano'], kind='mergesort')
-    g = out.groupby('_grupo', sort=False)[target]
-    out['emissao_lag1'] = g.shift(1)
-    out['emissao_lag2'] = g.shift(2)
-    out['delta_lag1'] = out['emissao_lag1'] - out['emissao_lag2']
-    n_before = len(out)
-    out = out.dropna(subset=['emissao_lag1']).drop(columns=['_grupo'])
-    print(
-        f"Lags por setor: {n_before} -> {len(out)} linhas "
-        f"(descartadas {n_before - len(out)} sem lag1)."
-    )
-    return out.reset_index(drop=True)
+    n_dropped = int(out[target].isna().sum())
+    out = out.dropna(subset=[target]).copy()
+    out[target] = out[target].astype(float).clip(lower=0.0)
 
+    for c in group_cols:
+        out[c] = out[c].fillna('missing').astype(str)
 
-def preprocess_data(df):
-    """Prepara os dados para modelagem (lags + qualidade)."""
-    target = MODEL_CONFIG['target_col']
-    n_raw = len(df)
+    out['unique_id'] = make_unique_id(out, group_cols)
+    out['ds'] = pd.to_datetime(out['ano'].astype(int).astype(str) + '-12-31')
+    out['y'] = out[target]
 
-    missing_pct = {}
-    for col in ['produto', 'atividade_economica']:
-        if col in df.columns:
-            missing_pct[col] = 100.0 * df[col].isna().mean()
+    keep = ['unique_id', 'ds', 'y', 'ano'] + group_cols
+    panel = out[keep].sort_values(['unique_id', 'ds']).reset_index(drop=True)
 
-    n_dropped_target = int(df[target].isna().sum())
-    df_clean = df.dropna(subset=[target]).copy()
-    df_clean = add_sector_lags(df_clean)
-
-    num_cols = [col for col in MODEL_CONFIG['num_cols'] if col in df_clean.columns]
-    cat_cols = [col for col in MODEL_CONFIG['cat_cols'] if col in df_clean.columns]
-
-    drop_cols = [c for c in [target, 'gas'] if c in df_clean.columns]
-    X = df_clean.drop(columns=drop_cols)
-    y = df_clean[target]
-
-    y_clean = df_clean[target]
-    n_top10 = max(1, int(np.ceil(0.1 * len(y_clean))))
-    top10 = y_clean.nlargest(n_top10)
-    y_sum = float(y_clean.sum())
+    y = panel['y']
+    n_top10 = max(1, int(np.ceil(0.1 * len(y))))
+    top10 = y.nlargest(n_top10)
+    y_sum = float(y.sum())
 
     quality = {
-        'n_raw': n_raw,
-        'n_dropped_target': n_dropped_target,
-        'n_clean': len(df_clean),
-        'missing_pct': missing_pct,
-        'target_zeros_pct': 100.0 * (y_clean == 0).mean(),
-        'target_median': float(y_clean.median()),
-        'target_mean': float(y_clean.mean()),
-        'target_max': float(y_clean.max()),
-        'target_p90': float(y_clean.quantile(0.90)),
-        'target_p99': float(y_clean.quantile(0.99)),
+        'n_raw': len(df),
+        'n_dropped_target': n_dropped,
+        'n_clean': len(panel),
+        'n_series': int(panel['unique_id'].nunique()),
+        'missing_pct': {
+            c: 100.0 * float((df[c].isna().mean() if c in df.columns else 0.0))
+            for c in ['produto', 'atividade_economica']
+        },
+        'target_zeros_pct': 100.0 * float((y == 0).mean()),
+        'target_median': float(y.median()),
+        'target_mean': float(y.mean()),
+        'target_max': float(y.max()),
+        'target_p90': float(y.quantile(0.90)),
+        'target_p99': float(y.quantile(0.99)),
         'share_em_top10_pct': (100.0 * float(top10.sum()) / y_sum) if y_sum else 0.0,
-        'year_min': int(df_clean['ano'].min()) if 'ano' in df_clean.columns else None,
-        'year_max': int(df_clean['ano'].max()) if 'ano' in df_clean.columns else None,
-        'has_lags': True,
+        'year_min': int(panel['ano'].min()),
+        'year_max': int(panel['ano'].max()),
         'split_year': MODEL_CONFIG['split_year'],
+        'protocol': 'multi_year_direct_no_test_lag',
     }
-
     print(
-        f"Qualidade: {n_raw} linhas brutas, {n_dropped_target} alvos nulos "
-        f"descartados, {len(df_clean)} linhas limpas (com lags)."
+        f"Painel Nixtla: {quality['n_clean']} linhas, "
+        f"{quality['n_series']} series, "
+        f"{quality['year_min']}–{quality['year_max']} "
+        f"(zeros={quality['target_zeros_pct']:.1f}%)."
     )
-    return X, y, num_cols, cat_cols, quality
+    return panel, quality
 
 
-def create_preprocessor(num_cols, cat_cols):
-    """Cria o pipeline de pré-processamento (ainda não ajustado)."""
-    numeric_transformer = Pipeline(steps=[
-        ('imputer', SimpleImputer(strategy='median')),
-        ('scaler', StandardScaler()),
-    ])
-
-    categorical_transformer = Pipeline(steps=[
-        ('imputer', SimpleImputer(strategy='constant', fill_value='missing')),
-        ('onehot', OneHotEncoder(handle_unknown='ignore', sparse_output=False)),
-    ])
-
-    preprocessor = ColumnTransformer(
-        transformers=[
-            ('num', numeric_transformer, num_cols),
-            ('cat', categorical_transformer, cat_cols),
-        ],
-        remainder='drop',
-    )
-    return preprocessor
-
-
-def split_data_chronological(X, y):
-    """Divide os dados por ano: treino <= split_year, teste > split_year."""
-    if 'ano' not in X.columns:
-        raise ValueError("A coluna 'ano' é obrigatória para o split cronológico.")
-
+def split_panel_chronological(panel):
+    """Treino <= split_year, teste > split_year (só para métricas / holdout y)."""
     corte = MODEL_CONFIG['split_year']
-    treino = X['ano'] <= corte
-    X_train, X_test = X[treino], X[~treino]
-    y_train, y_test = y[treino], y[~treino]
-
-    if len(X_train) == 0 or len(X_test) == 0:
+    train = panel[panel['ano'] <= corte].copy()
+    test = panel[panel['ano'] > corte].copy()
+    if train.empty or test.empty:
         raise ValueError(
-            f"Split cronológico inválido em {corte}: "
-            f"treino={len(X_train)}, teste={len(X_test)}."
+            f"Split inválido em {corte}: treino={len(train)}, teste={len(test)}."
         )
-
     print(
-        f"Split cronológico (corte {corte}): "
-        f"treino {len(X_train)} linhas "
-        f"({int(X_train['ano'].min())}–{int(X_train['ano'].max())}) | "
-        f"teste {len(X_test)} linhas "
-        f"({int(X_test['ano'].min())}–{int(X_test['ano'].max())})"
+        f"Split cronologico (corte {corte}): "
+        f"treino {len(train)} ({int(train['ano'].min())}–{int(train['ano'].max())}) | "
+        f"teste {len(test)} ({int(test['ano'].min())}–{int(test['ano'].max())})"
     )
-    return X_train, X_test, y_train, y_test
+    return train, test

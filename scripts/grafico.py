@@ -1,4 +1,4 @@
-# scripts/grafico.py
+# scripts/grafico.py — emissão média por ano (treino + teste + projeção 2025–2026)
 import os
 import sys
 from pathlib import Path
@@ -17,22 +17,68 @@ plt.style.use('seaborn-v0_8-darkgrid')
 palette = sns.color_palette("husl", 3)
 
 
+def _load_historico():
+    """Painel com ano / emissao / emissao_predita (histórico até 2024)."""
+    path = PATHS['predictions_new']
+    if not os.path.exists(path):
+        path = PATHS['predictions']
+    df = pd.read_csv(path)
+    # Schema antigo
+    if {'ano', 'emissao', 'emissao_predita'}.issubset(df.columns):
+        return df[['ano', 'emissao', 'emissao_predita']].copy()
+    # Schema multi-ano (só teste): y + melhor coluna Ridge/MinTrace
+    if 'y' in df.columns and 'ano' in df.columns:
+        pred_col = None
+        for c in (
+            'Ridge/MinTrace_method-ols',
+            'Ridge/BottomUp',
+            'Ridge',
+        ):
+            if c in df.columns:
+                pred_col = c
+                break
+        if pred_col is None:
+            raise ValueError('Nenhuma coluna de previsao encontrada.')
+        out = df.rename(columns={'y': 'emissao', pred_col: 'emissao_predita'})
+        return out[['ano', 'emissao', 'emissao_predita']].copy()
+    raise ValueError(
+        "Arquivo precisa de ('ano','emissao','emissao_predita') "
+        "ou schema multi-ano com y + modelo."
+    )
+
+
+def _append_projecao(out_sample):
+    """Acrescenta médias de 2025–2026 na série fora da amostra."""
+    proj_path = PATHS['projection']
+    if not os.path.exists(proj_path):
+        print(f"Aviso: projecao nao encontrada ({proj_path}); grafico sem 2025–2026.")
+        return out_sample
+
+    proj = pd.read_csv(proj_path)
+    if 'previsto' not in proj.columns or 'ano' not in proj.columns:
+        print('Aviso: projecao sem colunas ano/previsto.')
+        return out_sample
+
+    fut = (
+        proj.groupby('ano', as_index=False)['previsto']
+        .mean()
+        .rename(columns={'previsto': 'emissao_predita'})
+    )
+    fut = fut[fut['ano'].isin([2025, 2026])].copy()
+    fut['emissao'] = float('nan')
+    return pd.concat([out_sample, fut], ignore_index=True).sort_values('ano')
+
+
 def main():
-    print("Carregando dados...")
+    print('Carregando dados...')
     try:
-        df = pd.read_csv(PATHS['predictions'])
-        print(f"Total de linhas carregadas: {len(df)}")
-        required = ['ano', 'emissao', 'emissao_predita']
-        if not all(col in df.columns for col in required):
-            raise ValueError(
-                "Arquivo não contém as colunas necessárias "
-                "('ano', 'emissao', 'emissao_predita')"
-            )
+        df = _load_historico()
+        print(f'Total de linhas carregadas: {len(df)}')
     except Exception as e:
-        print(f"Erro ao carregar dados: {e}")
+        print(f'Erro ao carregar dados: {e}')
         sys.exit(1)
 
-    print("\nProcessando dados...")
+    print('\nProcessando dados...')
     corte = MODEL_CONFIG['split_year']
 
     df_grouped = df.groupby('ano', as_index=False).agg({
@@ -41,9 +87,15 @@ def main():
     })
 
     in_sample = df_grouped[df_grouped['ano'] <= corte]
-    out_sample = df_grouped[df_grouped['ano'] > corte]
+    out_sample = df_grouped[df_grouped['ano'] > corte].copy()
+    out_sample = _append_projecao(out_sample)
 
-    print("\nCriando visualização...")
+    anos_xticks = sorted(
+        set(df_grouped['ano'].astype(int).tolist())
+        | set(out_sample['ano'].astype(int).tolist())
+    )
+
+    print('\nCriando visualizacao...')
     plt.figure(figsize=(12, 6))
     plt.plot(
         df_grouped['ano'], df_grouped['emissao'],
@@ -83,7 +135,7 @@ def main():
     plt.xlabel('Ano', fontsize=12)
     plt.ylabel('Emissão média (t)', fontsize=12)
     plt.legend(fontsize=10)
-    plt.xticks(df_grouped['ano'].unique(), rotation=45)
+    plt.xticks(anos_xticks, rotation=45)
     plt.grid(True, alpha=0.3)
 
     ensure_dirs()
@@ -91,8 +143,9 @@ def main():
     plt.tight_layout()
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     plt.close()
-    print(f"\nGráfico salvo em: {output_path}")
+    print(f'\nGrafico salvo em: {output_path}')
+    print('Fora da amostra (anos):', sorted(out_sample['ano'].astype(int).unique().tolist()))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

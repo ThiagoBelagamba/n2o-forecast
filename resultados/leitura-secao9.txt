@@ -1,31 +1,28 @@
-Previsão cronológica de N2O (t) — evidência da seção 9.2
-Thiago Belagamba Bueno — mecanismo preditivo
-Código: https://github.com/ThiagoBelagamba/n2o-forecast
+Previsao multi-ano de N2O (t) — secao 9.2
+SEEG Colecao 13 + LightGBM Tweedie + MinT
+https://github.com/ThiagoBelagamba/n2o-forecast
 
-1. Alvo e fonte
-   Emissão de N2O em toneladas, SEEG Coleção 13 (1970–2024), agregado nacional.
-   Features: ano + hierarquia setorial + lags (emissao_lag1, emissao_lag2, delta_lag1).
+1. Pergunta: com dados ate 2019, prever 2020–2024 SEM ver os anos intermediarios?
 
-2. Split (anti-vazamento)
-   Treino até 2019, teste 2020–2024. TimeSeriesSplit (5 folds) no treino.
-   Lags usam só o passado; no teste lag1 de t usa a emissão observada de t−1.
+2. Metodo: previsao direta h=5, Tweedie p=1.7, reconciliacao MinT (nonnegative).
 
-3. Referência
-   persistencia_1passo: com lags, copiar t−1 (1 passo). Também reportamos persistência multi-ano (último ano do treino).
+3. Metricas (folha reconciliada):
+   persistencia_multi_ano: MAE 102.74 | RMSE 892.84
+   LGBM_Tweedie: MAE 128.22 | RMSE 1104.00
+   Ridge: MAE 89.90 | RMSE 707.21
+   RF: MAE 97.16 | RMSE 764.79
+   LGBM_Tweedie/BottomUp: MAE 128.22 | RMSE 1104.00
+   Ridge/BottomUp: MAE 89.90 | RMSE 707.21
+   RF/BottomUp: MAE 97.16 | RMSE 764.79
+   LGBM_Tweedie/MinTrace_method-ols: MAE 174.36 | RMSE 1070.76
+   Ridge/MinTrace_method-ols: MAE 83.85 | RMSE 704.53
+   RF/MinTrace_method-ols: MAE 115.61 | RMSE 785.92
+   LGBM_Tweedie/MinTrace_method-mint_shrink: MAE 126.27 | RMSE 1179.25
+   Ridge/MinTrace_method-mint_shrink: MAE 86.86 | RMSE 663.18
+   RF/MinTrace_method-mint_shrink: MAE 97.07 | RMSE 732.79
 
-4. Métricas no teste > 2019
-   random_forest: MAE 78.11 t | RMSE 705.11 t | MedAE 0.1553 t | R² 0.9894
-   ridge (escolhido por MAE de CV): MAE 57.60 t | RMSE 446.15 t | MedAE 2.9398 t | R² 0.9958
-   persistencia_1passo: MAE 54.23 t | RMSE 463.64 t
-   Δ MAE (persistencia_1passo − ridge): -3.37 t
-   Hiperparâmetros: {'model__alpha': 0.1}
+4. Delta MAE (persistencia multi-ano - Ridge/MinTrace_method-ols): 18.89 t
 
-5. Limitação
-   Previsão de um passo (inventário anual). Não é projeção multi-ano sem observar o intermediário.
-   Neste experimento o modelo não ganha da referência em MAE; o método e o teto estão medidos.
+5. Entrega operacional: projecao 2025–2026 (cenario, nao inventario oficial).
 
-6. Viés (evidência no teste)
-   28.6% zeros; média 866.1 t vs mediana 0.3624 t.
-   Top 10% das linhas: 97.0% da emissão e 85.5% do erro absoluto.
-
-Arquivos: relatorio.txt, graficos/, modelo_n2o.joblib, metricas_comparacao.csv
+Series: 770 | periodo 1970–2024

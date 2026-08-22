@@ -1,31 +1,13 @@
-# Checklist — frente de dados e modelo (seção 9)
+# Checklist — seção 9 (multi-ano)
 
-Status com **Coleção 13 + lags** (treino já executado nesta máquina).
+- [x] Coleção 13 + painel `unique_id`/`ds`/`y`
+- [x] Previsão direta h=5 sem lag observado no teste
+- [x] LightGBM Tweedie + Ridge + RF (MLForecast)
+- [x] Reconciliação BottomUp / MinTrace + clip ≥ 0
+- [x] Métricas vs persistência multi-ano
+- [x] Projeção 2025–2026 + gráficos
+- [x] Docs atualizados
 
-| Campo | Valor |
-| --- | --- |
-| Nome | Thiago Belagamba Bueno |
-| Função | Análise de dados e mecanismo preditivo (seção 9) |
-| Repositório | https://github.com/ThiagoBelagamba/n2o-forecast |
+Reproduzir: `.\.venv\Scripts\python.exe -u main.py`
 
-## Status
-
-- [x] `Dados-nacionais-13.0.xlsx` em `data/` + cache `n2o_nacional_longo.csv`
-- [x] Lags por setor + split 2019 / 2020–2024
-- [x] Baselines: persistência multi-ano e **1 passo**
-- [x] Grid RF + Ridge até o fim; relatório e gráficos
-- [x] `docs/resultados.md` com números do teste
-
-Resultado (teste 2020–2024): **persistência 1 passo MAE 54,23 t; Ridge 57,60 t; RF 78,11 t; persistência multi-ano 102,74 t**. Ridge ganha da multi-ano e do RMSE da 1 passo; perde ~3 t de MAE para copiar t−1.
-
-## Reproduzir
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\pip install -r requirements.txt
-.\.venv\Scripts\python.exe -u main.py
-.\.venv\Scripts\python.exe scripts\grafico.py
-.\.venv\Scripts\python.exe scripts\predict_only.py
-```
-
-O xlsx (~136 MB) e o `.joblib` ficam locais. Relatório e PNGs vão ao Git.
+Melhor no teste cego: **Ridge/MinTrace(ols)** (MAE 83,85 vs persistência 102,74).
