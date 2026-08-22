@@ -10,7 +10,18 @@ import numpy as np
 import pandas as pd
 
 from config import MODEL_CONFIG, PATHS, PLOT_STYLE, ensure_dirs
-from model_training import _predict_persistence, compute_metrics
+from model_training import (
+    _predict_persistence,
+    _predict_persistence_1passo,
+    compute_metrics,
+)
+
+
+def _primary_baseline_name(baseline_results):
+    """Com lags, a referência justa é persistencia_1passo; senão, persistencia multi-ano."""
+    if baseline_results and 'persistencia_1passo' in baseline_results:
+        return 'persistencia_1passo'
+    return 'persistencia'
 
 
 def save_results(
@@ -38,7 +49,10 @@ def save_results(
     joblib.dump(estimator, PATHS['model'])
     save_predictions(best_model, X_train, y_train, X_test, y_test)
 
-    y_persist = _predict_persistence(X_train, y_train, X_test)
+    if 'emissao_lag1' in X_test.columns:
+        y_persist = _predict_persistence_1passo(X_test, y_train)
+    else:
+        y_persist = _predict_persistence(X_train, y_train, X_test)
     bias = compute_bias_evidence(X_test, y_test, y_pred, y_persist)
     save_bias_tables(bias)
 
@@ -64,6 +78,7 @@ def save_results(
     )
     save_plots(best_model, X_test, y_test, y_pred, bias=bias)
     print(f"Arquivos salvos em '{PATHS['results_dir']}'")
+
 
 
 def save_predictions(model, X_train, y_train, X_test, y_test):
@@ -212,11 +227,15 @@ def save_comparison_csv(model_metrics, baseline_results, best_model_name, final_
 
 
 def _write_relevance_section(f, final_metrics, baseline_results, model_metrics, best_model_name):
-    persist = (baseline_results or {}).get('persistencia')
+    corte = MODEL_CONFIG['split_year']
+    ref_name = _primary_baseline_name(baseline_results)
+    persist = (baseline_results or {}).get(ref_name)
     f.write("=== RELEVÂNCIA DO DESEMPENHO (manual §9.2) ===\n")
     f.write(
-        "Não basta treinar um algoritmo. A relevância se mede no teste futuro "
-        "(2011–2019) com MAE/RMSE contra a persistência (repetir 2010 por setor).\n\n"
+        f"Pergunta: com o histórico até t−1, o modelo prevê o ano t "
+        f"(teste > {corte}) melhor do que copiar t−1?\n"
+        f"Referência justa com lags: {ref_name}. "
+        "Também reportamos persistência multi-ano (último valor do treino).\n\n"
     )
     if model_metrics:
         for name, metrics in model_metrics.items():
@@ -226,40 +245,48 @@ def _write_relevance_section(f, final_metrics, baseline_results, model_metrics, 
                 f"RMSE={metrics['RMSE']:.4f} t | "
                 f"MedAE={metrics['MedAE']:.4f} t | R²={metrics['R2']:.4f}\n"
             )
+    if baseline_results:
+        for bname in ('persistencia_1passo', 'persistencia'):
+            if bname in baseline_results:
+                m = baseline_results[bname]
+                f.write(
+                    f"{bname}: MAE={m['MAE']:.4f} t | "
+                    f"RMSE={m['RMSE']:.4f} t | "
+                    f"MedAE={m['MedAE']:.4f} t | R²={m['R2']:.4f}\n"
+                )
     if persist:
-        f.write(
-            f"persistência: MAE={persist['MAE']:.4f} t | "
-            f"RMSE={persist['RMSE']:.4f} t | "
-            f"MedAE={persist['MedAE']:.4f} t | R²={persist['R2']:.4f}\n"
-        )
         mae_delta = persist['MAE'] - final_metrics['MAE']
         rmse_delta = persist['RMSE'] - final_metrics['RMSE']
         mae_pct = (100.0 * mae_delta / persist['MAE']) if persist['MAE'] else 0.0
-        f.write(f"\nΔ MAE  (persistência − {best_model_name}): {mae_delta:.4f} t ({mae_pct:+.2f}%)\n")
-        f.write(f"Δ RMSE (persistência − {best_model_name}): {rmse_delta:.4f} t\n")
+        f.write(
+            f"\nΔ MAE  ({ref_name} − {best_model_name}): "
+            f"{mae_delta:.4f} t ({mae_pct:+.2f}%)\n"
+        )
+        f.write(
+            f"Δ RMSE ({ref_name} − {best_model_name}): {rmse_delta:.4f} t\n"
+        )
         if mae_delta > 1e-6:
             f.write(
-                "\nConclusão: o modelo erra menos que a persistência em MAE no teste "
-                "2011–2019. Há ganho preditivo mensurável com as features atuais.\n"
+                "\nConclusão: o modelo erra menos que a referência em MAE no teste. "
+                "Há ganho preditivo mensurável com lags + categorias.\n"
             )
         elif mae_delta < -1e-6:
             f.write(
-                "\nConclusão: o modelo NÃO supera a persistência em MAE. O desempenho "
-                "não é operacionalmente relevante neste recorte: copiar 2010 por setor "
-                "é igual ou melhor. O resultado é negativo, mas válido — documenta o "
-                "teto de 'ano + categorias' sem defasagens.\n"
+                "\nConclusão: o modelo NÃO supera a referência em MAE. "
+                "Copiar t−1 (ou o último ano do treino) é igual ou melhor neste recorte.\n"
             )
         else:
             f.write(
-                "\nConclusão: empate prático com a persistência em MAE. O modelo "
-                "reproduz o nível de 2010; não há ganho preditivo extra.\n"
+                "\nConclusão: empate prático com a referência em MAE.\n"
             )
     f.write("\n")
 
 
 def _write_interpretation(f, final_metrics, baseline_results, bias):
-    persist = (baseline_results or {}).get('persistencia')
-    f.write("=== INTERPRETAÇÃO DOS NÚMEROS (TESTE 2011–2019) ===\n")
+    ref_name = _primary_baseline_name(baseline_results)
+    persist = (baseline_results or {}).get(ref_name)
+    corte = MODEL_CONFIG['split_year']
+    f.write(f"=== INTERPRETAÇÃO DOS NÚMEROS (TESTE > {corte}) ===\n")
     f.write(
         f"n={bias['n_test']} linhas. "
         f"Média={bias['mean']:.2f} t, mediana={bias['median']:.4f} t, "
@@ -279,13 +306,12 @@ def _write_interpretation(f, final_metrics, baseline_results, bias):
         )
     f.write(
         f"R²={final_metrics['R2']:.4f} no teste cronológico. "
-        "Não comparar com R² de split aleatório: aquele infla porque o mesmo "
-        "setor aparece nos dois lados.\n"
+        "Não comparar com R² de split aleatório.\n"
     )
     if persist:
         f.write(
-            f"Persistência (copiar 2010): MAE={persist['MAE']:.4f} t, "
-            f"RMSE={persist['RMSE']:.4f} t. Esse é o teto/chão do experimento.\n"
+            f"Referência {ref_name}: MAE={persist['MAE']:.4f} t, "
+            f"RMSE={persist['RMSE']:.4f} t.\n"
         )
     f.write("\n")
 
@@ -335,14 +361,14 @@ def _write_bias_section(f, bias, data_quality):
         first, last = bias['by_year'][0], bias['by_year'][-1]
         if last['mae'] > first['mae'] * 1.1:
             f.write(
-                "\nO MAE cresce ao longo de 2011–2019: o modelo não acompanha "
-                "a trajetória após o corte (satura no nível conhecido).\n"
+                "\nO MAE cresce ao longo do horizonte de teste: "
+                "o erro aumenta nos anos mais distantes do corte.\n"
             )
         elif last['mae'] < first['mae'] * 0.9:
             f.write("\nO MAE não aumenta de forma sistemática no horizonte de teste.\n")
         else:
             f.write(
-                "\nO MAE permanece da mesma ordem ao longo do horizonte 2011–2019.\n"
+                "\nO MAE permanece da mesma ordem ao longo do horizonte de teste.\n"
             )
     f.write("\n")
 
@@ -414,23 +440,27 @@ def save_report(
                 f.write(f"\n{name}\n")
                 f.write(_format_metrics_block(metrics))
 
-            persist = baseline_results.get('persistencia')
+            persist = baseline_results.get(_primary_baseline_name(baseline_results))
+            persist_multi = baseline_results.get('persistencia')
             if persist:
                 mae_delta = persist['MAE'] - final_metrics['MAE']
                 rmse_delta = persist['RMSE'] - final_metrics['RMSE']
-                f.write("\n=== GANHO VERSUS PERSISTÊNCIA ===\n")
+                ref = _primary_baseline_name(baseline_results)
+                f.write(f"\n=== GANHO VERSUS {ref.upper()} ===\n")
                 f.write(
-                    "Valores positivos = o modelo erra menos que repetir "
-                    "o último valor observado de cada setor (2010).\n"
+                    "Valores positivos = o modelo erra menos que a referência.\n"
+                    "Com lags, a referência justa é persistencia_1passo (copiar t−1).\n"
                 )
-                f.write(f"Δ MAE  (persistência − modelo): {mae_delta:.4f} t\n")
-                f.write(f"Δ RMSE (persistência − modelo): {rmse_delta:.4f} t\n")
+                f.write(f"Δ MAE  ({ref} − modelo): {mae_delta:.4f} t\n")
+                f.write(f"Δ RMSE ({ref} − modelo): {rmse_delta:.4f} t\n")
+                if persist_multi and ref != 'persistencia':
+                    d2 = persist_multi['MAE'] - final_metrics['MAE']
+                    f.write(
+                        f"Δ MAE  (persistencia multi-ano − modelo): {d2:.4f} t\n"
+                    )
                 if mae_delta <= 0:
                     f.write(
-                        "\nO modelo não supera a persistência em MAE. "
-                        "Árvores e Ridge com só 'ano' + categorias tendem a "
-                        "repetir o nível conhecido do setor e não extrapolam "
-                        "tendência além de 2010.\n"
+                        "\nO modelo não supera a referência em MAE neste teste.\n"
                     )
                 f.write("\n")
 
@@ -454,22 +484,33 @@ def save_leitura_secao9(
 ):
     """Página curta da seção 9.2: alvo, split, referência, tabela e limitação."""
     final_metrics = compute_metrics(y_test, y_pred)
-    persist = (baseline_results or {}).get('persistencia', {})
+    ref_name = _primary_baseline_name(baseline_results)
+    persist = (baseline_results or {}).get(ref_name, {})
+    corte = MODEL_CONFIG['split_year']
     path = os.path.join(PATHS['results_dir'], 'leitura-secao9.txt')
     nome = best_model_name or 'modelo'
     with open(path, 'w', encoding='utf-8') as f:
         f.write("Previsão cronológica de N2O (t) — evidência da seção 9.2\n")
         f.write("Thiago Belagamba Bueno — mecanismo preditivo\n")
         f.write("Código: https://github.com/ThiagoBelagamba/n2o-forecast\n\n")
-        f.write("1. Alvo\n")
-        f.write("   Emissão de N2O em toneladas, inventário SEEG 1970–2019.\n")
-        f.write("   Features: ano + hierarquia setorial (nivel_1…6, tipo, atividade, produto).\n\n")
+        f.write("1. Alvo e fonte\n")
+        f.write("   Emissão de N2O em toneladas, SEEG Coleção 13 (1970–2024), agregado nacional.\n")
+        f.write(
+            "   Features: ano + hierarquia setorial + lags "
+            "(emissao_lag1, emissao_lag2, delta_lag1).\n\n"
+        )
         f.write("2. Split (anti-vazamento)\n")
-        f.write("   Treino 1970–2010, teste 2011–2019. TimeSeriesSplit (5 folds) no treino.\n")
-        f.write("   O mesmo setor não entra no teste só porque o ano mudou: o teste é o futuro.\n\n")
+        f.write(
+            f"   Treino até {corte}, teste {corte + 1}–2024. "
+            "TimeSeriesSplit (5 folds) no treino.\n"
+        )
+        f.write("   Lags usam só o passado; no teste lag1 de t usa a emissão observada de t−1.\n\n")
         f.write("3. Referência\n")
-        f.write("   Persistência: para cada setor, repetir o valor de 2010.\n\n")
-        f.write("4. Métricas no teste 2011–2019\n")
+        f.write(
+            f"   {ref_name}: com lags, copiar t−1 (1 passo). "
+            "Também reportamos persistência multi-ano (último ano do treino).\n\n"
+        )
+        f.write(f"4. Métricas no teste > {corte}\n")
         if model_metrics:
             for name, metrics in model_metrics.items():
                 tag = " (escolhido por MAE de CV)" if name == nome else ""
@@ -479,25 +520,28 @@ def save_leitura_secao9(
                     f"MedAE {metrics['MedAE']:.4f} t | R² {metrics['R2']:.4f}\n"
                 )
         f.write(
-            f"   persistência: MAE {persist.get('MAE', float('nan')):.2f} t | "
+            f"   {ref_name}: MAE {persist.get('MAE', float('nan')):.2f} t | "
             f"RMSE {persist.get('RMSE', float('nan')):.2f} t\n"
         )
         if persist:
             delta = persist['MAE'] - final_metrics['MAE']
-            f.write(f"   Δ MAE (persistência − {nome}): {delta:.2f} t\n")
+            f.write(f"   Δ MAE ({ref_name} − {nome}): {delta:.2f} t\n")
         if hasattr(model, 'best_params_'):
             f.write(f"   Hiperparâmetros: {model.best_params_}\n")
         f.write("\n5. Limitação\n")
-        f.write("   Sem defasagens/tendência por setor, RF e Ridge saturam no nível de 2010.\n")
+        f.write(
+            "   Previsão de um passo (inventário anual). "
+            "Não é projeção multi-ano sem observar o intermediário.\n"
+        )
         if persist:
             delta = persist['MAE'] - final_metrics['MAE']
             if delta <= 0:
                 f.write(
-                    "   Neste experimento o modelo não ganha da persistência em MAE; "
-                    "o método está correto e o resultado (teto das features) está medido.\n"
+                    "   Neste experimento o modelo não ganha da referência em MAE; "
+                    "o método e o teto estão medidos.\n"
                 )
             else:
-                f.write("   Há ganho frente à persistência; ainda assim o erro da cauda permanece.\n")
+                f.write("   Há ganho frente à referência de 1 passo; a cauda ainda concentra o erro.\n")
         if bias:
             f.write(
                 f"\n6. Viés (evidência no teste)\n"
@@ -566,10 +610,10 @@ def _plot_bias(bias):
         width = 0.35
         plt.figure(figsize=(10, 5))
         plt.bar(x - width / 2, df['mae'], width, label='Modelo')
-        plt.bar(x + width / 2, df['mae_persistencia'], width, label='Persistência')
+        plt.bar(x + width / 2, df['mae_persistencia'], width, label='Persistência 1 passo')
         plt.xticks(x, [s.split(' (')[0] for s in df['faixa']], rotation=0)
         plt.ylabel("MAE (t)")
-        plt.title("MAE por faixa de emissão — teste 2011–2019")
+        plt.title("MAE por faixa de emissão — teste")
         plt.legend()
         plt.tight_layout()
         plt.savefig(os.path.join(PATHS['plots_dir'], 'mae_por_faixa.png'), dpi=150, bbox_inches='tight')
@@ -581,7 +625,7 @@ def _plot_bias(bias):
         height = 0.35
         plt.figure(figsize=(10, max(4, 0.45 * len(df))))
         plt.barh(y - height / 2, df['mae'], height, label='Modelo')
-        plt.barh(y + height / 2, df['mae_persistencia'], height, label='Persistência')
+        plt.barh(y + height / 2, df['mae_persistencia'], height, label='Persistência 1 passo')
         plt.yticks(y, df['nivel_1'])
         plt.xlabel("MAE (t)")
         plt.title("MAE por nivel_1 — teste")
@@ -594,10 +638,10 @@ def _plot_bias(bias):
         df = pd.DataFrame(bias['by_year'])
         plt.figure(figsize=(8, 5))
         plt.plot(df['ano'], df['mae'], marker='o', label='Modelo')
-        plt.plot(df['ano'], df['mae_persistencia'], marker='s', linestyle='--', label='Persistência')
+        plt.plot(df['ano'], df['mae_persistencia'], marker='s', linestyle='--', label='Persistência 1 passo')
         plt.xlabel("Ano")
         plt.ylabel("MAE (t)")
-        plt.title("MAE anual no teste vs persistência")
+        plt.title("MAE anual no teste vs persistência 1 passo")
         plt.legend()
         plt.tight_layout()
         plt.savefig(os.path.join(PATHS['plots_dir'], 'mae_por_ano_teste.png'), dpi=150, bbox_inches='tight')

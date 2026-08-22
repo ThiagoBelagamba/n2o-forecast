@@ -11,7 +11,8 @@ PD_OPTIONS = {
 # Caminhos do projeto (fonte única, sempre relativos à raiz)
 PATHS = {
     'root': _ROOT,
-    'data': os.path.join(_ROOT, 'data', 'emissao_gases.csv'),
+    'data': os.path.join(_ROOT, 'data', 'Dados-nacionais-13.0.xlsx'),
+    'data_cache': os.path.join(_ROOT, 'data', 'n2o_nacional_longo.csv'),
     'results_dir': os.path.join(_ROOT, 'resultados'),
     'plots_dir': os.path.join(_ROOT, 'resultados', 'graficos'),
     'model': os.path.join(_ROOT, 'resultados', 'modelo_n2o.joblib'),
@@ -20,22 +21,44 @@ PATHS = {
     'report': os.path.join(_ROOT, 'resultados', 'relatorio.txt'),
 }
 
+# Mapeamento Coleção 13 (wide) → nomes internos do pipeline
+SEEG_C13_COLUMNS = {
+    'Emissão/Remoção/Bunker': 'tipo_emissao',
+    'Gás': 'gas',
+    'Setor de emissão': 'nivel_1',
+    'Categoria emissora': 'nivel_2',
+    'Sub-categoria emissora': 'nivel_3',
+    'Detalhamento': 'nivel_4',
+    'Recorte': 'nivel_5',
+    'Produto ou sistema': 'produto',
+    'Atividade geral': 'atividade_economica',
+}
+
+# Colunas de id setorial (Estado/Bioma são somados ao nacional)
+SEEG_C13_GROUP_COLS = [
+    'tipo_emissao', 'gas', 'nivel_1', 'nivel_2', 'nivel_3',
+    'nivel_4', 'nivel_5', 'produto', 'atividade_economica',
+]
+
 # Configurações do modelo
 MODEL_CONFIG = {
     'target_col': 'emissao',
     'gas_type': 'N2O (t)',
-    'num_cols': ['ano'],
+    'emission_type': 'Emissão',
+    'num_cols': ['ano', 'emissao_lag1', 'emissao_lag2', 'delta_lag1'],
     'cat_cols': [
-        'nivel_1', 'nivel_2', 'nivel_3', 'nivel_4',
-        'nivel_5', 'nivel_6', 'tipo_emissao',
-        'atividade_economica', 'produto'
+        'nivel_1', 'nivel_2', 'nivel_3', 'nivel_4', 'nivel_5',
+        'tipo_emissao', 'atividade_economica', 'produto',
     ],
-    'split_year': 2010,  # treino <= 2010, teste >= 2011
-    'cv_splits': 5,      # TimeSeriesSplit
+    'group_cols': [
+        'nivel_1', 'nivel_2', 'nivel_3', 'nivel_4', 'nivel_5',
+        'tipo_emissao', 'atividade_economica', 'produto',
+    ],
+    'lag_cols': ['emissao_lag1', 'emissao_lag2', 'delta_lag1'],
+    'split_year': 2019,  # treino <= 2019, teste 2020–2024
+    'cv_splits': 5,
     'random_state': 42,
     'scoring': 'neg_mean_absolute_error',
-    # Grid paralelo + árvores em paralelo (Ryzen 6c/12t). Evita n_jobs aninhado
-    # saturar memória: 4 processos × 3 threads ≈ 12.
     'grid_n_jobs': 4,
     'rf_n_jobs': 3,
     'rf_param_grid': {

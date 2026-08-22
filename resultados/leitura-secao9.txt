@@ -2,30 +2,30 @@ Previsão cronológica de N2O (t) — evidência da seção 9.2
 Thiago Belagamba Bueno — mecanismo preditivo
 Código: https://github.com/ThiagoBelagamba/n2o-forecast
 
-1. Alvo
-   Emissão de N2O em toneladas, inventário SEEG 1970–2019.
-   Features: ano + hierarquia setorial (nivel_1…6, tipo, atividade, produto).
+1. Alvo e fonte
+   Emissão de N2O em toneladas, SEEG Coleção 13 (1970–2024), agregado nacional.
+   Features: ano + hierarquia setorial + lags (emissao_lag1, emissao_lag2, delta_lag1).
 
 2. Split (anti-vazamento)
-   Treino 1970–2010, teste 2011–2019. TimeSeriesSplit (5 folds) no treino.
-   O mesmo setor não entra no teste só porque o ano mudou: o teste é o futuro.
+   Treino até 2019, teste 2020–2024. TimeSeriesSplit (5 folds) no treino.
+   Lags usam só o passado; no teste lag1 de t usa a emissão observada de t−1.
 
 3. Referência
-   Persistência: para cada setor, repetir o valor de 2010.
+   persistencia_1passo: com lags, copiar t−1 (1 passo). Também reportamos persistência multi-ano (último ano do treino).
 
-4. Métricas no teste 2011–2019
-   random_forest (escolhido por MAE de CV): MAE 232.78 t | RMSE 1437.71 t | MedAE 0.3912 t | R² 0.9650
-   ridge: MAE 1593.26 t | RMSE 5589.09 t | MedAE 590.3355 t | R² 0.4707
-   persistência: MAE 219.73 t | RMSE 1390.27 t
-   Δ MAE (persistência − random_forest): -13.05 t
-   Hiperparâmetros: {'model__max_depth': None, 'model__min_samples_split': 2, 'model__n_estimators': 100}
+4. Métricas no teste > 2019
+   random_forest: MAE 78.11 t | RMSE 705.11 t | MedAE 0.1553 t | R² 0.9894
+   ridge (escolhido por MAE de CV): MAE 57.60 t | RMSE 446.15 t | MedAE 2.9398 t | R² 0.9958
+   persistencia_1passo: MAE 54.23 t | RMSE 463.64 t
+   Δ MAE (persistencia_1passo − ridge): -3.37 t
+   Hiperparâmetros: {'model__alpha': 0.1}
 
 5. Limitação
-   Sem defasagens/tendência por setor, RF e Ridge saturam no nível de 2010.
-   Neste experimento o modelo não ganha da persistência em MAE; o método está correto e o resultado (teto das features) está medido.
+   Previsão de um passo (inventário anual). Não é projeção multi-ano sem observar o intermediário.
+   Neste experimento o modelo não ganha da referência em MAE; o método e o teto estão medidos.
 
 6. Viés (evidência no teste)
-   37.2% zeros; média 1343.7 t vs mediana 0.4001 t.
-   Top 10% das linhas: 95.3% da emissão e 93.6% do erro absoluto.
+   28.6% zeros; média 866.1 t vs mediana 0.3624 t.
+   Top 10% das linhas: 97.0% da emissão e 85.5% do erro absoluto.
 
 Arquivos: relatorio.txt, graficos/, modelo_n2o.joblib, metricas_comparacao.csv

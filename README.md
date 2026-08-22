@@ -1,136 +1,89 @@
 # Previsão de emissão de N2O
 
-Pipeline de regressão para estimar emissão de **N2O (t)** a partir do inventário brasileiro de gases de efeito estufa (1970–2019), no formato SEEG.
+Pipeline de regressão para estimar emissão de **N2O (t)** a partir do inventário brasileiro SEEG (**Coleção 13**, 1970–2024).
 
-O objetivo **não** é interpolar setores já vistos. O teste é o futuro: treino em 1970–2010 e teste em 2011–2019. Assim o mesmo setor não aparece nos dois lados do split só porque o ano mudou.
+O teste é o futuro: treino até **2019** e teste em **2020–2024**. Features: hierarquia setorial + **defasagens por setor** (`emissao_lag1`, `emissao_lag2`, `delta_lag1`). A referência justa com lags é a **persistência de 1 passo** (copiar t−1).
 
 Desenvolvido em **Python 3.11+** (`requirements.txt`). Rodou neste repositório em 3.14.
 
-Resultados do teste 2011–2019 (números e vieses): [`docs/resultados.md`](docs/resultados.md). Escopo acadêmico: [`docs/escopo.md`](docs/escopo.md).
+Resultados: [`docs/resultados.md`](docs/resultados.md). Escopo: [`docs/escopo.md`](docs/escopo.md).
 
 ## Dataset
 
-Fonte: **SEEG** (Sistema de Estimativas de Emissões e Remoções de Gases de Efeito Estufa), iniciativa do [Observatório do Clima](https://www.oc.eco.br/).
+Fonte: **SEEG** (Observatório do Clima) — [seeg.eco.br/dados](https://seeg.eco.br/dados/).
 
-- Site e download: [seeg.eco.br/dados](https://seeg.eco.br/dados/)
-- Plataforma interativa: [plataforma.seeg.eco.br](https://plataforma.seeg.eco.br/)
-
-Este CSV cobre **1970–2019** (sem UF/município), típico da **Coleção 8**. A planilha oficial de hoje é a Coleção 13 (série até 2024) e vem com mais colunas; o schema daqui é a versão nacional “longa” (`ano` em linhas, não em colunas).
-
-Citação sugerida pelo SEEG: *“Fonte: SEEG – Sistema de Estimativa de Emissões e Remoções de Gases de Efeito Estufa, Observatório do Clima – seeg.eco.br”*.
-
-O CSV **não está no Git** (~82 MB). Coloque-o em:
+Coloque em `data/`:
 
 ```
-data/emissao_gases.csv
+data/Dados-nacionais-13.0.xlsx
 ```
 
-O arquivo original contém todos os gases do inventário. O pipeline filtra `gas == "N2O (t)"` (26.400 linhas: 528 setores × 50 anos). 160 linhas sem alvo são descartadas.
+(~136 MB, **não** vai ao Git). O pipeline filtra `N2O (t)` + `Emissão`, agrega UF/bioma ao **nacional** e grava o cache `data/n2o_nacional_longo.csv`.
 
-| Coluna | Papel |
+| Interno | Origem Coleção 13 |
 | --- | --- |
-| `ano` | Única feature numérica (1970–2019) |
-| `nivel_1` … `nivel_6` | Hierarquia setorial |
-| `tipo_emissao` | Tipo da emissão |
-| `atividade_economica` | Atividade (há ~0,6% de ausência no N2O) |
-| `produto` | Produto (há ~54% de ausência no N2O; imputado como `missing`) |
-| `gas` | Tipo de gás (filtrado para N2O) |
-| `emissao` | Alvo, em toneladas |
+| `nivel_1` … `nivel_5` | Setor / categoria / subcategoria / detalhamento / recorte |
+| `produto`, `atividade_economica`, `tipo_emissao` | Produto ou sistema, Atividade geral, Emissão/Remoção/Bunker |
+| `ano`, `emissao` | melt das colunas 1970–2024 |
+| `emissao_lag1`, `emissao_lag2`, `delta_lag1` | defasagens por setor (só passado) |
 
-O alvo é assimétrico: cerca de 46% zeros, mediana ≈ 0,04 t, média ≈ 907 t, máximo ≈ 138.619 t. Por isso o grid otimiza **MAE**, não R².
+O alvo continua assimétrico (muitos zeros, cauda longa). O grid otimiza **MAE**.
 
 ## Estrutura
 
 ```
 main.py                  treino, avaliação e relatório
-config.py                caminhos, corte temporal e hiperparâmetros
-data_loading.py          carga, filtro N2O e EDA (gráficos em disco)
-data_preprocessing.py    limpeza, preprocessor sklearn, split cronológico
-model_training.py        baselines, Random Forest, Ridge, métricas
-results_saving.py        modelo .joblib, CSV, relatório e gráficos
+config.py                caminhos, corte 2019, hiperparâmetros
+data_seeg.py             leitura xlsx Coleção 13 → painel nacional
+data_loading.py          carga + EDA
+data_preprocessing.py    limpeza, lags, preprocessor, split
+model_training.py        baselines (incl. 1 passo), RF, Ridge
+results_saving.py        .joblib, CSV, relatório e gráficos
 scripts/grafico.py       série anual real vs prevista
 scripts/predict_only.py  inferência com modelo já treinado
-data/emissao_gases.csv   dataset local (não versionado)
+data/Dados-nacionais-13.0.xlsx   local (não versionado)
 resultados/              gerado na execução
 ```
 
-Hiperparâmetros e o ano de corte (`split_year = 2010`) ficam em `config.py`.
-
 ## Setup
-
-Não copie a pasta `.venv` do outro computador. Recrie o ambiente.
-
-Python **3.11 ou mais novo**. Depois:
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\pip install -r requirements.txt
 ```
 
-Linux/macOS: `python3 -m venv .venv` e `.venv/bin/pip install -r requirements.txt`.
-
-O CSV **não está no Git**. Copie `emissao_gases.csv` para `data/emissao_gases.csv` antes de rodar. Sem esse arquivo o `main.py` para com erro explícito.
-
 ## Como executar
 
-Na **raiz** do projeto:
-
 ```powershell
-.\.venv\Scripts\python.exe main.py
+.\.venv\Scripts\python.exe -u main.py
 .\.venv\Scripts\python.exe scripts\grafico.py
 .\.venv\Scripts\python.exe scripts\predict_only.py
 ```
 
-1. `main.py` — EDA, split, baselines, GridSearch (Random Forest e Ridge com `TimeSeriesSplit`), relatório e modelo.
-2. `scripts/grafico.py` — exige o CSV de predições gerado pelo treino; marca o corte 2010/2011.
-3. `scripts/predict_only.py` — exige `resultados/modelo_n2o.joblib`; grava um CSV novo, sem sobrescrever o do treino.
-
-O GridSearch do Random Forest é a etapa lenta (12 combinações × 5 folds). O paralelismo fica em `config.py` (`grid_n_jobs=4`, `rf_n_jobs=3`). Em um PC comum pode levar dezenas de minutos.
-
-## Saídas (`resultados/`)
-
-| Arquivo | Conteúdo |
-| --- | --- |
-| `relatorio.txt` | Qualidade dos dados, métricas no teste, RF vs Ridge vs persistência, vieses, §9.2 |
-| `leitura-secao9.txt` | Página curta da evidência |
-| `metricas_comparacao.csv` | Tabela RF / Ridge / baselines |
-| `cv_random_forest.csv`, `cv_ridge.csv` | Grid completo (12 + 4 combinações) |
-| `vies_por_faixa.csv`, `vies_por_nivel1.csv`, `vies_por_ano.csv` | Erro no teste por recorte |
-| `modelo_n2o.joblib` | Melhor modelo (RF). **Local**, ~103 MB — o GitHub recusa; gere com `main.py` |
-| `emissao_n2o_com_predicoes.csv` | Predições de treino e teste. Local (não vai ao Git) |
-| `graficos/` | EDA, reais vs preditos, importância, MAE por faixa/setor/ano, série anual |
+1. `main.py` — EDA, lags, split, baselines, GridSearch, relatório e modelo.
+2. `scripts/grafico.py` — marca o corte 2019/2020.
+3. `scripts/predict_only.py` — exige `resultados/modelo_n2o.joblib`.
 
 ## Como ler as métricas
 
-O modelo escolhido é o de **menor MAE na validação cruzada temporal**. No teste reportamos MAE, RMSE, MedAE e R².
+Referência **justa com lags**: `persistencia_1passo` (y(t) ≈ y(t−1) observado). Também reportamos `persistencia` multi-ano (repetir 2019 em 2020–2024).
 
-| Métrica | Interpretação |
-| --- | --- |
-| MAE | Erro absoluto médio, em toneladas |
-| RMSE | Penaliza erros nos grandes emissores |
-| MedAE | Erro típico, pouco afetado por outliers |
-| R² | Fração da variância no teste (2011–2019) |
+**Valor positivo** no Δ MAE (referência − modelo) = o modelo erra menos que a referência.
 
-Baselines no mesmo teste:
-
-- média, mediana e zero (`DummyRegressor`);
-- **média por grupo** — média histórica do setor no treino;
-- **persistência** — último valor do setor em 2010. Este é o benchmark correto para previsão.
-
-O relatório traz Δ MAE e Δ RMSE contra a persistência. **Valor positivo = o modelo erra menos que repetir 2010.**
-
-No teste 2011–2019 (experimento já rodado):
+Números do teste 2020–2024 (experimento já rodado):
 
 | Método | MAE (t) | RMSE (t) |
 | --- | ---: | ---: |
-| Persistência | 219,73 | 1.390,27 |
-| Random Forest | 232,78 | 1.437,71 |
-| Ridge | 1.593,26 | 5.589,09 |
+| Persistência 1 passo | 54,23 | 463,64 |
+| Ridge (CV) | 57,60 | 446,15 |
+| Persistência multi-ano | 102,74 | 892,84 |
+| Random Forest | 78,11 | 705,11 |
 
-Δ MAE (persistência − RF) = −13,05 t. A persistência ganha; o RF só ganha de Ridge e dos dummies. Detalhe e vieses: [`docs/resultados.md`](docs/resultados.md).
+Δ MAE (1 passo − Ridge) = −3,37 t. Δ RMSE = +17,49 t (Ridge melhor em RMSE). Detalhe: [`docs/resultados.md`](docs/resultados.md).
 
 ## Limitações
 
-Um split aleatório 80/20 neste painel (528 grupos × 50 anos) coloca o mesmo setor em treino e teste. O R² fica alto porque o modelo memoriza o nível do setor, não porque prevê o futuro. Por isso a avaliação é cronológica.
-
-As features são só `ano` + categorias. Random Forest e Ridge **não extrapolam tendência** além de 2010: a previsão média no teste ficou constante (1.205,59 t) enquanto a emissão real subiu. Perder para a persistência é o resultado medido, não um bug do código. Superar esse teto exigiria defasagens e tendência por setor — fora do escopo deste pipeline.
+- Avaliação cronológica (não split aleatório).
+- Previsão de **um passo** no inventário anual: no teste, `lag1` de 2021 usa a emissão **observada** de 2020.
+- Não é projeção multi-ano sem observar os anos intermediários.
+- Agregação nacional (UF/bioma somados); `data/cidades/` fica fora deste recorte.

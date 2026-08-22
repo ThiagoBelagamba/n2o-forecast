@@ -48,7 +48,7 @@ def _predict_group_mean(X_train, y_train, X_test):
 
 
 def _predict_persistence(X_train, y_train, X_test):
-    """Último valor observado de cada grupo no conjunto de treino."""
+    """Persistência multi-ano: último valor do treino (ex.: 2019) em todo o teste."""
     tmp = _filled_groups(X_train)
     group_cols = list(tmp.columns)
     tmp['ano'] = X_train['ano'].to_numpy()
@@ -63,8 +63,24 @@ def _predict_persistence(X_train, y_train, X_test):
     return merged['_y'].fillna(np.mean(y_train)).to_numpy()
 
 
+def _predict_persistence_1passo(X_test, y_train_fallback=None):
+    """
+    Persistência de 1 passo: y(t) ≈ y(t−1) observado (= emissao_lag1 no teste).
+    Teto correto quando o modelo usa lag1 com inventário anual observado.
+    """
+    if 'emissao_lag1' not in X_test.columns:
+        raise ValueError(
+            "persistencia_1passo exige a coluna emissao_lag1 em X_test."
+        )
+    pred = X_test['emissao_lag1'].to_numpy(dtype=float)
+    if y_train_fallback is not None:
+        fill = float(np.mean(y_train_fallback))
+        pred = np.where(np.isnan(pred), fill, pred)
+    return pred
+
+
 def create_baselines(X_train, y_train, X_test, y_test):
-    """Baselines ingênuos e temporais para comparação justa."""
+    """Baselines ingênuos e temporais (multi-ano e 1 passo) para comparação justa."""
     baseline_results = {}
 
     for name, strategy, kwargs in [
@@ -81,6 +97,9 @@ def create_baselines(X_train, y_train, X_test, y_test):
     )
     baseline_results['persistencia'] = compute_metrics(
         y_test, _predict_persistence(X_train, y_train, X_test)
+    )
+    baseline_results['persistencia_1passo'] = compute_metrics(
+        y_test, _predict_persistence_1passo(X_test, y_train)
     )
     return baseline_results
 

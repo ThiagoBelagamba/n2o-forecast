@@ -5,11 +5,14 @@ __pycache__/
 .python-version
 .vscode/
 
-# Dataset local (~82 MB) — copiar para data/emissao_gases.csv
+# Dataset local — não versionar (xlsx ~136 MB; cache CSV gerado)
 data/*.csv
+data/*.xlsx
+data/cidades/
+data/drive-download-*/
 
 # Cache do GridSearch, CSVs grandes de predição e modelo serializado
-# (modelo_n2o.joblib ~103 MB — acima do limite do GitHub; gerar com main.py)
+# (modelo_n2o.joblib pode passar de 100 MB — gerar com main.py)
 resultados/.sklearn_cache/
 resultados/emissao_n2o_*.csv
 resultados/*.joblib

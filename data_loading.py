@@ -10,23 +10,30 @@ import pandas as pd
 import seaborn as sns
 
 from config import MODEL_CONFIG, PATHS, PD_OPTIONS, PLOT_STYLE, ensure_dirs
+from data_seeg import load_seeg_collection13
 
 
 def load_and_analyze_data(file_path=None):
-    """Carrega os dados e filtra pelo gás configurado."""
+    """Carrega SEEG Coleção 13 (xlsx) ou cache CSV nacional, filtra N2O."""
     file_path = file_path or PATHS['data']
-    if not os.path.isfile(file_path):
-        raise FileNotFoundError(
-            f"Dataset não encontrado em:\n  {file_path}\n"
-            "Copie emissao_gases.csv para a pasta data/ "
-            "(o arquivo não vai no Git)."
-        )
     try:
         pd.set_option('display.max_columns', PD_OPTIONS['display.max_columns'])
         plt.style.use(PLOT_STYLE)
 
-        df = pd.read_csv(file_path)
-        df_gas = df[df['gas'] == MODEL_CONFIG['gas_type']].copy()
+        if str(file_path).lower().endswith(('.xlsx', '.xls')):
+            df_gas = load_seeg_collection13(xlsx_path=file_path)
+        elif os.path.isfile(PATHS['data_cache']):
+            df_gas = load_seeg_collection13(use_cache=True)
+        elif os.path.isfile(file_path) and str(file_path).lower().endswith('.csv'):
+            # Compatibilidade com CSV longo antigo (Coleção 8)
+            df = pd.read_csv(file_path)
+            df_gas = df[df['gas'] == MODEL_CONFIG['gas_type']].copy()
+        else:
+            raise FileNotFoundError(
+                f"Dataset não encontrado em:\n  {file_path}\n"
+                "Coloque Dados-nacionais-13.0.xlsx em data/ "
+                "(o arquivo não vai no Git)."
+            )
 
         if len(df_gas) == 0:
             raise ValueError(
