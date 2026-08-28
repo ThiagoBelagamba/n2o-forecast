@@ -4,25 +4,31 @@ https://github.com/ThiagoBelagamba/n2o-forecast
 
 1. Pergunta: com dados ate 2019, prever 2020–2024 SEM ver os anos intermediarios?
 
-2. Metodo: previsao direta h=5, Tweedie p=1.7, reconciliacao MinT (nonnegative).
+2. Metodo: previsao direta h=5, Tweedie p=1.1, reconciliacao MinT (nonnegative).
 
 3. Metricas (folha reconciliada):
    persistencia_multi_ano: MAE 102.74 | RMSE 892.84
-   LGBM_Tweedie: MAE 128.22 | RMSE 1104.00
-   Ridge: MAE 89.90 | RMSE 707.21
-   RF: MAE 97.16 | RMSE 764.79
-   LGBM_Tweedie/BottomUp: MAE 128.22 | RMSE 1104.00
-   Ridge/BottomUp: MAE 89.90 | RMSE 707.21
-   RF/BottomUp: MAE 97.16 | RMSE 764.79
-   LGBM_Tweedie/MinTrace_method-ols: MAE 174.36 | RMSE 1070.76
-   Ridge/MinTrace_method-ols: MAE 83.85 | RMSE 704.53
-   RF/MinTrace_method-ols: MAE 115.61 | RMSE 785.92
-   LGBM_Tweedie/MinTrace_method-mint_shrink: MAE 126.27 | RMSE 1179.25
-   Ridge/MinTrace_method-mint_shrink: MAE 86.86 | RMSE 663.18
-   RF/MinTrace_method-mint_shrink: MAE 97.07 | RMSE 732.79
+   LGBM_Tweedie: MAE 101.37 | RMSE 800.32
+   Ridge: MAE 95.35 | RMSE 757.23
+   RF: MAE 91.16 | RMSE 721.96
+   Ensemble_Ridge_LGBM: MAE 94.60 | RMSE 739.75
+   LGBM_Tweedie/BottomUp: MAE 101.37 | RMSE 800.32
+   Ridge/BottomUp: MAE 95.35 | RMSE 757.23
+   RF/BottomUp: MAE 91.16 | RMSE 721.96
+   Ensemble_Ridge_LGBM/BottomUp: MAE 94.60 | RMSE 739.75
+   LGBM_Tweedie/MinTrace_method-ols: MAE 137.35 | RMSE 861.57
+   Ridge/MinTrace_method-ols: MAE 89.82 | RMSE 754.79
+   RF/MinTrace_method-ols: MAE 111.89 | RMSE 762.68
+   Ensemble_Ridge_LGBM/MinTrace_method-ols: MAE 102.32 | RMSE 757.47
+   LGBM_Tweedie/MinTrace_method-mint_shrink: MAE 108.25 | RMSE 833.60
+   Ridge/MinTrace_method-mint_shrink: MAE 88.03 | RMSE 673.50
+   RF/MinTrace_method-mint_shrink: MAE 94.11 | RMSE 722.89
+   Ensemble_Ridge_LGBM/MinTrace_method-mint_shrink: MAE 95.00 | RMSE 771.43
 
-4. Delta MAE (persistencia multi-ano - Ridge/MinTrace_method-ols): 18.89 t
+4. Delta MAE (persistencia multi-ano - Ridge/MinTrace_method-mint_shrink): 14.71 t
 
 5. Entrega operacional: projecao 2025–2026 (cenario, nao inventario oficial).
+
+6. Tempo de inferencia (MinT classico + clip): ver resultados/tempo_inferencia.json (nucleo ~1.2 s; margem de poucos segundos).
 
 Series: 770 | periodo 1970–2024

@@ -1,0 +1,7 @@
+{
+  "nhits_leaf_mae_raw": 85.66749308968075,
+  "nhits_best_reconciled": "NHITS",
+  "nhits_best_mae": 85.66749308968075,
+  "ridge_barrier": 83.8493346419633,
+  "beat_barrier": false
+}

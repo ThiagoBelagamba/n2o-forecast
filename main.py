@@ -6,17 +6,20 @@ import warnings
 import numpy as np
 import pandas as pd
 
-from config import MODEL_CONFIG, PATHS, ensure_dirs
+from config import MODEL_CONFIG, PATHS, RIDGE_MAE_BARRIER, ensure_dirs
 from data_loading import load_and_analyze_data, perform_eda
-from data_preprocessing import split_panel_chronological, to_nixtla_panel
+from data_preprocessing import to_nixtla_panel
 from forecasting import (
+    add_ridge_lgbm_ensemble,
+    best_lgbm_reconciled_mae,
     evaluate_on_test,
     fit_direct_models,
     fit_recursive_for_future,
     fitted_insample,
+    load_ensemble_weights,
+    load_lgbm_params,
     persistence_multi_year,
     predict_horizon,
-    select_tweedie_power,
 )
 from reconciliation import (
     build_hierarchy,
@@ -73,16 +76,36 @@ def main():
             f"series={Y_df['unique_id'].nunique()}"
         )
 
-        print("\n3. Selecao tweedie_variance_power (CV no treino)...")
-        # CV na folha original (mais leve) — amostra de series se necessario
-        train_panel, _ = split_panel_chronological(panel)
-        power, cv_mae = select_tweedie_power(train_panel)
+        print("\n3. Hiperparametros LightGBM (tunados ou defaults)...")
+        lgbm_params, tuned = load_lgbm_params()
+        power = lgbm_params['tweedie_variance_power']
+        if tuned:
+            print(f"   Usando {PATHS['lgbm_params']} (p={power})")
+        else:
+            print(
+                f"   Aviso: sem {PATHS['lgbm_params']}. "
+                "Rode scripts/tune_lgbm.py para sintonia fina."
+            )
 
         print("\n4. Treino direto h=%d (sem lag observado no teste)..." % horizon)
-        fcst = fit_direct_models(Y_train, power, horizon)
+        fcst = fit_direct_models(Y_train, lgbm_params, horizon)
         Y_hat = predict_horizon(fcst, h=horizon)
         Y_fitted = fitted_insample(fcst)
         print(f"Previsoes base: {len(Y_hat)} linhas, cols={list(Y_hat.columns)}")
+
+        print("\n4b. Ensemble Ridge+LGBM (antes do MinT)...")
+        ens_cfg = load_ensemble_weights()
+        Y_hat, Y_fitted, ridge_w = add_ridge_lgbm_ensemble(Y_hat, Y_fitted)
+        if ens_cfg[1]:
+            print(
+                f"   Usando {PATHS['ensemble_weights']} "
+                f"(w_ridge={ridge_w:.2f}, w_lgbm={1 - ridge_w:.2f})"
+            )
+        else:
+            print(
+                f"   Peso default w_ridge={ridge_w:.2f} "
+                f"(rode scripts/tune_ensemble.py para sintonia)"
+            )
         print(f"Fitted in-sample: {len(Y_fitted)} linhas")
 
         print("\n5. Reconciliacao MinT (nonnegative) + BottomUp...")
@@ -152,6 +175,34 @@ def main():
         best_model = min(candidates, key=lambda k: candidates[k]['MAE'])
         print(f"\nSelecionado (menor MAE): {best_model}")
 
+        lgbm_best_col, lgbm_mae = best_lgbm_reconciled_mae(metrics)
+        ridge_mae = metrics.get('Ridge/MinTrace_method-ols', {}).get('MAE')
+        ens_cols = [
+            k for k in metrics
+            if 'Ensemble_Ridge_LGBM' in k and k != 'persistencia_multi_ano'
+        ]
+        if ens_cols:
+            best_ens = min(ens_cols, key=lambda k: metrics[k]['MAE'])
+            print(
+                f"\nEnsemble Ridge+LGBM: {best_ens} "
+                f"MAE={metrics[best_ens]['MAE']:.2f} "
+                f"(w_ridge={ridge_w:.2f})"
+            )
+        if lgbm_best_col and ridge_mae is not None:
+            delta = ridge_mae - lgbm_mae
+            print(
+                f"\nLGBM vs Ridge/MinTrace(ols): "
+                f"{lgbm_best_col} MAE={lgbm_mae:.2f} | "
+                f"Ridge={ridge_mae:.2f} | delta={delta:+.2f} t"
+            )
+            if lgbm_mae < RIDGE_MAE_BARRIER:
+                print("LGBM superou a barreira Ridge (83.85 t).")
+            else:
+                print(
+                    f"LGBM nao superou barreira {RIDGE_MAE_BARRIER:.2f} t — "
+                    "NHITS pode ser acionado (scripts/run_nhits_benchmark.py)."
+                )
+
         # Totais nacionais para grafico
         hist_total = _total_by_year(
             Y_df[Y_df['unique_id'] == list(tags[list(tags.keys())[0]])[0]]
@@ -193,7 +244,7 @@ def main():
 
         print("\n8. Projecao 2025–2026 (recursiva a partir de 2024)...")
         Y_full = Y_df[Y_df['ds'].dt.year <= 2024].copy()
-        _fcst_fut, Y_hat_fut = fit_recursive_for_future(Y_full, power, h=2)
+        _fcst_fut, Y_hat_fut = fit_recursive_for_future(Y_full, lgbm_params, h=2)
         with warnings.catch_warnings():
             warnings.simplefilter('ignore')
             Y_rec_fut, _ = reconcile_forecasts(

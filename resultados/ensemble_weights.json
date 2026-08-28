@@ -1,0 +1,33 @@
+{
+  "ridge_weight": 0.7,
+  "lgbm_weight": 0.30000000000000004,
+  "cv_mae_leaf": 89.46048934791592,
+  "cv_protocol": "direct_h5_val_2015_2019",
+  "weight_grid": [
+    {
+      "ridge_weight": 0.3,
+      "lgbm_weight": 0.7,
+      "mae_leaf": 102.99546487928268
+    },
+    {
+      "ridge_weight": 0.4,
+      "lgbm_weight": 0.6,
+      "mae_leaf": 98.18864142285183
+    },
+    {
+      "ridge_weight": 0.5,
+      "lgbm_weight": 0.5,
+      "mae_leaf": 94.8710756566512
+    },
+    {
+      "ridge_weight": 0.6,
+      "lgbm_weight": 0.4,
+      "mae_leaf": 91.89162792285958
+    },
+    {
+      "ridge_weight": 0.7,
+      "lgbm_weight": 0.30000000000000004,
+      "mae_leaf": 89.46048934791592
+    }
+  ]
+}

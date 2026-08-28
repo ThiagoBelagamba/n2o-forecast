@@ -1,0 +1,46 @@
+tweedie_variance_power,max_depth,min_data_in_leaf,reg_alpha,reg_lambda,cv_mae,stage
+1.1,5,25,1.0,0.1,105.53842276991614,RandomizedSearch n=40 amostra 150 series
+1.1,5,25,0.1,5.0,106.55641849891678,RandomizedSearch n=40 amostra 150 series
+1.3,4,25,1.0,0.1,111.30416865745232,RandomizedSearch n=40 amostra 150 series
+1.2,5,10,1.0,5.0,116.43934775649487,RandomizedSearch n=40 amostra 150 series
+1.1,4,50,0.1,1.0,117.78117508696869,RandomizedSearch n=40 amostra 150 series
+1.4,5,50,1.0,1.0,118.6694612212038,RandomizedSearch n=40 amostra 150 series
+1.2,4,50,1.0,0.1,118.71946211308041,RandomizedSearch n=40 amostra 150 series
+1.4,5,50,1.0,0.1,119.81181544358336,RandomizedSearch n=40 amostra 150 series
+1.5,5,25,1.0,1.0,121.7627320138233,RandomizedSearch n=40 amostra 150 series
+1.5,5,50,1.0,1.0,123.64393595620695,RandomizedSearch n=40 amostra 150 series
+1.4,5,10,5.0,1.0,124.28721246399127,RandomizedSearch n=40 amostra 150 series
+1.4,4,50,0.1,0.1,125.54595781173002,RandomizedSearch n=40 amostra 150 series
+1.4,5,10,1.0,0.1,126.95584313784903,RandomizedSearch n=40 amostra 150 series
+1.2,3,25,0.1,0.1,129.59890688763244,RandomizedSearch n=40 amostra 150 series
+1.5,4,25,0.1,5.0,135.49814028128276,RandomizedSearch n=40 amostra 150 series
+1.1,5,10,5.0,1.0,135.80140826470057,RandomizedSearch n=40 amostra 150 series
+1.5,4,25,5.0,5.0,135.81875113937096,RandomizedSearch n=40 amostra 150 series
+1.3,3,10,0.1,1.0,141.17364819860387,RandomizedSearch n=40 amostra 150 series
+1.5,4,10,1.0,1.0,141.3160784205588,RandomizedSearch n=40 amostra 150 series
+1.1,5,10,1.0,5.0,141.45138529678556,RandomizedSearch n=40 amostra 150 series
+1.4,3,50,0.1,5.0,147.54773288288325,RandomizedSearch n=40 amostra 150 series
+1.6,5,10,0.1,1.0,155.00077934077456,RandomizedSearch n=40 amostra 150 series
+1.6,4,50,0.1,5.0,155.7723735341731,RandomizedSearch n=40 amostra 150 series
+1.7,5,25,1.0,5.0,161.14345472445407,RandomizedSearch n=40 amostra 150 series
+1.7,5,50,0.1,0.1,162.65721996941505,RandomizedSearch n=40 amostra 150 series
+1.5,3,10,0.1,0.1,163.8504655889526,RandomizedSearch n=40 amostra 150 series
+1.7,4,50,1.0,0.1,173.4923332887392,RandomizedSearch n=40 amostra 150 series
+1.7,4,50,1.0,1.0,174.0545971799641,RandomizedSearch n=40 amostra 150 series
+1.7,4,10,1.0,0.1,174.57723796325732,RandomizedSearch n=40 amostra 150 series
+1.3,4,25,1.0,0.1,174.77461817225952,refino_full
+1.1,5,25,1.0,0.1,175.87767349660416,refino_full
+1.1,5,25,0.1,5.0,176.20139574613398,refino_full
+1.1,4,50,0.1,1.0,177.07984690289598,refino_full
+1.2,5,10,1.0,5.0,177.69018397808117,refino_full
+1.8,5,50,1.0,0.1,186.81936385771672,RandomizedSearch n=40 amostra 150 series
+1.8,5,10,0.1,5.0,191.35087522463795,RandomizedSearch n=40 amostra 150 series
+1.7,3,50,0.1,1.0,196.64700927794658,RandomizedSearch n=40 amostra 150 series
+1.8,4,10,0.1,0.1,199.54269031318765,RandomizedSearch n=40 amostra 150 series
+1.7,3,10,0.1,0.1,206.83345669749662,RandomizedSearch n=40 amostra 150 series
+1.8,4,10,0.1,5.0,211.65503642198047,RandomizedSearch n=40 amostra 150 series
+1.8,4,10,5.0,1.0,225.61403425338753,RandomizedSearch n=40 amostra 150 series
+1.8,3,50,1.0,1.0,238.2238832440426,RandomizedSearch n=40 amostra 150 series
+1.9,5,50,5.0,5.0,289.0714144998835,RandomizedSearch n=40 amostra 150 series
+1.9,4,10,5.0,5.0,295.1916045257402,RandomizedSearch n=40 amostra 150 series
+1.9,3,25,1.0,0.1,300.7333417856368,RandomizedSearch n=40 amostra 150 series

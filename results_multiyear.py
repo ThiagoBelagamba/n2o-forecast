@@ -84,6 +84,23 @@ def save_report(
             "\nNota: persistencia_1passo (copiar t-1 observado) NAO e a "
             "referencia deste protocolo; mediria inventário já publicado.\n"
         )
+        timing_path = PATHS.get('timing')
+        if timing_path and os.path.isfile(timing_path):
+            import json
+            with open(timing_path, encoding='utf-8') as tf:
+                timing = json.load(tf)
+            f.write("\n=== TEMPO DE INFERENCIA (MinT classico + clip) ===\n")
+            f.write(timing.get('margin_note', '') + "\n")
+            secs = timing.get('seconds', {})
+            f.write(
+                f"predict: {secs.get('predict_horizon')}s | "
+                f"reconcile+clip: {secs.get('reconcile_mint_clip')}s | "
+                f"nucleo: {secs.get('inference_core')}s\n"
+            )
+            f.write(
+                "NNMinT QP foi abandonado; com MinT + clip a inferencia "
+                "cai para a margem de poucos segundos (< 1 min).\n"
+            )
     print(f"Relatorio: {PATHS['report']}")
 
 
@@ -117,6 +134,11 @@ def save_leitura(quality, metrics, best_model, tweedie_power):
         f.write(
             "\n5. Entrega operacional: projecao 2025–2026 "
             "(cenario, nao inventario oficial).\n"
+        )
+        f.write(
+            "\n6. Tempo de inferencia (MinT classico + clip): "
+            "ver resultados/tempo_inferencia.json "
+            "(nucleo ~1.2 s; margem de poucos segundos).\n"
         )
         f.write(f"\nSeries: {quality.get('n_series')} | "
                 f"periodo {quality.get('year_min')}–{quality.get('year_max')}\n")

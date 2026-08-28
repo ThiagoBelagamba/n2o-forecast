@@ -16,7 +16,7 @@ Fonte: [`resultados/relatorio.txt`](../resultados/relatorio.txt). Projeção: [`
 | Teste | 2020–2024, previsão **direta** h=5 (MLForecast `max_horizon`) |
 | Lags no teste | geridos pelo MLForecast a partir do fim do treino — **sem** y observado de 2020+ |
 | Referência justa | persistência multi-ano (copiar 2019) |
-| Modelo base | LightGBM Tweedie (p=1.7), Ridge, RF |
+| Modelo base | LightGBM Tweedie (sintonizado), Ridge, RF; lags `[1,2,3,5]` + `RollingMean(3,5)` |
 | Reconciliação | BottomUp + MinTrace(ols) + MinTrace(mint_shrink); clip ≥ 0 |
 
 `persistencia_1passo` (copiar t−1 observado) **não** é a referência deste protocolo.
@@ -29,12 +29,55 @@ Fonte: [`resultados/relatorio.txt`](../resultados/relatorio.txt). Projeção: [`
 | --- | ---: | ---: |
 | Persistência multi-ano | 102,74 | 892,84 |
 | **Ridge / MinTrace(ols)** | **83,85** | **704,53** |
-| Ridge / MinTrace(mint_shrink) | 86,86 | 663,18 |
+| Ridge / MinTrace(mint_shrink) | 88,03 | 673,50 |
 | Ridge (base) | 89,90 | 707,21 |
+| LGBM Tweedie / MinTrace(mint_shrink) | 108,25 | 833,60 |
+| LGBM Tweedie (base, sintonizado) | 101,37 | 800,32 |
 | RF / MinTrace(mint_shrink) | 97,07 | 732,79 |
-| LGBM Tweedie / MinTrace(mint_shrink) | 126,27 | 1.179,25 |
 
-LightGBM Tweedie (p=1.7) foi selecionado por CV no treino; no teste multi-ano o **Ridge reconciliado** venceu em MAE. O Tweedie permanece no pipeline (perda alinhada a zeros + cauda); a entrega operacional usa o melhor MAE no protocolo cego.
+LightGBM foi sintonizado com `scripts/tune_lgbm.py` (RandomizedSearch + refino, CV direta h=5 em 2015–2019). Melhor config em `resultados/lgbm_best_params.json` (p=1.1, `max_depth=5`, `min_data_in_leaf=25`, L1/L2). No teste cego multi-ano o **Ridge reconciliado** permanece melhor em MAE; LGBM melhorou de ~126 t para ~101 t (base) mas não superou a barreira **83,85 t**.
+
+---
+
+## Sintonia LGBM (Fase 1)
+
+| Artefato | Conteúdo |
+| --- | --- |
+| `resultados/lgbm_best_params.json` | Hiperparâmetros vencedores (CV MAE ≈ 105,5 t) |
+| `resultados/cv_lgbm_grid.csv` | Malha RandomizedSearch + refino top-5 |
+
+Features MLForecast: lags `[1, 2, 3, 5]` + `RollingMean(3)` e `RollingMean(5)` no lag 1.
+
+---
+
+## NHITS (Fase 2 — extensão experimental)
+
+**Gate:** acionado porque LGBM reconciliado MAE ≥ 83,85 t. Benchmark: `scripts/run_nhits_benchmark.py`.
+
+| Método | MAE | RMSE |
+| --- | ---: | ---: |
+| NHITS (folha, sem MinT) | 85,67 | — |
+| NHITS / MinTrace(ols) | 85,67 | 695,35 |
+
+NHITS **não** superou Ridge/MinTrace(ols) (Δ ≈ −1,82 t). Projeção 2025–2026 permanece com Ridge/LGBM do pipeline principal. Artefatos: `resultados/nhits_benchmark.json`, `resultados/metricas_nhits.csv`.
+
+---
+
+## Ensemble (Ridge + LGBM / Ridge + NHITS)
+
+Blend **antes** da reconciliação MinT. Pesos sintonizados por CV folha (2015–2019, h=5).
+
+| Método | MAE teste cego | vs Ridge/MinTrace(ols) |
+| --- | ---: | --- |
+| **Ridge / MinTrace(ols)** | **83,85** | — |
+| Ridge / MinTrace(mint_shrink) | 88,03 | referência atual no `main.py` |
+| Ensemble Ridge+LGBM (base, w=0,7/0,3) | 94,60 | pior |
+| Ensemble Ridge+LGBM / MinTrace(ols) | 102,32 | pior |
+| Ensemble Ridge+NHITS (w=0,3/0,7) | 88,47 | pior (−4,6 t) |
+
+O ensemble Ridge+LGBM melhora levemente o Ridge **sem** reconciliar (95,35 → 94,60 t), mas **não** supera Ridge+MinT. Ridge+NHITS fica entre NHITS isolado e Ridge, ainda longe da barreira.
+
+Scripts: `scripts/tune_ensemble.py`, `scripts/run_ensemble_benchmark.py`. Pesos: `resultados/ensemble_weights.json`.
 
 ---
 
@@ -49,8 +92,25 @@ Aviso no arquivo: **cenário, não inventário oficial SEEG**.
 
 ---
 
+## Tempo de inferência (MinT clássico + clip)
+
+Medido com `scripts/benchmark_inference.py` sobre o `modelo_n2o.joblib` (h=5 + BottomUp/MinTrace + clip ≥ 0):
+
+| Etapa | Tempo |
+| --- | ---: |
+| Predict horizonte | ~0,2 s |
+| Reconcile MinT + clip | ~1,0 s |
+| **Núcleo de inferência** | **~1,2 s** (~0,02 min) |
+| + load do joblib | ~1,4 s |
+
+Arquivo: [`resultados/tempo_inferencia.json`](../resultados/tempo_inferencia.json).
+
+**Margem:** após abandonar o NNMinT (QP), o tempo total de inferência multi-ano cai para a ordem de **poucos segundos** (**&lt; 1 minuto**).
+
+---
+
 ## Limitações
 
 - Cascata de erro na projeção recursiva 2026 (usa o previsto de 2025).  
-- NNMinT com programação quadrática ficou lento demais (~800 séries); usamos MinT clássico + clip.  
+- NNMinT com programação quadrática ficou lento demais (~800 séries); usamos MinT clássico + clip (inferência ~1,2 s).  
 - Sem covariates externas (fertilizante, rebanho).  

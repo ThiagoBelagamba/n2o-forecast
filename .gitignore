@@ -5,6 +5,15 @@ __pycache__/
 .python-version
 .vscode/
 
+# Node (api Nest + web Next)
+api/node_modules/
+api/dist/
+web/node_modules/
+web/.next/
+web/out/
+web/.env.local
+*.tsbuildinfo
+
 # Dataset local — não versionar (xlsx ~136 MB; cache CSV gerado)
 data/*.csv
 data/*.xlsx
@@ -16,3 +25,4 @@ data/drive-download-*/
 resultados/.sklearn_cache/
 resultados/emissao_n2o_*.csv
 resultados/*.joblib
+lightning_logs/

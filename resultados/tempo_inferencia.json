@@ -1,0 +1,20 @@
+{
+  "protocol": "direct_h5 + MinTrace(ols/mint_shrink) + clip>=0",
+  "n_series_hierarchy": 838,
+  "n_leaves": 771,
+  "horizon": 5,
+  "seconds": {
+    "load_data_hierarchy": 0.572,
+    "load_model": 0.156,
+    "predict_horizon": 0.182,
+    "fitted_insample": 0.006,
+    "reconcile_mint_clip": 1.041,
+    "inference_core": 1.228,
+    "inference_total_with_model_load": 1.384
+  },
+  "minutes": {
+    "inference_core": 0.02,
+    "inference_total_with_model_load": 0.023
+  },
+  "margin_note": "Inferencia multi-ano (predict + MinT classico + clip) em 1.2s (~0.02 min); com load do joblib: 1.4s (~0.02 min)."
+}

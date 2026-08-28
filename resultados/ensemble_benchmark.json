@@ -1,0 +1,37 @@
+{
+  "blend": "Ridge+NHITS",
+  "ridge_weight": 0.3,
+  "nhits_weight": 0.7,
+  "cv_mae_leaf": 81.36846099310567,
+  "weight_grid": [
+    {
+      "ridge_weight": 0.3,
+      "lgbm_weight": 0.7,
+      "mae_leaf": 81.36846099310567
+    },
+    {
+      "ridge_weight": 0.4,
+      "lgbm_weight": 0.6,
+      "mae_leaf": 82.00600268180473
+    },
+    {
+      "ridge_weight": 0.5,
+      "lgbm_weight": 0.5,
+      "mae_leaf": 82.7848645717918
+    },
+    {
+      "ridge_weight": 0.6,
+      "lgbm_weight": 0.4,
+      "mae_leaf": 83.70218917242656
+    },
+    {
+      "ridge_weight": 0.7,
+      "lgbm_weight": 0.30000000000000004,
+      "mae_leaf": 84.71565529640334
+    }
+  ],
+  "best_reconciled": "Ensemble_Ridge_NHITS",
+  "best_mae": 88.47346580993896,
+  "ridge_barrier": 83.8493346419633,
+  "beat_barrier": false
+}

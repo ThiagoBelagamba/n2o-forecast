@@ -25,7 +25,7 @@ Números: [`docs/resultados.md`](resultados.md).
 | Fonte | Coleção 13, 1970–2024, nacional |
 | Split | treino ≤ 2019, teste 2020–2024 |
 | Protocolo | previsão direta h=5 (anti-vazamento) |
-| Modelos | LightGBM Tweedie, Ridge, RF via MLForecast |
+| Modelos | LightGBM Tweedie (sintonizado), Ridge, RF via MLForecast; NHITS experimental se LGBM não bater Ridge |
 | Reconciliação | BottomUp + MinTrace (ols / mint_shrink) + clip ≥ 0 |
 | Referência | persistência multi-ano |
 | Entrega | projeção recursiva 2025–2026 |
@@ -34,6 +34,8 @@ Números: [`docs/resultados.md`](resultados.md).
 
 App/frontend/API; TFT/HINT; covariates IBGE; município como alvo principal.
 
+**NHITS** entra como extensão experimental (`forecasting_nhits.py`, `scripts/run_nhits_benchmark.py`) somente quando LGBM não supera Ridge no teste cego; não substitui o modelo operacional até provar ganho.
+
 ## Resultado (resumo)
 
-Ridge/MinTrace(ols) MAE 83,85 t vs persistência multi-ano 102,74 t no teste cego 2020–2024. Cenário 2025–2026 em `resultados/projecao_2025_2026.csv`.
+Ridge/MinTrace(ols) MAE 83,85 t vs persistência multi-ano 102,74 t no teste cego 2020–2024. LGBM sintonizado (~101 t base) e NHITS experimental (~86 t) não superaram Ridge. Cenário 2025–2026 em `resultados/projecao_2025_2026.csv`.
