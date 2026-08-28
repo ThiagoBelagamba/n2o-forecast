@@ -81,6 +81,35 @@ Scripts: `scripts/tune_ensemble.py`, `scripts/run_ensemble_benchmark.py`. Pesos:
 
 ---
 
+## Conformal Prediction (incerteza)
+
+Split conformal simétrico sobre **Ridge/MinTrace(ols)**; calibração 2015–2019 (treino ≤ 2014), teste cego 2020–2024.
+
+| Nível | Cobertura 90% | Cobertura 95% | Largura média IC 90% |
+| --- | ---: | ---: | ---: |
+| Folhas (todas) | **91,4%** | **94,8%** | ~118 t |
+| Folhas (y>0 no treino) | 91,3% | 94,8% | ~119 t |
+
+Intervalos no nível **folha** ficam próximos da cobertura nominal. No total nacional a calibração com poucos pontos (5 anos) ainda sub-cobre — ver gráfico `conformal_nacional.png`.
+
+Artefatos: `resultados/conformal_coverage.json`, `conformal_intervals.csv`, `conformal_projecao_2025_2026.csv`. Script: `scripts/run_conformal.py`.
+
+---
+
+## Piloto DTW + modelos por cluster
+
+K-Means com métrica **DTW** (K=3 por silhouette) nas 770 folhas; Ridge/LGBM treinados por cluster vs Ridge global.
+
+| Método | MAE folha teste |
+| --- | ---: |
+| Ridge global / MinTrace(ols) | **89,82** |
+| Ridge por cluster DTW | 95,51 |
+| LGBM por cluster DTW | 115,30 |
+
+O piloto **não** superou o Ridge global nem a barreira 83,85 t. Clusters em `resultados/dtw_clusters.csv`; benchmark em `dtw_benchmark.json`. Script: `scripts/run_dtw_cluster_benchmark.py`.
+
+---
+
 ## Projeção 2025–2026
 
 1. Refit até 2024  
@@ -114,3 +143,24 @@ Arquivo: [`resultados/tempo_inferencia.json`](../resultados/tempo_inferencia.jso
 - Cascata de erro na projeção recursiva 2026 (usa o previsto de 2025).  
 - NNMinT com programação quadrática ficou lento demais (~800 séries); usamos MinT clássico + clip (inferência ~1,2 s).  
 - Sem covariates externas (fertilizante, rebanho).  
+
+---
+
+## Conclusão e platô MAE
+
+O erro pontual **estabilizou** em torno da barreira **83,85 t** (Ridge/MinTrace ols). Experimentos posteriores — LGBM tunado (~101 t), NHITS (~86 t), ensemble Ridge+LGBM/NHITS (~88–95 t), DTW por cluster (~95 t) — **não superaram** Ridge de forma consistente.
+
+**Próximo passo metodológico:** quantificar **incerteza** (Conformal Prediction), não novo tuning pontual. Cobertura folha ~**91% / 95%** valida os intervalos no teste cego.
+
+**Entrega operacional:** cenário 2025–2026 com ponto + IC agregado (`cenario_2025_2026_resumo.csv`), UI Nest/Next, export para slides (`resultados/export/slides.md`).
+
+Pipeline de fechamento:
+
+```powershell
+.\.venv\Scripts\python.exe -u main.py
+.\.venv\Scripts\python.exe -u scripts\run_conformal.py
+.\.venv\Scripts\python.exe -u scripts\export_entrega.py
+.\.venv\Scripts\python.exe -u scripts\export_slides.py
+```
+
+Artefatos: `mae_por_nivel1.csv`, `conformal_por_nivel1.csv`, `tabela_experimentos.csv`, `sintese_entrega.json`, `leitura-secao9.txt`.

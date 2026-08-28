@@ -1,0 +1,771 @@
+unique_id,cluster,nivel_1
+Brasil/Agropecuária/Manejo de dejetos animais/Tratamento e disposição de dejetos animais/Animal/Diretas/Emissão/Pecuária/Aves,2,Agropecuária
+Brasil/Agropecuária/Manejo de dejetos animais/Tratamento e disposição de dejetos animais/Animal/Diretas/Emissão/Pecuária/Gado de corte,2,Agropecuária
+Brasil/Agropecuária/Manejo de dejetos animais/Tratamento e disposição de dejetos animais/Animal/Diretas/Emissão/Pecuária/Gado de leite,1,Agropecuária
+Brasil/Agropecuária/Manejo de dejetos animais/Tratamento e disposição de dejetos animais/Animal/Diretas/Emissão/Pecuária/Suínos,0,Agropecuária
+Brasil/Agropecuária/Manejo de dejetos animais/Tratamento e disposição de dejetos animais/Animal/Indiretas (deposição atmosférica)/Emissão/Pecuária/Aves,2,Agropecuária
+Brasil/Agropecuária/Manejo de dejetos animais/Tratamento e disposição de dejetos animais/Animal/Indiretas (deposição atmosférica)/Emissão/Pecuária/Gado de corte,2,Agropecuária
+Brasil/Agropecuária/Manejo de dejetos animais/Tratamento e disposição de dejetos animais/Animal/Indiretas (deposição atmosférica)/Emissão/Pecuária/Gado de leite,2,Agropecuária
+Brasil/Agropecuária/Manejo de dejetos animais/Tratamento e disposição de dejetos animais/Animal/Indiretas (deposição atmosférica)/Emissão/Pecuária/Suínos,0,Agropecuária
+Brasil/Agropecuária/Queima de resíduos agrícolas/Prática de queima dos resíduos agrícolas/Vegetal/Diretas/Emissão/Agricultura/Algodão,1,Agropecuária
+Brasil/Agropecuária/Queima de resíduos agrícolas/Prática de queima dos resíduos agrícolas/Vegetal/Diretas/Emissão/Agricultura/Cana-de-açúcar,1,Agropecuária
+Brasil/Agropecuária/Solos manejados/Aplicação de resíduos orgânicos/Animal/Diretas/Emissão/Pecuária/Aves,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Aplicação de resíduos orgânicos/Animal/Diretas/Emissão/Pecuária/Gado de corte,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Aplicação de resíduos orgânicos/Animal/Diretas/Emissão/Pecuária/Gado de leite,1,Agropecuária
+Brasil/Agropecuária/Solos manejados/Aplicação de resíduos orgânicos/Animal/Diretas/Emissão/Pecuária/Suínos,0,Agropecuária
+Brasil/Agropecuária/Solos manejados/Aplicação de resíduos orgânicos/Animal/Indiretas (deposição atmosférica)/Emissão/Pecuária/Aves,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Aplicação de resíduos orgânicos/Animal/Indiretas (deposição atmosférica)/Emissão/Pecuária/Gado de corte,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Aplicação de resíduos orgânicos/Animal/Indiretas (deposição atmosférica)/Emissão/Pecuária/Gado de leite,1,Agropecuária
+Brasil/Agropecuária/Solos manejados/Aplicação de resíduos orgânicos/Animal/Indiretas (deposição atmosférica)/Emissão/Pecuária/Suínos,0,Agropecuária
+Brasil/Agropecuária/Solos manejados/Aplicação de resíduos orgânicos/Animal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Pecuária/Aves,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Aplicação de resíduos orgânicos/Animal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Pecuária/Gado de corte,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Aplicação de resíduos orgânicos/Animal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Pecuária/Gado de leite,1,Agropecuária
+Brasil/Agropecuária/Solos manejados/Aplicação de resíduos orgânicos/Animal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Pecuária/Suínos,0,Agropecuária
+Brasil/Agropecuária/Solos manejados/Aplicação de resíduos orgânicos/Subproduto/Diretas/Emissão/Agricultura/Torta de filtro,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Aplicação de resíduos orgânicos/Subproduto/Diretas/Emissão/Agricultura/Vinhaça,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Aplicação de resíduos orgânicos/Subproduto/Indiretas (deposição atmosférica)/Emissão/Agricultura/Torta de filtro,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Aplicação de resíduos orgânicos/Subproduto/Indiretas (lixiviação/escorrimento superficial)/Emissão/Agricultura/Torta de filtro,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Aplicação de resíduos orgânicos/Subproduto/Indiretas (lixiviação/escorrimento superficial)/Emissão/Agricultura/Vinhaça,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Diretas/Emissão/Pecuária/Asinino,1,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Diretas/Emissão/Pecuária/Bubalino,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Diretas/Emissão/Pecuária/Caprino,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Diretas/Emissão/Pecuária/Equino,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Diretas/Emissão/Pecuária/Gado de corte,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Diretas/Emissão/Pecuária/Gado de leite,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Diretas/Emissão/Pecuária/Muar,1,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Diretas/Emissão/Pecuária/Ovino,0,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Diretas/Emissão/Pecuária/Suínos,1,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Indiretas (deposição atmosférica)/Emissão/Pecuária/Asinino,1,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Indiretas (deposição atmosférica)/Emissão/Pecuária/Bubalino,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Indiretas (deposição atmosférica)/Emissão/Pecuária/Caprino,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Indiretas (deposição atmosférica)/Emissão/Pecuária/Equino,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Indiretas (deposição atmosférica)/Emissão/Pecuária/Gado de corte,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Indiretas (deposição atmosférica)/Emissão/Pecuária/Gado de leite,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Indiretas (deposição atmosférica)/Emissão/Pecuária/Muar,1,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Indiretas (deposição atmosférica)/Emissão/Pecuária/Ovino,0,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Indiretas (deposição atmosférica)/Emissão/Pecuária/Suínos,1,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Pecuária/Asinino,1,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Pecuária/Bubalino,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Pecuária/Caprino,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Pecuária/Equino,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Pecuária/Gado de corte,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Pecuária/Gado de leite,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Pecuária/Muar,1,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Pecuária/Ovino,0,Agropecuária
+Brasil/Agropecuária/Solos manejados/Deposição de dejetos em pastagem/Animal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Pecuária/Suínos,1,Agropecuária
+Brasil/Agropecuária/Solos manejados/Fertilizantes sintéticos nitrogenados/Insumo/Diretas/Emissão/Agricultura/Aplicação de ureia e demais fertilizantes sintéticos nitrogenados,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Fertilizantes sintéticos nitrogenados/Insumo/Indiretas (deposição atmosférica)/Emissão/Agricultura/Aplicação de ureia e demais fertilizantes sintéticos nitrogenados,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Fertilizantes sintéticos nitrogenados/Insumo/Indiretas (lixiviação/escorrimento superficial)/Emissão/Agricultura/Aplicação de ureia e demais fertilizantes sintéticos nitrogenados,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Mineralização de N associado a perda de C no solo/Solo/Diretas/Emissão/Agricultura/Manejo de solo,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Mineralização de N associado a perda de C no solo/Solo/Indiretas (lixiviação/escorrimento superficial)/Emissão/Agricultura/Manejo de solo,0,Agropecuária
+Brasil/Agropecuária/Solos manejados/Resíduos agrícolas/Vegetal/Diretas/Emissão/Agricultura/Arroz,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Resíduos agrícolas/Vegetal/Diretas/Emissão/Agricultura/Cana-de-açúcar,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Resíduos agrícolas/Vegetal/Diretas/Emissão/Agricultura/Feijão,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Resíduos agrícolas/Vegetal/Diretas/Emissão/Agricultura/Mandioca,1,Agropecuária
+Brasil/Agropecuária/Solos manejados/Resíduos agrícolas/Vegetal/Diretas/Emissão/Agricultura/Milho,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Resíduos agrícolas/Vegetal/Diretas/Emissão/Agricultura/Outras culturas,0,Agropecuária
+Brasil/Agropecuária/Solos manejados/Resíduos agrícolas/Vegetal/Diretas/Emissão/Agricultura/Pastagem,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Resíduos agrícolas/Vegetal/Diretas/Emissão/Agricultura/Soja,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Resíduos agrícolas/Vegetal/Diretas/Emissão/Agricultura/Trigo,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Resíduos agrícolas/Vegetal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Agricultura/Arroz,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Resíduos agrícolas/Vegetal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Agricultura/Cana-de-açúcar,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Resíduos agrícolas/Vegetal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Agricultura/Feijão,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Resíduos agrícolas/Vegetal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Agricultura/Mandioca,1,Agropecuária
+Brasil/Agropecuária/Solos manejados/Resíduos agrícolas/Vegetal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Agricultura/Milho,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Resíduos agrícolas/Vegetal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Agricultura/Outras culturas,0,Agropecuária
+Brasil/Agropecuária/Solos manejados/Resíduos agrícolas/Vegetal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Agricultura/Pastagem,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Resíduos agrícolas/Vegetal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Agricultura/Soja,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Resíduos agrícolas/Vegetal/Indiretas (lixiviação/escorrimento superficial)/Emissão/Agricultura/Trigo,2,Agropecuária
+Brasil/Agropecuária/Solos manejados/Solos orgânicos/Solo/Diretas/Emissão/Agricultura/Manejo de solo,0,Agropecuária
+Brasil/Energia/Agropecuária/Agropecuária/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Bagaço de cana,0,Energia
+Brasil/Energia/Agropecuária/Agropecuária/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biodiesel,0,Energia
+Brasil/Energia/Agropecuária/Agropecuária/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biogás,0,Energia
+Brasil/Energia/Agropecuária/Agropecuária/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Diesel de petróleo,1,Energia
+Brasil/Energia/Agropecuária/Agropecuária/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás de refinaria,1,Energia
+Brasil/Energia/Agropecuária/Agropecuária/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural seco,1,Energia
+Brasil/Energia/Agropecuária/Agropecuária/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Lenha,0,Energia
+Brasil/Energia/Agropecuária/Agropecuária/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Lixívia,-1,Energia
+Brasil/Energia/Agropecuária/Agropecuária/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outras biomassas,0,Energia
+Brasil/Energia/Agropecuária/Agropecuária/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Óleo combustível,1,Energia
+Brasil/Energia/Agropecuária/Agropecuária/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Agropecuária (finalidade não identificada)/Biodiesel,0,Energia
+Brasil/Energia/Agropecuária/Agropecuária/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Agropecuária (finalidade não identificada)/Carvão vegetal,1,Energia
+Brasil/Energia/Agropecuária/Agropecuária/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Agropecuária (finalidade não identificada)/Diesel de petróleo,2,Energia
+Brasil/Energia/Agropecuária/Agropecuária/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Agropecuária (finalidade não identificada)/GLP,0,Energia
+Brasil/Energia/Agropecuária/Agropecuária/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Agropecuária (finalidade não identificada)/Gás natural seco,1,Energia
+Brasil/Energia/Agropecuária/Agropecuária/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Agropecuária (finalidade não identificada)/Lenha,0,Energia
+Brasil/Energia/Agropecuária/Agropecuária/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Agropecuária (finalidade não identificada)/Querosene iluminante,1,Energia
+Brasil/Energia/Agropecuária/Agropecuária/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Agropecuária (finalidade não identificada)/Álcool hidratado,0,Energia
+Brasil/Energia/Agropecuária/Agropecuária/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Agropecuária (finalidade não identificada)/Óleo combustível,1,Energia
+Brasil/Energia/Comercial/Comercial/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Bagaço de cana,-1,Energia
+Brasil/Energia/Comercial/Comercial/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biodiesel,0,Energia
+Brasil/Energia/Comercial/Comercial/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biogás,0,Energia
+Brasil/Energia/Comercial/Comercial/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Diesel de petróleo,0,Energia
+Brasil/Energia/Comercial/Comercial/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural seco,0,Energia
+Brasil/Energia/Comercial/Comercial/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Lenha,0,Energia
+Brasil/Energia/Comercial/Comercial/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outras biomassas,1,Energia
+Brasil/Energia/Comercial/Comercial/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Óleo combustível,0,Energia
+Brasil/Energia/Comercial/Comercial/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Biodiesel,0,Energia
+Brasil/Energia/Comercial/Comercial/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Carvão vegetal,2,Energia
+Brasil/Energia/Comercial/Comercial/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Coque de petróleo,1,Energia
+Brasil/Energia/Comercial/Comercial/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Diesel de petróleo,1,Energia
+Brasil/Energia/Comercial/Comercial/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/GLP,2,Energia
+Brasil/Energia/Comercial/Comercial/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Gás canalizado RJ,1,Energia
+Brasil/Energia/Comercial/Comercial/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Gás canalizado SP,1,Energia
+Brasil/Energia/Comercial/Comercial/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Gás natural seco,2,Energia
+Brasil/Energia/Comercial/Comercial/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Lenha,1,Energia
+Brasil/Energia/Comercial/Comercial/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Querosene iluminante,1,Energia
+Brasil/Energia/Comercial/Comercial/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Óleo combustível,1,Energia
+Brasil/Energia/Geração de eletricidade (serviço público)/Geração de eletricidade (serviço público)/Centrais elétricas de serviço público/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Alcatrão,1,Energia
+Brasil/Energia/Geração de eletricidade (serviço público)/Geração de eletricidade (serviço público)/Centrais elétricas de serviço público/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biodiesel,0,Energia
+Brasil/Energia/Geração de eletricidade (serviço público)/Geração de eletricidade (serviço público)/Centrais elétricas de serviço público/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biogás,0,Energia
+Brasil/Energia/Geração de eletricidade (serviço público)/Geração de eletricidade (serviço público)/Centrais elétricas de serviço público/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Carvão mineral sem especificação,2,Energia
+Brasil/Energia/Geração de eletricidade (serviço público)/Geração de eletricidade (serviço público)/Centrais elétricas de serviço público/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Diesel de petróleo,2,Energia
+Brasil/Energia/Geração de eletricidade (serviço público)/Geração de eletricidade (serviço público)/Centrais elétricas de serviço público/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás de refinaria,0,Energia
+Brasil/Energia/Geração de eletricidade (serviço público)/Geração de eletricidade (serviço público)/Centrais elétricas de serviço público/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural seco,2,Energia
+Brasil/Energia/Geração de eletricidade (serviço público)/Geração de eletricidade (serviço público)/Centrais elétricas de serviço público/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural úmido,1,Energia
+Brasil/Energia/Geração de eletricidade (serviço público)/Geração de eletricidade (serviço público)/Centrais elétricas de serviço público/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Lenha,0,Energia
+Brasil/Energia/Geração de eletricidade (serviço público)/Geração de eletricidade (serviço público)/Centrais elétricas de serviço público/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outras biomassas,0,Energia
+Brasil/Energia/Geração de eletricidade (serviço público)/Geração de eletricidade (serviço público)/Centrais elétricas de serviço público/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outros energéticos de petróleo,1,Energia
+Brasil/Energia/Geração de eletricidade (serviço público)/Geração de eletricidade (serviço público)/Centrais elétricas de serviço público/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Óleo combustível,1,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Bagaço de cana,2,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biodiesel,0,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biogás,0,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Carvão vapor 4700,0,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Carvão vapor 5200,-1,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Diesel de petróleo,0,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural seco,2,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Lenha,0,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outras biomassas,0,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outros energéticos de petróleo,1,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Óleo combustível,1,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Bagaço de cana,2,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Biodiesel,0,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 3100,1,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 3300,2,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 3700,1,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 4200,1,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 4500,1,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 4700,2,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 5200,2,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 5900,1,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 6000,1,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor sem especificação,1,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Coque de petróleo,2,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Diesel de petróleo,0,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/GLP,0,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás canalizado RJ,1,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás canalizado SP,1,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás natural seco,2,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás natural úmido,1,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Lenha,2,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Outras biomassas,0,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Querosene iluminante,1,Energia
+Brasil/Energia/Industrial/Alimentos e bebidas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Óleo combustível,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biodiesel,0,Energia
+Brasil/Energia/Industrial/Cerâmica/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Diesel de petróleo,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural seco,0,Energia
+Brasil/Energia/Industrial/Cerâmica/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Lenha,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outras não renováveis,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outros energéticos de petróleo,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Óleo combustível,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Biodiesel,0,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 3100,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 3300,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 3700,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 4200,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 4500,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 4700,2,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 5200,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 6000,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor sem especificação,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vegetal,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Coque de petróleo,0,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Diesel de petróleo,0,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/GLP,2,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás canalizado RJ,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás canalizado SP,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás de refinaria,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás natural seco,2,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás natural úmido,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Lenha,2,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Outras biomassas,2,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Outros energéticos de petróleo,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Querosene iluminante,1,Energia
+Brasil/Energia/Industrial/Cerâmica/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Óleo combustível,1,Energia
+Brasil/Energia/Industrial/Cimento/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biodiesel,0,Energia
+Brasil/Energia/Industrial/Cimento/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Diesel de petróleo,0,Energia
+Brasil/Energia/Industrial/Cimento/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outras não renováveis,0,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Alcatrão,1,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Bagaço de cana,1,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Biodiesel,0,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Carvão vapor 3100,1,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Carvão vapor 3300,1,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Carvão vapor 3700,1,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Carvão vapor 4200,1,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Carvão vapor 4500,1,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Carvão vapor 4700,1,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Carvão vapor 5200,1,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Carvão vapor 5900,1,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Carvão vapor 6000,2,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Carvão vapor sem especificação,1,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Carvão vegetal,2,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Coque de carvão mineral,0,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Coque de petróleo,2,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Diesel de petróleo,0,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/GLP,0,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Gás natural seco,1,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Gás natural úmido,1,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Lenha,0,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Outras biomassas,2,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Outras não renováveis,2,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Outros energéticos de petróleo,1,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Querosene iluminante,1,Energia
+Brasil/Energia/Industrial/Cimento/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Cimento/Óleo combustível,1,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Alcatrão,2,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biodiesel,0,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Carvão vapor 4500,1,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Diesel de petróleo,0,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás de coqueria,2,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural seco,2,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural úmido,1,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outras biomassas,0,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outras não renováveis,0,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Óleo combustível,1,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Alcatrão,2,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Biodiesel,0,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Carvão vapor 3100,1,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Carvão vapor 3300,1,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Carvão vapor 4200,1,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Carvão vapor 4500,1,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Carvão vapor 4700,1,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Carvão vapor 5200,1,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Carvão vapor sem especificação,1,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Diesel de petróleo,2,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/GLP,2,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Gás canalizado RJ,1,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Gás de coqueria,2,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Gás de refinaria,1,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Gás natural seco,2,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Gás natural úmido,1,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Nafta,1,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Outras biomassas,1,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Outras não renováveis,1,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Querosene iluminante,1,Energia
+Brasil/Energia/Industrial/Ferro gusa e aço/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Óleo combustível,1,Energia
+Brasil/Energia/Industrial/Ferro ligas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Biodiesel,0,Energia
+Brasil/Energia/Industrial/Ferro ligas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Carvão vapor 3300,1,Energia
+Brasil/Energia/Industrial/Ferro ligas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Carvão vapor 4200,1,Energia
+Brasil/Energia/Industrial/Ferro ligas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Carvão vapor 4500,1,Energia
+Brasil/Energia/Industrial/Ferro ligas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Carvão vapor 4700,1,Energia
+Brasil/Energia/Industrial/Ferro ligas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Carvão vapor 5200,1,Energia
+Brasil/Energia/Industrial/Ferro ligas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Diesel de petróleo,0,Energia
+Brasil/Energia/Industrial/Ferro ligas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/GLP,0,Energia
+Brasil/Energia/Industrial/Ferro ligas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Gás canalizado SP,1,Energia
+Brasil/Energia/Industrial/Ferro ligas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Gás natural seco,1,Energia
+Brasil/Energia/Industrial/Ferro ligas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Lenha,2,Energia
+Brasil/Energia/Industrial/Ferro ligas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Querosene iluminante,1,Energia
+Brasil/Energia/Industrial/Ferro ligas/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Óleo combustível,2,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biodiesel,1,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Diesel de petróleo,1,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural seco,0,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Óleo combustível,2,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Biodiesel,0,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 3300,1,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 4200,1,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 4500,1,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 4700,0,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 5200,1,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 6000,2,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor sem especificação,0,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vegetal,1,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Coque de carvão mineral,2,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Coque de petróleo,2,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Diesel de petróleo,2,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/GLP,2,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás natural seco,2,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás natural úmido,1,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Lenha,1,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Querosene iluminante,1,Energia
+Brasil/Energia/Industrial/Mineração e pelotização/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Óleo combustível,1,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biodiesel,1,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Carvão vapor 4500,1,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Carvão vapor 6000,0,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Diesel de petróleo,1,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural seco,1,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Lenha,1,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Óleo combustível,2,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Biodiesel,0,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Carvão vapor 5200,1,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Carvão vapor 6000,0,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Carvão vapor sem especificação,1,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Diesel de petróleo,0,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/GLP,2,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Gás canalizado RJ,1,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Gás canalizado SP,1,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Gás natural seco,2,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Gás natural úmido,1,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Lenha,1,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Outros energéticos de petróleo,1,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Querosene iluminante,1,Energia
+Brasil/Energia/Industrial/Não ferrosos e outros da metalurgia/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Metalurgia/Óleo combustível,2,Energia
+Brasil/Energia/Industrial/Outras indústrias/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Bagaço de cana,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biodiesel,0,Energia
+Brasil/Energia/Industrial/Outras indústrias/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biogás,0,Energia
+Brasil/Energia/Industrial/Outras indústrias/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Diesel de petróleo,0,Energia
+Brasil/Energia/Industrial/Outras indústrias/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural seco,0,Energia
+Brasil/Energia/Industrial/Outras indústrias/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Lenha,0,Energia
+Brasil/Energia/Industrial/Outras indústrias/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outras biomassas,0,Energia
+Brasil/Energia/Industrial/Outras indústrias/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outras não renováveis,0,Energia
+Brasil/Energia/Industrial/Outras indústrias/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Óleo combustível,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Bagaço de cana,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Biodiesel,0,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 3100,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 3300,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 3700,0,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 4200,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 4500,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 4700,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 5200,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 5900,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 6000,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor sem especificação,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vegetal,2,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Coque de carvão mineral,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Coque de petróleo,2,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Diesel de petróleo,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/GLP,2,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás canalizado RJ,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás canalizado SP,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás de refinaria,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás natural seco,2,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás natural úmido,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Lenha,2,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Outras biomassas,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Outros energéticos de petróleo,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Querosene iluminante,1,Energia
+Brasil/Energia/Industrial/Outras indústrias/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Óleo combustível,1,Energia
+Brasil/Energia/Industrial/Papel e celulose/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Bagaço de cana,0,Energia
+Brasil/Energia/Industrial/Papel e celulose/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biodiesel,0,Energia
+Brasil/Energia/Industrial/Papel e celulose/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Carvão vapor 4200,1,Energia
+Brasil/Energia/Industrial/Papel e celulose/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Carvão vapor 4500,1,Energia
+Brasil/Energia/Industrial/Papel e celulose/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Carvão vapor 4700,1,Energia
+Brasil/Energia/Industrial/Papel e celulose/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Carvão vapor 5200,0,Energia
+Brasil/Energia/Industrial/Papel e celulose/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Carvão vapor 6000,1,Energia
+Brasil/Energia/Industrial/Papel e celulose/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Diesel de petróleo,0,Energia
+Brasil/Energia/Industrial/Papel e celulose/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural seco,0,Energia
+Brasil/Energia/Industrial/Papel e celulose/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Lenha,2,Energia
+Brasil/Energia/Industrial/Papel e celulose/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Lixívia,2,Energia
+Brasil/Energia/Industrial/Papel e celulose/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outras biomassas,2,Energia
+Brasil/Energia/Industrial/Papel e celulose/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Óleo combustível,2,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Bagaço de cana,2,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Biodiesel,0,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 3700,1,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 4200,1,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 4500,1,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 4700,2,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 5200,2,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 6000,1,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor sem especificação,1,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vegetal,1,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Coque de carvão mineral,1,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Coque de petróleo,1,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Diesel de petróleo,0,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/GLP,0,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás canalizado RJ,1,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás canalizado SP,1,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás natural seco,2,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás natural úmido,1,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Lenha,2,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Lixívia,2,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Outras biomassas,2,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Querosene iluminante,1,Energia
+Brasil/Energia/Industrial/Papel e celulose/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Óleo combustível,1,Energia
+Brasil/Energia/Industrial/Química/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biodiesel,1,Energia
+Brasil/Energia/Industrial/Química/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Carvão vapor 3700,1,Energia
+Brasil/Energia/Industrial/Química/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Carvão vapor 4500,1,Energia
+Brasil/Energia/Industrial/Química/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Carvão vapor 4700,1,Energia
+Brasil/Energia/Industrial/Química/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Carvão vapor 5200,0,Energia
+Brasil/Energia/Industrial/Química/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Diesel de petróleo,1,Energia
+Brasil/Energia/Industrial/Química/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás de refinaria,1,Energia
+Brasil/Energia/Industrial/Química/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural seco,2,Energia
+Brasil/Energia/Industrial/Química/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural úmido,1,Energia
+Brasil/Energia/Industrial/Química/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Lenha,0,Energia
+Brasil/Energia/Industrial/Química/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outras biomassas,1,Energia
+Brasil/Energia/Industrial/Química/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outras não renováveis,2,Energia
+Brasil/Energia/Industrial/Química/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outros energéticos de petróleo,2,Energia
+Brasil/Energia/Industrial/Química/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Óleo combustível,1,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Bagaço de cana,1,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Biodiesel,0,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Carvão vapor 3100,1,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Carvão vapor 3300,1,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Carvão vapor 3700,1,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Carvão vapor 4200,0,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Carvão vapor 4500,1,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Carvão vapor 4700,1,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Carvão vapor 5200,0,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Carvão vapor 5900,1,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Carvão vapor 6000,1,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Carvão vapor sem especificação,1,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Carvão vegetal,2,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Coque de petróleo,2,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Diesel de petróleo,1,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/GLP,0,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Gás canalizado RJ,1,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Gás canalizado SP,1,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Gás de refinaria,0,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Gás natural seco,2,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Gás natural úmido,1,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Lenha,1,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Nafta,1,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Outras não renováveis,2,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Outros energéticos de petróleo,2,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Querosene iluminante,1,Energia
+Brasil/Energia/Industrial/Química/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Química/Óleo combustível,1,Energia
+Brasil/Energia/Industrial/Têxtil/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biodiesel,0,Energia
+Brasil/Energia/Industrial/Têxtil/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Diesel de petróleo,1,Energia
+Brasil/Energia/Industrial/Têxtil/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural seco,2,Energia
+Brasil/Energia/Industrial/Têxtil/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Lenha,2,Energia
+Brasil/Energia/Industrial/Têxtil/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Óleo combustível,1,Energia
+Brasil/Energia/Industrial/Têxtil/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Biodiesel,0,Energia
+Brasil/Energia/Industrial/Têxtil/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 4500,1,Energia
+Brasil/Energia/Industrial/Têxtil/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vapor 5200,1,Energia
+Brasil/Energia/Industrial/Têxtil/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Carvão vegetal,1,Energia
+Brasil/Energia/Industrial/Têxtil/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Diesel de petróleo,1,Energia
+Brasil/Energia/Industrial/Têxtil/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/GLP,0,Energia
+Brasil/Energia/Industrial/Têxtil/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás canalizado RJ,1,Energia
+Brasil/Energia/Industrial/Têxtil/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás canalizado SP,1,Energia
+Brasil/Energia/Industrial/Têxtil/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Gás natural seco,2,Energia
+Brasil/Energia/Industrial/Têxtil/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Lenha,1,Energia
+Brasil/Energia/Industrial/Têxtil/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Querosene iluminante,1,Energia
+Brasil/Energia/Industrial/Têxtil/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Outras matérias primas e indústrias/Óleo combustível,1,Energia
+Brasil/Energia/Produção de combustíveis/Exploração de petróleo e gás natural/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Diesel de petróleo,2,Energia
+Brasil/Energia/Produção de combustíveis/Exploração de petróleo e gás natural/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural seco,1,Energia
+Brasil/Energia/Produção de combustíveis/Exploração de petróleo e gás natural/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural úmido,2,Energia
+Brasil/Energia/Produção de combustíveis/Exploração de petróleo e gás natural/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Diesel de petróleo,0,Energia
+Brasil/Energia/Produção de combustíveis/Exploração de petróleo e gás natural/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Gás natural seco,1,Energia
+Brasil/Energia/Produção de combustíveis/Exploração de petróleo e gás natural/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Gás natural úmido,2,Energia
+Brasil/Energia/Produção de combustíveis/Exploração de petróleo e gás natural/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Óleo combustível,0,Energia
+Brasil/Energia/Produção de combustíveis/Exploração de petróleo e gás natural/Queima em tocha (flare)/Emissões fugitivas/Emissão/Produção de combustíveis/Petróleo,2,Energia
+Brasil/Energia/Produção de combustíveis/Produção de carvão mineral e outros/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Alcatrão,1,Energia
+Brasil/Energia/Produção de combustíveis/Produção de carvão mineral e outros/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Carvão vapor 5200,1,Energia
+Brasil/Energia/Produção de combustíveis/Produção de carvão mineral e outros/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Carvão vapor sem especificação,1,Energia
+Brasil/Energia/Produção de combustíveis/Produção de carvão mineral e outros/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Coque de carvão mineral,1,Energia
+Brasil/Energia/Produção de combustíveis/Produção de carvão mineral e outros/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Diesel de petróleo,1,Energia
+Brasil/Energia/Produção de combustíveis/Produção de carvão mineral e outros/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Gás canalizado RJ,1,Energia
+Brasil/Energia/Produção de combustíveis/Produção de carvão mineral e outros/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Gás canalizado SP,1,Energia
+Brasil/Energia/Produção de combustíveis/Produção de carvão mineral e outros/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Gás de coqueria,2,Energia
+Brasil/Energia/Produção de combustíveis/Produção de carvão mineral e outros/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Gás natural seco,1,Energia
+Brasil/Energia/Produção de combustíveis/Produção de carvão vegetal/Carvoarias/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Lenha carvoejamento,2,Energia
+Brasil/Energia/Produção de combustíveis/Produção de álcool/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Bagaço de cana,2,Energia
+Brasil/Energia/Produção de combustíveis/Produção de álcool/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Diesel de petróleo,1,Energia
+Brasil/Energia/Produção de combustíveis/Produção de álcool/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural seco,1,Energia
+Brasil/Energia/Produção de combustíveis/Produção de álcool/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Lenha,1,Energia
+Brasil/Energia/Produção de combustíveis/Produção de álcool/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outras biomassas,1,Energia
+Brasil/Energia/Produção de combustíveis/Produção de álcool/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Óleo combustível,1,Energia
+Brasil/Energia/Produção de combustíveis/Produção de álcool/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Bagaço de cana,2,Energia
+Brasil/Energia/Produção de combustíveis/Produção de álcool/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Gás natural seco,1,Energia
+Brasil/Energia/Produção de combustíveis/Produção de álcool/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Lenha,1,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biodiesel,1,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Diesel de petróleo,1,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás de refinaria,2,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural seco,2,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural úmido,1,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outras biomassas,0,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outros energéticos de petróleo,1,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Óleo combustível,1,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Coque de petróleo,1,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Diesel de petróleo,1,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/GLP,1,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Gás canalizado RJ,1,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Gás de refinaria,2,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Gás natural seco,2,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Gás natural úmido,1,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Nafta,1,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Outros energéticos de petróleo,1,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Querosene iluminante,1,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Óleo combustível,1,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Outros processos/Emissões fugitivas/Emissão/Produção de combustíveis/Petróleo,0,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Queima em tocha (flare)/Emissões fugitivas/Emissão/Produção de combustíveis/Petróleo,0,Energia
+Brasil/Energia/Produção de combustíveis/Refino de petróleo/Ventilação (venting)/Emissões fugitivas/Emissão/Produção de combustíveis/Petróleo,0,Energia
+Brasil/Energia/Produção de combustíveis/Transporte de petróleo e gás natural/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Gás natural seco,0,Energia
+Brasil/Energia/Produção de combustíveis/Transporte de petróleo e gás natural/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Produção de combustíveis/Óleo combustível,1,Energia
+Brasil/Energia/Produção de combustíveis/Transporte de petróleo e gás natural/Queima em tocha (flare)/Emissões fugitivas/Emissão/Produção de combustíveis/Gás natural sem especificação,1,Energia
+Brasil/Energia/Produção de combustíveis/Transporte de petróleo e gás natural/Queima em tocha (flare)/Emissões fugitivas/Emissão/Produção de combustíveis/Petróleo,0,Energia
+Brasil/Energia/Público/Público/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biodiesel,0,Energia
+Brasil/Energia/Público/Público/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biogás,0,Energia
+Brasil/Energia/Público/Público/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Diesel de petróleo,0,Energia
+Brasil/Energia/Público/Público/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural seco,0,Energia
+Brasil/Energia/Público/Público/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Lenha,1,Energia
+Brasil/Energia/Público/Público/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Outras biomassas,0,Energia
+Brasil/Energia/Público/Público/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Óleo combustível,0,Energia
+Brasil/Energia/Público/Público/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Biodiesel,1,Energia
+Brasil/Energia/Público/Público/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Carvão vegetal,1,Energia
+Brasil/Energia/Público/Público/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Coque de petróleo,1,Energia
+Brasil/Energia/Público/Público/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Diesel de petróleo,1,Energia
+Brasil/Energia/Público/Público/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/GLP,2,Energia
+Brasil/Energia/Público/Público/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Gás canalizado RJ,1,Energia
+Brasil/Energia/Público/Público/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Gás canalizado SP,1,Energia
+Brasil/Energia/Público/Público/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Gás natural seco,2,Energia
+Brasil/Energia/Público/Público/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Lenha,1,Energia
+Brasil/Energia/Público/Público/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Outros energéticos de petróleo,1,Energia
+Brasil/Energia/Público/Público/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Querosene iluminante,1,Energia
+Brasil/Energia/Público/Público/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Óleo combustível,1,Energia
+Brasil/Energia/Residencial/Residencial/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Bagaço de cana,-1,Energia
+Brasil/Energia/Residencial/Residencial/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Biogás,0,Energia
+Brasil/Energia/Residencial/Residencial/Centrais elétricas autoprodutoras/Emissões pela queima de combustíveis/Emissão/Geração de eletricidade/Gás natural seco,0,Energia
+Brasil/Energia/Residencial/Residencial/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Carvão vegetal,1,Energia
+Brasil/Energia/Residencial/Residencial/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/GLP,2,Energia
+Brasil/Energia/Residencial/Residencial/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Gás canalizado RJ,1,Energia
+Brasil/Energia/Residencial/Residencial/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Gás canalizado SP,1,Energia
+Brasil/Energia/Residencial/Residencial/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Gás natural seco,2,Energia
+Brasil/Energia/Residencial/Residencial/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Lenha,1,Energia
+Brasil/Energia/Residencial/Residencial/Consumo final energético/Emissões pela queima de combustíveis/Emissão/Edificações/Querosene iluminante,1,Energia
+Brasil/Energia/Transportes/Aéreo/Aeronaves de aviação civil/Emissões pela queima de combustíveis/Emissão/Transporte de passageiros/Querosene de aviação,2,Energia
+Brasil/Energia/Transportes/Aéreo/Aeronaves/Emissões pela queima de combustíveis/Emissão/Transporte de passageiros/Gasolina de aviação,1,Energia
+Brasil/Energia/Transportes/Aéreo/Helicópteros e outras aeronaves de menor porte e aviação militar/Emissões pela queima de combustíveis/Emissão/Transporte de passageiros/Querosene de aviação,2,Energia
+Brasil/Energia/Transportes/Ferroviário/Locomotivas/Emissões pela queima de combustíveis/Emissão/Transporte de carga/Biodiesel,0,Energia
+Brasil/Energia/Transportes/Ferroviário/Locomotivas/Emissões pela queima de combustíveis/Emissão/Transporte de carga/Carvão vapor 4500,1,Energia
+Brasil/Energia/Transportes/Ferroviário/Locomotivas/Emissões pela queima de combustíveis/Emissão/Transporte de carga/Carvão vapor 5200,1,Energia
+Brasil/Energia/Transportes/Ferroviário/Locomotivas/Emissões pela queima de combustíveis/Emissão/Transporte de carga/Diesel de petróleo,2,Energia
+Brasil/Energia/Transportes/Ferroviário/Locomotivas/Emissões pela queima de combustíveis/Emissão/Transporte de carga/Lenha,1,Energia
+Brasil/Energia/Transportes/Ferroviário/Locomotivas/Emissões pela queima de combustíveis/Emissão/Transporte de carga/Óleo combustível,1,Energia
+Brasil/Energia/Transportes/Hidroviário/Embarcações/Emissões pela queima de combustíveis/Emissão/Transporte de carga/Diesel de petróleo,1,Energia
+Brasil/Energia/Transportes/Hidroviário/Embarcações/Emissões pela queima de combustíveis/Emissão/Transporte de carga/Óleo combustível,2,Energia
+Brasil/Energia/Transportes/Rodoviário/Automóveis/Emissões pela queima de combustíveis/Emissão/Transporte de passageiros/Biodiesel,0,Energia
+Brasil/Energia/Transportes/Rodoviário/Automóveis/Emissões pela queima de combustíveis/Emissão/Transporte de passageiros/Diesel de petróleo,0,Energia
+Brasil/Energia/Transportes/Rodoviário/Automóveis/Emissões pela queima de combustíveis/Emissão/Transporte de passageiros/Gasolina automotiva,2,Energia
+Brasil/Energia/Transportes/Rodoviário/Automóveis/Emissões pela queima de combustíveis/Emissão/Transporte de passageiros/Gás natural seco,2,Energia
+Brasil/Energia/Transportes/Rodoviário/Automóveis/Emissões pela queima de combustíveis/Emissão/Transporte de passageiros/Álcool anidro,2,Energia
+Brasil/Energia/Transportes/Rodoviário/Automóveis/Emissões pela queima de combustíveis/Emissão/Transporte de passageiros/Álcool hidratado,2,Energia
+Brasil/Energia/Transportes/Rodoviário/Caminhões/Emissões pela queima de combustíveis/Emissão/Transporte de carga/Biodiesel,0,Energia
+Brasil/Energia/Transportes/Rodoviário/Caminhões/Emissões pela queima de combustíveis/Emissão/Transporte de carga/Diesel de petróleo,2,Energia
+Brasil/Energia/Transportes/Rodoviário/Comerciais leves/Emissões pela queima de combustíveis/Emissão/Transporte de carga/Biodiesel,0,Energia
+Brasil/Energia/Transportes/Rodoviário/Comerciais leves/Emissões pela queima de combustíveis/Emissão/Transporte de carga/Diesel de petróleo,0,Energia
+Brasil/Energia/Transportes/Rodoviário/Comerciais leves/Emissões pela queima de combustíveis/Emissão/Transporte de carga/Gasolina automotiva,2,Energia
+Brasil/Energia/Transportes/Rodoviário/Comerciais leves/Emissões pela queima de combustíveis/Emissão/Transporte de carga/Álcool anidro,2,Energia
+Brasil/Energia/Transportes/Rodoviário/Comerciais leves/Emissões pela queima de combustíveis/Emissão/Transporte de carga/Álcool hidratado,2,Energia
+Brasil/Energia/Transportes/Rodoviário/Motocicletas/Emissões pela queima de combustíveis/Emissão/Transporte de passageiros/Gasolina automotiva,2,Energia
+Brasil/Energia/Transportes/Rodoviário/Motocicletas/Emissões pela queima de combustíveis/Emissão/Transporte de passageiros/Álcool anidro,2,Energia
+Brasil/Energia/Transportes/Rodoviário/Ônibus/Emissões pela queima de combustíveis/Emissão/Transporte de passageiros/Biodiesel,0,Energia
+Brasil/Energia/Transportes/Rodoviário/Ônibus/Emissões pela queima de combustíveis/Emissão/Transporte de passageiros/Diesel de petróleo,2,Energia
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Arroz/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Arroz/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Café/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Café/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Cana-de-açúcar/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Cana-de-açúcar/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Citrus/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Citrus/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Dendê/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Dendê/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Floresta plantada/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Floresta plantada/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Mineração/missing/Emissão/Outros (geral)/Vegetação não florestal primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Mineração/missing/Emissão/Outros (geral)/Vegetação não florestal secundária -- Área sem Vegetação,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Mosaico de agricultura e pastagem/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Mosaico de agricultura e pastagem/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Outras lavouras perenes/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Outras lavouras perenes/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Outras lavouras temporárias/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Outras lavouras temporárias/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Outras áreas não vegetadas/missing/Emissão/Outros (geral)/Vegetação não florestal primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Outras áreas não vegetadas/missing/Emissão/Outros (geral)/Vegetação não florestal secundária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Pastagem/missing/Emissão/Pecuária/Vegetação não florestal primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Pastagem/missing/Emissão/Pecuária/Vegetação não florestal secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Soja/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Soja/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Água/missing/Emissão/Outros (geral)/Vegetação não florestal primária -- Área sem Vegetação,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Água/missing/Emissão/Outros (geral)/Vegetação não florestal secundária -- Área sem Vegetação,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Área urbanizada/missing/Emissão/Outros (geral)/Vegetação não florestal primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Campo alagado -- Área urbanizada/missing/Emissão/Outros (geral)/Vegetação não florestal secundária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Cana-de-açúcar/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Cana-de-açúcar/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Dendê/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Dendê/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Floresta plantada/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Floresta plantada/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Mineração/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Mineração/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Outras lavouras perenes/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Outras lavouras perenes/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Outras lavouras temporárias/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Outras lavouras temporárias/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Outras áreas não vegetadas/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Outras áreas não vegetadas/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Pastagem/missing/Emissão/Pecuária/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Pastagem/missing/Emissão/Pecuária/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Soja/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Soja/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Água/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Água/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Área urbanizada/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Floresta alagável -- Área urbanizada/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Algodão/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Algodão/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,-1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Arroz/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Arroz/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Café/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Café/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Cana-de-açúcar/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Cana-de-açúcar/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Citrus/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Citrus/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Dendê/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Dendê/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Floresta plantada/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Floresta plantada/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Mineração/missing/Emissão/Outros (geral)/Vegetação não florestal primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Mineração/missing/Emissão/Outros (geral)/Vegetação não florestal secundária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Mosaico de agricultura e pastagem/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Mosaico de agricultura e pastagem/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Outras lavouras perenes/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Outras lavouras perenes/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Outras lavouras temporárias/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Outras lavouras temporárias/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Outras áreas não vegetadas/missing/Emissão/Outros (geral)/Vegetação não florestal primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Outras áreas não vegetadas/missing/Emissão/Outros (geral)/Vegetação não florestal secundária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Pastagem/missing/Emissão/Pecuária/Vegetação não florestal primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Pastagem/missing/Emissão/Pecuária/Vegetação não florestal secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Soja/missing/Emissão/Agricultura/Vegetação não florestal primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Soja/missing/Emissão/Agricultura/Vegetação não florestal secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Água/missing/Emissão/Outros (geral)/Vegetação não florestal primária -- Área sem Vegetação,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Água/missing/Emissão/Outros (geral)/Vegetação não florestal secundária -- Área sem Vegetação,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Área urbanizada/missing/Emissão/Outros (geral)/Vegetação não florestal primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação campestre -- Área urbanizada/missing/Emissão/Outros (geral)/Vegetação não florestal secundária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Algodão/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,-1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Arroz/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Arroz/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Café/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Café/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Cana-de-açúcar/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Cana-de-açúcar/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Citrus/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Citrus/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Dendê/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Dendê/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Floresta plantada/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Floresta plantada/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Mineração/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Mineração/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Mosaico de agricultura e pastagem/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Mosaico de agricultura e pastagem/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Outras lavouras perenes/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Outras lavouras perenes/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Outras lavouras temporárias/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Outras lavouras temporárias/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Outras áreas não vegetadas/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Outras áreas não vegetadas/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Pastagem/missing/Emissão/Pecuária/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Pastagem/missing/Emissão/Pecuária/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Soja/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Soja/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Água/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Água/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Área urbanizada/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação florestal -- Área urbanizada/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Algodão/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Algodão/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Arroz/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Arroz/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Café/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Café/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Cana-de-açúcar/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Cana-de-açúcar/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Citrus/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Citrus/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Dendê/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Dendê/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Floresta plantada/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Floresta plantada/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Mineração/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Mineração/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Mosaico de agricultura e pastagem/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Mosaico de agricultura e pastagem/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Outras lavouras perenes/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Outras lavouras perenes/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Outras lavouras temporárias/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Outras lavouras temporárias/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Outras áreas não vegetadas/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Outras áreas não vegetadas/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Pastagem/missing/Emissão/Pecuária/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Pastagem/missing/Emissão/Pecuária/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Soja/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Soja/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Água/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Água/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Área urbanizada/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Formação savânica -- Área urbanizada/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Mangue -- Cana-de-açúcar/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Mangue -- Floresta plantada/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Mangue -- Floresta plantada/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Mangue -- Mineração/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Mangue -- Mosaico de agricultura e pastagem/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Mangue -- Mosaico de agricultura e pastagem/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Mangue -- Outras lavouras temporárias/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Mangue -- Outras áreas não vegetadas/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Mangue -- Outras áreas não vegetadas/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Mangue -- Pastagem/missing/Emissão/Pecuária/Floresta primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Mangue -- Pastagem/missing/Emissão/Pecuária/Floresta secundária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Mangue -- Água/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Mangue -- Área urbanizada/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Mangue -- Área urbanizada/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Arroz/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Arroz/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Cana-de-açúcar/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Cana-de-açúcar/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Floresta plantada/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Floresta plantada/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Mineração/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Mineração/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Mosaico de agricultura e pastagem/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Mosaico de agricultura e pastagem/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Outras lavouras temporárias/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Outras lavouras temporárias/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Outras áreas não vegetadas/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Outras áreas não vegetadas/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Pastagem/missing/Emissão/Pecuária/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Pastagem/missing/Emissão/Pecuária/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Soja/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Soja/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Água/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Água/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Área urbanizada/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga arborizada -- Área urbanizada/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Arroz/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Arroz/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Cana-de-açúcar/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Cana-de-açúcar/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Floresta plantada/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Mosaico de agricultura e pastagem/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Mosaico de agricultura e pastagem/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Outras lavouras perenes/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Outras lavouras perenes/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Outras lavouras temporárias/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Outras lavouras temporárias/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Outras áreas não vegetadas/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Outras áreas não vegetadas/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Pastagem/missing/Emissão/Pecuária/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Pastagem/missing/Emissão/Pecuária/Floresta secundária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Soja/missing/Emissão/Agricultura/Floresta primária -- Uso agropecuário,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Soja/missing/Emissão/Agricultura/Floresta secundária -- Uso agropecuário,0,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Água/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Água/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,1,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Área urbanizada/missing/Emissão/Outros (geral)/Floresta primária -- Área sem Vegetação,2,Mudança de Uso da Terra e Floresta
+Brasil/Mudança de Uso da Terra e Floresta/Resíduos florestais/Desmatamento/Restinga herbácea -- Área urbanizada/missing/Emissão/Outros (geral)/Floresta secundária -- Área sem Vegetação,0,Mudança de Uso da Terra e Floresta
+Brasil/Processos Industriais/Indústria química/Produção de caprolactama/Caprolactama/Emissão efetiva/Emissão/Química/Caprolactama,1,Processos Industriais
+Brasil/Processos Industriais/Indústria química/Produção de ácido adípico/Ácido adípico/Emissão efetiva/Emissão/Química/Ácido adípico,1,Processos Industriais
+Brasil/Processos Industriais/Indústria química/Produção de ácido nítrico/Ácido nítrico/Emissão efetiva/Emissão/Química/Ácido nítrico,1,Processos Industriais
+Brasil/Processos Industriais/Produção de metais/Produção de ferro gusa e aço/Ferro e aço/Emissão efetiva/Emissão/Metalurgia/Consumo de combustíveis redutores,2,Processos Industriais
+Brasil/Processos Industriais/Produção de metais/Produção de ferro gusa e aço/Produção de Gusa/Emissão efetiva/Emissão/Metalurgia/Consumo de combustíveis redutores,2,Processos Industriais
+Brasil/Processos Industriais/Produção de metais/Produção de ferroligas/Carvão vapor 6000/Emissão efetiva/Emissão/Metalurgia/Consumo de combustíveis redutores,1,Processos Industriais
+Brasil/Processos Industriais/Produção de metais/Produção de ferroligas/Carvão vegetal/Emissão efetiva/Emissão/Metalurgia/Consumo de combustíveis redutores,2,Processos Industriais
+Brasil/Processos Industriais/Produção de metais/Produção de ferroligas/Coque de carvão mineral/Emissão efetiva/Emissão/Metalurgia/Consumo de combustíveis redutores,2,Processos Industriais
+Brasil/Processos Industriais/Produção de metais/Produção de ferroligas/Coque de petróleo/Emissão efetiva/Emissão/Metalurgia/Consumo de combustíveis redutores,2,Processos Industriais
+Brasil/Processos Industriais/Produção de metais/Produção de outros não-ferrosos/Carvão vapor 6000/Emissão efetiva/Emissão/Metalurgia/Consumo de combustíveis redutores,-1,Processos Industriais
+Brasil/Processos Industriais/Produção de metais/Produção de outros não-ferrosos/Carvão vegetal/Emissão efetiva/Emissão/Metalurgia/Consumo de combustíveis redutores,1,Processos Industriais
+Brasil/Processos Industriais/Produção de metais/Produção de outros não-ferrosos/Coque de carvão mineral/Emissão efetiva/Emissão/Metalurgia/Consumo de combustíveis redutores,2,Processos Industriais
+Brasil/Processos Industriais/Produção de metais/Produção de outros não-ferrosos/Coque de petróleo/Emissão efetiva/Emissão/Metalurgia/Consumo de combustíveis redutores,2,Processos Industriais
+Brasil/Resíduos/Efluentes domésticos/Tratamento e despejo de efluentes domésticos/Efluentes Líquidos/Efluentes Líquidos/Emissão/Saneamento Básico/Efluentes Líquidos,2,Resíduos
+Brasil/Resíduos/Incineração ou queima a céu aberto/Incineração/Resíduos sólidos/Diretas/Emissão/Saneamento Básico/Resíduos de serviço de saúde,2,Resíduos
+Brasil/Resíduos/Incineração ou queima a céu aberto/Queima de resíduos a céu aberto/Resíduos sólidos/Resíduos sólidos/Emissão/Saneamento Básico/Resíduos sólidos municipais,2,Resíduos
+Brasil/Resíduos/Tratamento biológico de resíduos sólidos/Compostagem/Resíduos sólidos/Resíduos sólidos/Emissão/Saneamento Básico/Resíduos sólidos municipais,2,Resíduos

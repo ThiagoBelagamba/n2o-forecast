@@ -29,4 +29,29 @@ export class ResultsController {
   projecaoResumo() {
     return this.results.readProjecaoResumo();
   }
+
+  @Get('conformal-resumo')
+  conformalResumo() {
+    return this.results.readConformalResumo();
+  }
+
+  @Get('setores')
+  setores() {
+    return this.results.readSetores();
+  }
+
+  @Get('cenario-resumo')
+  cenarioResumo() {
+    return this.results.readCenarioResumo();
+  }
+
+  @Get('experimentos')
+  experimentos() {
+    return this.results.readExperimentos();
+  }
+
+  @Get('sintese')
+  sintese() {
+    return this.results.readSintese();
+  }
 }

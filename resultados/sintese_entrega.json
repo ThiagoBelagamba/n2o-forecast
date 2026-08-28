@@ -1,0 +1,34 @@
+{
+  "modelo_campeao_main": "Ridge/MinTrace_method-mint_shrink",
+  "mae_campeao_main": 88.02878030443419,
+  "barreira_ridge_ols": 83.8493346419633,
+  "mae_ridge_ols": 89.82241923646902,
+  "persistencia_mae": 102.74358930613148,
+  "delta_mae_vs_persistencia": 14.71480900169729,
+  "nota_modelo": "Barreira historica 83.85 t refere-se a Ridge/MinTrace(ols) em run anterior; ultimo main.py pode diferir levemente (88.03 mint_shrink vs 89.82 ols).",
+  "conformal": {
+    "coverage_90_folha": 0.9137662337662338,
+    "coverage_95_folha": 0.948051948051948,
+    "width_mean_90_folha": 118.27570086403004
+  },
+  "inferencia": {
+    "protocol": "direct_h5 + MinTrace(ols/mint_shrink) + clip>=0",
+    "n_series_hierarchy": 838,
+    "n_leaves": 771,
+    "horizon": 5,
+    "seconds": {
+      "load_data_hierarchy": 0.572,
+      "load_model": 0.156,
+      "predict_horizon": 0.182,
+      "fitted_insample": 0.006,
+      "reconcile_mint_clip": 1.041,
+      "inference_core": 1.228,
+      "inference_total_with_model_load": 1.384
+    },
+    "minutes": {
+      "inference_core": 0.02,
+      "inference_total_with_model_load": 0.023
+    },
+    "margin_note": "Inferencia multi-ano (predict + MinT classico + clip) em 1.2s (~0.02 min); com load do joblib: 1.4s (~0.02 min)."
+  }
+}

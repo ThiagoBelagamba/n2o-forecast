@@ -24,13 +24,20 @@ Filtro `N2O (t)` + `Emissão`, agregação nacional, cache `data/n2o_nacional_lo
 main.py                 orquestra multi-ano + MinT + projecao
 forecasting.py          MLForecast + LightGBM Tweedie / Ridge / RF (+ rolling features)
 forecasting_nhits.py    NHITS experimental (NeuralForecast)
+forecasting_conformal.py  Split Conformal (intervalos Ridge/MinT)
+forecasting_dtw.py      clustering DTW + modelos por cluster (piloto)
 scripts/tune_lgbm.py    sintonia LGBM (CV direta h=5)
 scripts/tune_ensemble.py    sintonia peso Ridge+LGBM (CV folha)
 scripts/run_ensemble_benchmark.py  ensemble Ridge+NHITS vs barreira
+scripts/run_conformal.py  intervalos conformais + cobertura
+scripts/run_dtw_cluster_benchmark.py  piloto DTW vs Ridge global
 reconciliation.py       hierarquia + BottomUp / MinTrace
 data_seeg.py            leitura Colecao 13
 data_preprocessing.py   painel unique_id / ds / y
 results_multiyear.py    relatorio, metricas, graficos 2025-2026
+results_entrega.py      agregacoes por setor, cenario IC, sintese TCC
+scripts/export_entrega.py   orquestrador de fechamento
+scripts/export_slides.py    markdown + PNGs para apresentacao
 api/                    NestJS minimo (serve PNGs/CSVs de resultados/)
 web/                    Next.js minimo (galeria + metricas)
 ```
@@ -48,9 +55,15 @@ python -m venv .venv
 # ensemble (blend antes do MinT)
 .\.venv\Scripts\python.exe -u scripts\tune_ensemble.py
 .\.venv\Scripts\python.exe -u scripts\run_ensemble_benchmark.py
+# incerteza (conformal) e piloto DTW
+.\.venv\Scripts\python.exe -u scripts\run_conformal.py
+.\.venv\Scripts\python.exe -u scripts\run_dtw_cluster_benchmark.py
+# fechamento da entrega (TCC)
+.\.venv\Scripts\python.exe -u scripts\export_entrega.py
+.\.venv\Scripts\python.exe -u scripts\export_slides.py
 ```
 
-Saídas: `resultados/relatorio.txt`, `metricas_comparacao.csv`, `comparacao_real_vs_previsto.csv` (SEEG vs modelo em 2020–2024), `projecao_2025_2026.csv`, gráficos.
+Saídas: `resultados/relatorio.txt`, `metricas_comparacao.csv`, `comparacao_real_vs_previsto.csv` (SEEG vs modelo em 2020–2024), `projecao_2025_2026.csv`, `sintese_entrega.json`, `export/slides.md`, gráficos.
 
 ## UI mínima (Nest + Next)
 
@@ -69,7 +82,7 @@ copy .env.example .env.local
 npm run dev
 ```
 
-Abra http://localhost:3000. Endpoints úteis: `/health`, `/charts`, `/metrics`, `/comparacao`, `/projecao-resumo`, estáticos em `/static/graficos/*.png`.
+Abra http://localhost:3000. Endpoints úteis: `/health`, `/charts`, `/metrics`, `/comparacao`, `/projecao-resumo`, `/conformal-resumo`, `/setores`, `/cenario-resumo`, `/experimentos`, `/sintese`, estáticos em `/static/graficos/*.png`.
 
 ## Limitações
 

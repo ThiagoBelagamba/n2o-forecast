@@ -11,3 +11,4 @@ hierarchicalforecast>=0.4
 utilsforecast>=0.2
 neuralforecast>=1.7
 torch>=2.0
+tslearn>=0.6

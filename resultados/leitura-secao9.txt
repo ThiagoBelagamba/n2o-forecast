@@ -1,34 +1,46 @@
-Previsao multi-ano de N2O (t) — secao 9.2
-SEEG Colecao 13 + LightGBM Tweedie + MinT
+Previsao multi-ano de N2O (t) — secao 9.2 (fechamento)
+SEEG Colecao 13 + Ridge/MinT + Conformal Prediction
 https://github.com/ThiagoBelagamba/n2o-forecast
 
-1. Pergunta: com dados ate 2019, prever 2020–2024 SEM ver os anos intermediarios?
+1. PERGUNTA E PROTOCOLO
+   Com dados ate 2019, prever 2020–2024 sem ver anos intermediarios.
+   Previsao direta h=5; referencia: persistencia multi-ano.
 
-2. Metodo: previsao direta h=5, Tweedie p=1.1, reconciliacao MinT (nonnegative).
+2. RESULTADO PRINCIPAL (erro pontual)
+   Modelo campeao (ultimo main): Ridge/MinTrace_method-mint_shrink
+   MAE: 88.03 t
+   Persistencia multi-ano: 102.74 t
+   Delta MAE (ganho): 14.71 t
+   Barreira Ridge/MinTrace(ols): 83.85 t
+   Barreira historica 83.85 t refere-se a Ridge/MinTrace(ols) em run anterior; ultimo main.py pode diferir levemente (88.03 mint_shrink vs 89.82 ols).
 
-3. Metricas (folha reconciliada):
-   persistencia_multi_ano: MAE 102.74 | RMSE 892.84
-   LGBM_Tweedie: MAE 101.37 | RMSE 800.32
-   Ridge: MAE 95.35 | RMSE 757.23
-   RF: MAE 91.16 | RMSE 721.96
-   Ensemble_Ridge_LGBM: MAE 94.60 | RMSE 739.75
-   LGBM_Tweedie/BottomUp: MAE 101.37 | RMSE 800.32
-   Ridge/BottomUp: MAE 95.35 | RMSE 757.23
-   RF/BottomUp: MAE 91.16 | RMSE 721.96
-   Ensemble_Ridge_LGBM/BottomUp: MAE 94.60 | RMSE 739.75
-   LGBM_Tweedie/MinTrace_method-ols: MAE 137.35 | RMSE 861.57
-   Ridge/MinTrace_method-ols: MAE 89.82 | RMSE 754.79
-   RF/MinTrace_method-ols: MAE 111.89 | RMSE 762.68
-   Ensemble_Ridge_LGBM/MinTrace_method-ols: MAE 102.32 | RMSE 757.47
-   LGBM_Tweedie/MinTrace_method-mint_shrink: MAE 108.25 | RMSE 833.60
-   Ridge/MinTrace_method-mint_shrink: MAE 88.03 | RMSE 673.50
-   RF/MinTrace_method-mint_shrink: MAE 94.11 | RMSE 722.89
-   Ensemble_Ridge_LGBM/MinTrace_method-mint_shrink: MAE 95.00 | RMSE 771.43
+3. EXPERIMENTOS (platô MAE)
+   Ridge / MinTrace(ols): MAE 89.82 t | superou barreira: nao
+   Ridge / MinTrace(mint_shrink): MAE 88.03 t | superou barreira: nao
+   LGBM Tweedie (tunado): MAE 101.37 t | superou barreira: nao
+   LGBM / MinTrace(mint_shrink): MAE 108.25 t | superou barreira: nao
+   NHITS: MAE 85.67 t | superou barreira: nao
+   Ensemble Ridge+NHITS: MAE 88.47 t | superou barreira: nao
+   DTW cluster Ridge: MAE 95.51 t | superou barreira: nao
 
-4. Delta MAE (persistencia multi-ano - Ridge/MinTrace_method-mint_shrink): 14.71 t
+   Conclusao: erro pontual estabilizou; LGBM/NHITS/ensemble/DTW nao superaram Ridge de forma consistente.
 
-5. Entrega operacional: projecao 2025–2026 (cenario, nao inventario oficial).
+4. INCERTEZA (Conformal Prediction)
+   Cobertura folha 90%: 91.4%
+   Cobertura folha 95%: 94.8%
+   Largura media IC 90% (folha): 118.3 t
+   Nacional: poucos pontos no teste; IC agregado ainda limitado.
 
-6. Tempo de inferencia (MinT classico + clip): ver resultados/tempo_inferencia.json (nucleo ~1.2 s; margem de poucos segundos).
+5. COBERTURA POR SETOR (nivel_1)
+   Agropecuária: cov90=58.7% | width90=190 t
+   Energia: cov90=97.5% | width90=108 t
+   Mudança de Uso da Terra e Floresta: cov90=90.1% | width90=115 t
+   Processos Industriais: cov90=92.3% | width90=118 t
+   Resíduos: cov90=75.0% | width90=163 t
 
-Series: 770 | periodo 1970–2024
+6. CENARIO 2025–2026
+   Ponto + IC 90% agregado por setor e nacional.
+   Arquivo: cenario_2025_2026_resumo.csv (nao e inventario SEEG).
+
+7. INFERENCIA
+   MinT classico + clip: nucleo ~1.2 s (ver tempo_inferencia.json).

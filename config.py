@@ -27,6 +27,20 @@ PATHS = {
     'lgbm_cv': os.path.join(_ROOT, 'resultados', 'cv_lgbm_grid.csv'),
     'ensemble_weights': os.path.join(_ROOT, 'resultados', 'ensemble_weights.json'),
     'ensemble_benchmark': os.path.join(_ROOT, 'resultados', 'ensemble_benchmark.json'),
+    'nhits_benchmark': os.path.join(_ROOT, 'resultados', 'nhits_benchmark.json'),
+    'conformal_coverage': os.path.join(_ROOT, 'resultados', 'conformal_coverage.json'),
+    'conformal_intervals': os.path.join(_ROOT, 'resultados', 'conformal_intervals.csv'),
+    'conformal_projection': os.path.join(
+        _ROOT, 'resultados', 'conformal_projecao_2025_2026.csv'
+    ),
+    'dtw_clusters': os.path.join(_ROOT, 'resultados', 'dtw_clusters.csv'),
+    'dtw_benchmark': os.path.join(_ROOT, 'resultados', 'dtw_benchmark.json'),
+    'mae_nivel1': os.path.join(_ROOT, 'resultados', 'mae_por_nivel1.csv'),
+    'conformal_nivel1': os.path.join(_ROOT, 'resultados', 'conformal_por_nivel1.csv'),
+    'cenario_resumo': os.path.join(_ROOT, 'resultados', 'cenario_2025_2026_resumo.csv'),
+    'tabela_experimentos': os.path.join(_ROOT, 'resultados', 'tabela_experimentos.csv'),
+    'sintese_entrega': os.path.join(_ROOT, 'resultados', 'sintese_entrega.json'),
+    'export_dir': os.path.join(_ROOT, 'resultados', 'export'),
 }
 
 # Barreira MAE (Ridge/MinTrace ols no teste cego 2020-2024)
@@ -118,6 +132,23 @@ MODEL_CONFIG = {
         'out_col': 'Ensemble_Ridge_NHITS',
         'weight_grid': [0.3, 0.4, 0.5, 0.6, 0.7],
     },
+}
+
+CONFORMAL_CONFIG = {
+    'calibration_end_year': 2019,
+    'calibration_train_end': 2014,
+    'alphas': [0.10, 0.05],
+    'model_col': 'Ridge/MinTrace_method-ols',
+    'point_col_base': 'Ridge',
+}
+
+DTW_CONFIG = {
+    'n_clusters': 4,
+    'k_candidates': [3, 4, 5],
+    'transform': 'log1p_zscore',
+    'models': ['Ridge', 'LGBM_Tweedie'],
+    'silhouette_sample': 200,
+    'random_state': 42,
 }
 
 PLOT_STYLE = 'ggplot'

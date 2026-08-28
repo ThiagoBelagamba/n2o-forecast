@@ -36,6 +36,21 @@ const CHART_CATALOG: Omit<ChartItem, 'url' | 'available'>[] = [
     category: 'previsao',
   },
   {
+    id: 'conformal_nacional',
+    title: 'Intervalos conformais — total nacional',
+    category: 'previsao',
+  },
+  {
+    id: 'cenario_2025_2026_ic',
+    title: 'Cenário 2025–2026 com IC 90%',
+    category: 'previsao',
+  },
+  {
+    id: 'dtw_clusters_pca',
+    title: 'Clusters DTW (PCA ilustrativo)',
+    category: 'avaliacao',
+  },
+  {
     id: 'mae_por_ano_teste',
     title: 'MAE por ano (teste)',
     category: 'avaliacao',
@@ -144,6 +159,90 @@ export class ResultsService {
         previsto_total: v.previsto,
         persistencia_2024_total: v.persistencia,
       }));
+  }
+
+  readConformalResumo() {
+    const path = join(resultadosRoot(), 'conformal_coverage.json');
+    if (!existsSync(path)) {
+      throw new NotFoundException('conformal_coverage.json nao encontrado');
+    }
+    const data = JSON.parse(readFileSync(path, 'utf-8')) as Record<string, unknown>;
+    const national = (data.national ?? {}) as Record<string, number>;
+    const leaf = (data.leaf_all ?? {}) as Record<string, number>;
+    return {
+      protocol: data.protocol ?? null,
+      national: {
+        coverage90: national.coverage_90 ?? null,
+        coverage95: national.coverage_95 ?? null,
+        width90: national.width_mean_90 ?? null,
+      },
+      leaf: {
+        coverage90: leaf.coverage_90 ?? null,
+        coverage95: leaf.coverage_95 ?? null,
+        width90: leaf.width_mean_90 ?? null,
+      },
+    };
+  }
+
+  readSetores() {
+    const mae = this.readCsv('mae_por_nivel1.csv');
+    let conformal: Record<string, string>[] = [];
+    try {
+      conformal = this.readCsv('conformal_por_nivel1.csv');
+    } catch {
+      conformal = [];
+    }
+    const confMap = new Map(
+      conformal.map((r) => [String(r.nivel_1), r]),
+    );
+    return mae.map((r) => {
+      const c = confMap.get(String(r.nivel_1));
+      return {
+        nivel_1: String(r.nivel_1),
+        n: Number(r.n),
+        MAE: Number(r.MAE),
+        RMSE: Number(r.RMSE),
+        coverage90: c ? Number(c.coverage_90) : null,
+        coverage95: c ? Number(c.coverage_95) : null,
+        width90: c ? Number(c.width_mean_90) : null,
+      };
+    });
+  }
+
+  readCenarioResumo() {
+    const rows = this.readCsv('cenario_2025_2026_resumo.csv');
+    return rows.map((r) => ({
+      escopo: String(r.escopo ?? ''),
+      nivel_1: String(r.nivel_1 ?? ''),
+      ano: Number(r.ano),
+      previsto: Number(r.previsto),
+      lo_90: r.lo_90 != null ? Number(r.lo_90) : null,
+      hi_90: r.hi_90 != null ? Number(r.hi_90) : null,
+      lo_95: r.lo_95 != null ? Number(r.lo_95) : null,
+      hi_95: r.lo_95 != null ? Number(r.hi_95) : null,
+      persistencia_2024: r.persistencia_2024
+        ? Number(r.persistencia_2024)
+        : null,
+    }));
+  }
+
+  readExperimentos() {
+    const rows = this.readCsv('tabela_experimentos.csv');
+    return rows.map((r) => ({
+      experimento: String(r.experimento),
+      MAE: Number(r.MAE),
+      barreira_ridge_ols: Number(r.barreira_ridge_ols),
+      superou_barreira: String(r.superou_barreira).toLowerCase() === 'true',
+      delta_vs_barreira: Number(r.delta_vs_barreira),
+    }));
+  }
+
+  readSintese() {
+    const path = join(resultadosRoot(), 'sintese_entrega.json');
+    if (!existsSync(path)) {
+      throw new NotFoundException('sintese_entrega.json nao encontrado');
+    }
+    return JSON.parse(readFileSync(path, 'utf-8'));
   }
 
   private readCsv(filename: string): Record<string, string>[] {

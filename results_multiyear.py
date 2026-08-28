@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from config import MODEL_CONFIG, PATHS, PLOT_STYLE, ensure_dirs
+from config import CONFORMAL_CONFIG, MODEL_CONFIG, PATHS, PLOT_STYLE, ensure_dirs
 from forecasting import compute_metrics
 
 
@@ -105,23 +105,36 @@ def save_report(
 
 
 def save_leitura(quality, metrics, best_model, tweedie_power):
+    """Gera leitura-secao9.txt; usa narrativa completa se conformal existir."""
     ensure_dirs()
+    if os.path.isfile(PATHS.get('conformal_coverage', '')):
+        try:
+            from results_entrega import (
+                build_conformal_por_nivel1,
+                build_sintese_entrega,
+                build_tabela_experimentos,
+                write_leitura_completa,
+            )
+            sintese = build_sintese_entrega()
+            exp_df = build_tabela_experimentos()
+            conf_df = build_conformal_por_nivel1()
+            write_leitura_completa(sintese, exp_df, conf_df)
+            return
+        except Exception as exc:
+            print(f'Aviso: leitura completa indisponivel ({exc}); usando resumo basico.')
+
     corte = MODEL_CONFIG['split_year']
     ref = metrics.get('persistencia_multi_ano', {})
     best = metrics.get(best_model, {})
     path = os.path.join(PATHS['results_dir'], 'leitura-secao9.txt')
     with open(path, 'w', encoding='utf-8') as f:
         f.write("Previsao multi-ano de N2O (t) — secao 9.2\n")
-        f.write("SEEG Colecao 13 + LightGBM Tweedie + MinT\n")
+        f.write("SEEG Colecao 13 + Ridge/MinT + Conformal\n")
         f.write("https://github.com/ThiagoBelagamba/n2o-forecast\n\n")
         f.write(
             f"1. Pergunta: com dados ate {corte}, prever "
             f"{corte + 1}–{corte + MODEL_CONFIG['test_horizon']} "
             f"SEM ver os anos intermediarios?\n\n"
-        )
-        f.write(
-            f"2. Metodo: previsao direta h={MODEL_CONFIG['test_horizon']}, "
-            f"Tweedie p={tweedie_power}, reconciliacao MinT (nonnegative).\n\n"
         )
         f.write("3. Metricas (folha reconciliada):\n")
         for name, m in metrics.items():
@@ -132,16 +145,9 @@ def save_leitura(quality, metrics, best_model, tweedie_power):
                 f"{ref['MAE'] - best['MAE']:.2f} t\n"
             )
         f.write(
-            "\n5. Entrega operacional: projecao 2025–2026 "
-            "(cenario, nao inventario oficial).\n"
+            "\n5. Rode scripts/export_entrega.py para narrativa completa "
+            "(platô, conformal, experimentos).\n"
         )
-        f.write(
-            "\n6. Tempo de inferencia (MinT classico + clip): "
-            "ver resultados/tempo_inferencia.json "
-            "(nucleo ~1.2 s; margem de poucos segundos).\n"
-        )
-        f.write(f"\nSeries: {quality.get('n_series')} | "
-                f"periodo {quality.get('year_min')}–{quality.get('year_max')}\n")
     print(f"Leitura: {path}")
 
 
@@ -273,3 +279,42 @@ def save_model(fcst, path=None):
     path = path or PATHS['model']
     joblib.dump(fcst, path)
     print(f"Modelo: {path}")
+
+
+def plot_conformal_national(hist_total, intervals_nat, corte, path=None):
+    """Grafico nacional com faixa de incerteza 90% e 95%."""
+    ensure_dirs()
+    path = path or os.path.join(PATHS['plots_dir'], 'conformal_nacional.png')
+    point_col = CONFORMAL_CONFIG['model_col']
+    plt.style.use(PLOT_STYLE)
+    fig, ax = plt.subplots(figsize=(10, 5))
+
+    h = hist_total.sort_values('ano')
+    ax.plot(h['ano'], h['y'], label='Observado', color='steelblue', marker='o')
+
+    d = intervals_nat.sort_values('ano')
+    if point_col in d.columns:
+        ax.plot(
+            d['ano'], d[point_col], '--', color='darkorange',
+            marker='s', label='Ridge/MinTrace (ponto)',
+        )
+    if 'lo_90' in d.columns and 'hi_90' in d.columns:
+        ax.fill_between(
+            d['ano'], d['lo_90'], d['hi_90'],
+            alpha=0.25, color='darkorange', label='IC 90% conformal',
+        )
+    if 'lo_95' in d.columns and 'hi_95' in d.columns:
+        ax.fill_between(
+            d['ano'], d['lo_95'], d['hi_95'],
+            alpha=0.12, color='gray', label='IC 95% conformal',
+        )
+
+    ax.axvline(corte + 0.5, color='gray', linestyle=':', label=f'Corte {corte}')
+    ax.set_xlabel('Ano')
+    ax.set_ylabel('Emissao N2O total (t)')
+    ax.set_title('Total nacional — previsao com intervalos conformais')
+    ax.legend(fontsize=8)
+    fig.tight_layout()
+    fig.savefig(path, dpi=150, bbox_inches='tight')
+    plt.close(fig)
+    print(f"Grafico conformal: {path}")

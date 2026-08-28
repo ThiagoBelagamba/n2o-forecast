@@ -32,10 +32,18 @@ Números: [`docs/resultados.md`](resultados.md).
 
 ## Fora do escopo
 
-App/frontend/API; TFT/HINT; covariates IBGE; município como alvo principal.
+Covariates IBGE; município como alvo principal; novos modelos pontuais após platô MAE.
+
+**UI/API** (`api/`, `web/`): galeria mínima Nest + Next lendo artefatos de `resultados/` — entregável de visualização, não app de produção.
 
 **NHITS** entra como extensão experimental (`forecasting_nhits.py`, `scripts/run_nhits_benchmark.py`) somente quando LGBM não supera Ridge no teste cego; não substitui o modelo operacional até provar ganho.
 
+**Conformal Prediction** (`forecasting_conformal.py`, `scripts/run_conformal.py`): intervalos de incerteza sobre Ridge reconciliado — complementa a entrega pontual.
+
+**DTW clustering** (`forecasting_dtw.py`, `scripts/run_dtw_cluster_benchmark.py`): piloto experimental de modelos por cluster; não superou Ridge global no teste medido.
+
+**Fechamento TCC** (`results_entrega.py`, `scripts/export_entrega.py`, `scripts/export_slides.py`): agregações por setor, cenário com IC, tabela de experimentos, síntese JSON e export para slides.
+
 ## Resultado (resumo)
 
-Ridge/MinTrace(ols) MAE 83,85 t vs persistência multi-ano 102,74 t no teste cego 2020–2024. LGBM sintonizado (~101 t base) e NHITS experimental (~86 t) não superaram Ridge. Cenário 2025–2026 em `resultados/projecao_2025_2026.csv`.
+Ridge/MinTrace(ols) MAE 83,85 t vs persistência multi-ano 102,74 t no teste cego 2020–2024. Platô MAE confirmado; conformal ~91%/95% nas folhas. Cenário 2025–2026 com IC em `cenario_2025_2026_resumo.csv` e `resultados/export/slides.md`.

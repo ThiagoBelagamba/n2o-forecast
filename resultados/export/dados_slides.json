@@ -1,0 +1,9 @@
+{
+  "modelo_campeao": "Ridge/MinTrace_method-mint_shrink",
+  "mae_campeao": 88.02878030443419,
+  "barreira_ridge_ols": 83.8493346419633,
+  "persistencia_mae": 102.74358930613148,
+  "delta_mae": 14.71480900169729,
+  "conformal_folha_90": 0.9137662337662338,
+  "conformal_folha_95": 0.948051948051948
+}

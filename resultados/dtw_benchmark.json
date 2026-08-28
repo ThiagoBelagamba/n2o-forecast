@@ -1,0 +1,15 @@
+{
+  "k_clusters": 3,
+  "silhouette_scores": {
+    "3": 0.18988456476517812,
+    "4": 0.10442149119032393,
+    "5": 0.12615554727473982
+  },
+  "best_dtw_model": "Ridge",
+  "best_dtw_mae": 95.51296187776745,
+  "ridge_global_mae": 89.82241923646902,
+  "ridge_barrier": 83.8493346419633,
+  "beat_barrier": false,
+  "delta_vs_barrier": -11.663627235804157,
+  "delta_vs_ridge_global": -5.6905426412984355
+}
