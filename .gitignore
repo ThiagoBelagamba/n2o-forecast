@@ -4,6 +4,10 @@ __pycache__/
 *.egg-info/
 .python-version
 .vscode/
+.env
+
+# Artigo em LaTeX (PDF, auxiliares e figuras geradas)
+artigo/
 
 # Node (api Nest + web Next)
 api/node_modules/

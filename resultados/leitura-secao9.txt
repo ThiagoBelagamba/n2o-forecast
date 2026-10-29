@@ -17,8 +17,8 @@ https://github.com/ThiagoBelagamba/n2o-forecast
 3. EXPERIMENTOS (platô MAE)
    Ridge / MinTrace(ols): MAE 89.82 t | superou barreira: nao
    Ridge / MinTrace(mint_shrink): MAE 88.03 t | superou barreira: nao
-   LGBM Tweedie (tunado): MAE 101.37 t | superou barreira: nao
-   LGBM / MinTrace(mint_shrink): MAE 108.25 t | superou barreira: nao
+   LGBM Tweedie (tunado): MAE 101.33 t | superou barreira: nao
+   LGBM / MinTrace(mint_shrink): MAE 108.45 t | superou barreira: nao
    NHITS: MAE 85.67 t | superou barreira: nao
    Ensemble Ridge+NHITS: MAE 88.47 t | superou barreira: nao
    DTW cluster Ridge: MAE 95.51 t | superou barreira: nao

@@ -151,6 +151,18 @@ def save_leitura(quality, metrics, best_model, tweedie_power):
     print(f"Leitura: {path}")
 
 
+def _format_model_label(name):
+    mapping = {
+        'Ridge/MinTrace_method-mint_shrink': 'Ridge + MinT (Shrink)',
+        'Ridge/MinTrace_method-ols': 'Ridge + MinT (OLS)',
+        'LGBM_Tweedie/MinTrace_method-mint_shrink': 'LightGBM + MinT',
+        'RF/MinTrace_method-mint_shrink': 'Random Forest + MinT',
+        'persistencia': 'Persistência (2019)',
+        'persistencia_multi_ano': 'Persistência (2019)',
+    }
+    return mapping.get(str(name), str(name).replace('_method-', ' ').replace('/', ' + '))
+
+
 def plot_test_totals(hist_total, pred_totals, corte, path=None):
     ensure_dirs()
     path = path or os.path.join(PATHS['plots_dir'], 'total_nacional_teste.png')
@@ -160,7 +172,7 @@ def plot_test_totals(hist_total, pred_totals, corte, path=None):
     plt.plot(h['ano'], h['y'], label='Observado', marker='o')
     for name, df in pred_totals.items():
         d = df.sort_values('ano')
-        plt.plot(d['ano'], d['yhat'], label=name, linestyle='--', marker='s')
+        plt.plot(d['ano'], d['yhat'], label=_format_model_label(name), linestyle='--', marker='s')
     plt.axvline(corte + 0.5, color='gray', linestyle=':', label=f'Corte {corte}')
     plt.xlabel('Ano')
     plt.ylabel('Emissao N2O total (t)')
@@ -255,7 +267,7 @@ def save_comparacao_real_previsto(
     x = tot['ano'].astype(int)
     w = 0.35
     ax.bar(x - w / 2, tot['real_seeg'], width=w, label='Real (SEEG)', color='steelblue')
-    ax.bar(x + w / 2, tot['previsto'], width=w, label=f'Previsto ({best_model})',
+    ax.bar(x + w / 2, tot['previsto'], width=w, label=f'Previsto ({_format_model_label(best_model)})',
            color='darkorange')
     if 'persistencia_multi_ano' in tot.columns:
         ax.plot(

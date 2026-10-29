@@ -13,11 +13,11 @@ n_clean: 42350
 n_series: 770
 missing_pct: {'produto': 0.0, 'atividade_economica': 0.0}
 target_zeros_pct: 46.13223140495868
-target_median: 0.015772433500037902
+target_median: 0.015772433500037916
 target_mean: 547.7247502565389
 target_max: 153873.89002281305
 target_p90: 369.0169232351845
-target_p99: 11200.526320578076
+target_p99: 11200.526320578078
 share_em_top10_pct: 97.519567587565
 year_min: 1970
 year_max: 2024
@@ -33,10 +33,10 @@ R2:    0.9830
 MedAE: 0.1602
 
 LGBM_Tweedie
-MAE:   101.3749
-RMSE:  800.3227
-R2:    0.9863
-MedAE: 0.6763
+MAE:   101.3258
+RMSE:  786.3333
+R2:    0.9868
+MedAE: 0.6941
 
 Ridge
 MAE:   95.3542
@@ -45,22 +45,22 @@ R2:    0.9878
 MedAE: 0.3617
 
 RF
-MAE:   91.1617
-RMSE:  721.9623
-R2:    0.9889
+MAE:   91.0191
+RMSE:  725.2897
+R2:    0.9888
 MedAE: 1.3629
 
 Ensemble_Ridge_LGBM
-MAE:   94.6015
-RMSE:  739.7473
-R2:    0.9883
-MedAE: 0.3608
+MAE:   94.7163
+RMSE:  737.4581
+R2:    0.9884
+MedAE: 0.3624
 
 LGBM_Tweedie/BottomUp
-MAE:   101.3749
-RMSE:  800.3227
-R2:    0.9863
-MedAE: 0.6763
+MAE:   101.3258
+RMSE:  786.3333
+R2:    0.9868
+MedAE: 0.6941
 
 Ridge/BottomUp
 MAE:   95.3542
@@ -69,21 +69,21 @@ R2:    0.9878
 MedAE: 0.3617
 
 RF/BottomUp
-MAE:   91.1617
-RMSE:  721.9623
-R2:    0.9889
+MAE:   91.0191
+RMSE:  725.2897
+R2:    0.9888
 MedAE: 1.3629
 
 Ensemble_Ridge_LGBM/BottomUp
-MAE:   94.6015
-RMSE:  739.7473
-R2:    0.9883
-MedAE: 0.3608
+MAE:   94.7163
+RMSE:  737.4581
+R2:    0.9884
+MedAE: 0.3624
 
 LGBM_Tweedie/MinTrace_method-ols
-MAE:   137.3526
-RMSE:  861.5670
-R2:    0.9842
+MAE:   137.4894
+RMSE:  853.0817
+R2:    0.9845
 MedAE: 0.3624
 
 Ridge/MinTrace_method-ols
@@ -93,22 +93,22 @@ R2:    0.9878
 MedAE: 0.1824
 
 RF/MinTrace_method-ols
-MAE:   111.8935
-RMSE:  762.6796
-R2:    0.9876
-MedAE: 0.5033
+MAE:   111.9610
+RMSE:  766.7187
+R2:    0.9875
+MedAE: 0.4856
 
 Ensemble_Ridge_LGBM/MinTrace_method-ols
-MAE:   102.3232
-RMSE:  757.4734
+MAE:   102.5067
+RMSE:  756.3996
 R2:    0.9878
-MedAE: 0.9416
+MedAE: 0.9190
 
 LGBM_Tweedie/MinTrace_method-mint_shrink
-MAE:   108.2466
-RMSE:  833.5985
+MAE:   108.4521
+RMSE:  832.6671
 R2:    0.9852
-MedAE: 0.5827
+MedAE: 0.5598
 
 Ridge/MinTrace_method-mint_shrink
 MAE:   88.0288
@@ -117,16 +117,16 @@ R2:    0.9903
 MedAE: 0.2215
 
 RF/MinTrace_method-mint_shrink
-MAE:   94.1142
-RMSE:  722.8944
-R2:    0.9889
-MedAE: 0.8245
+MAE:   94.5863
+RMSE:  730.2370
+R2:    0.9886
+MedAE: 0.8262
 
 Ensemble_Ridge_LGBM/MinTrace_method-mint_shrink
-MAE:   95.0035
-RMSE:  771.4346
-R2:    0.9873
-MedAE: 3.6176
+MAE:   94.9671
+RMSE:  766.7192
+R2:    0.9875
+MedAE: 3.6634
 
 === GANHO vs PERSISTENCIA MULTI-ANO ===
 Positivo = modelo erra menos que copiar o ultimo ano do treino.

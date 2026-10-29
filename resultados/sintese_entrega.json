@@ -1,10 +1,10 @@
 {
   "modelo_campeao_main": "Ridge/MinTrace_method-mint_shrink",
-  "mae_campeao_main": 88.02878030443419,
+  "mae_campeao_main": 88.02878030448184,
   "barreira_ridge_ols": 83.8493346419633,
-  "mae_ridge_ols": 89.82241923646902,
+  "mae_ridge_ols": 89.82241923647014,
   "persistencia_mae": 102.74358930613148,
-  "delta_mae_vs_persistencia": 14.71480900169729,
+  "delta_mae_vs_persistencia": 14.714809001649641,
   "nota_modelo": "Barreira historica 83.85 t refere-se a Ridge/MinTrace(ols) em run anterior; ultimo main.py pode diferir levemente (88.03 mint_shrink vs 89.82 ols).",
   "conformal": {
     "coverage_90_folha": 0.9137662337662338,
